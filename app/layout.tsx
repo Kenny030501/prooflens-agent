@@ -6,14 +6,14 @@ const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
 const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://prooflens-agent.candid-mole-9441.chatgpt.site'),
+  metadataBase: new URL('https://prooflens-agent.yaowenhu1215.chatgpt.site'),
   title: 'ProofLens · Evidence infrastructure for research agents',
   description: 'A claim-level evidence verification and human-handoff layer for research agents.',
   openGraph: {
     title: 'ProofLens · Evidence infrastructure for research agents',
     description: 'A claim-level evidence verification and human-handoff layer for research agents.',
     type: 'website',
-    url: 'https://prooflens-agent.candid-mole-9441.chatgpt.site',
+    url: 'https://prooflens-agent.yaowenhu1215.chatgpt.site',
     images: [{ url: '/og.png', width: 1200, height: 630, alt: 'ProofLens evidence infrastructure for research agents' }],
   },
   twitter: {
