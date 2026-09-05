@@ -1,0 +1,356 @@
+{
+  "input": {
+    "request_id": "eval-3",
+    "entity": "MRVL",
+    "as_of": "2024-12-03",
+    "language": "en",
+    "source_ids": [
+      "MRVL-2025Q3"
+    ],
+    "claims": [
+      {
+        "claim_id": "legacy-M1",
+        "text": "Marvell reported Q3 FY2025 revenue of about $1.516 billion, $66 million above the prior guidance midpoint."
+      },
+      {
+        "claim_id": "legacy-M2",
+        "text": "Marvell reported Q3 FY2025 GAAP gross margin of 23.0% and non-GAAP gross margin of 60.5%."
+      },
+      {
+        "claim_id": "legacy-M3",
+        "text": "Marvell had a GAAP net loss of $676.3 million and non-GAAP net income of $373.0 million in Q3 FY2025."
+      },
+      {
+        "claim_id": "legacy-M4",
+        "text": "As of December 3, 2024, Marvell's Q4 FY2025 revenue outlook was $1.800 billion plus or minus 5%."
+      },
+      {
+        "claim_id": "legacy-M6",
+        "text": "Marvell reported actual Q3 FY2025 net revenue of $1.450 billion."
+      },
+      {
+        "claim_id": "legacy-M7",
+        "text": "Marvell reported non-GAAP net income of $373.0 billion in Q3 FY2025."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-3",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "MRVL",
+    "as_of": "2024-12-03",
+    "source_cutoff": "2024-12-03",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "MRVL-2025Q3-P010",
+      "MRVL-2025Q3-P007",
+      "MRVL-2025Q3-P013",
+      "MRVL-2025Q3-P030",
+      "MRVL-2025Q3-P006",
+      "MRVL-2025Q3-P015",
+      "MRVL-2025Q3-P008",
+      "MRVL-2025Q3-P011",
+      "MRVL-2025Q3-P014",
+      "MRVL-2025Q3-P035",
+      "MRVL-2025Q3-P009",
+      "MRVL-2025Q3-P172",
+      "MRVL-2025Q3-P200",
+      "MRVL-2025Q3-P047",
+      "MRVL-2025Q3-P022",
+      "MRVL-2025Q3-P070"
+    ],
+    "results": [
+      {
+        "claim_id": "legacy-M1",
+        "status": "supported",
+        "reason": "Evidence states Q3 FY2025 net revenue was $1.516 billion, $66.0 million above the guidance midpoint provided on August 29, 2024.",
+        "facts": [
+          {
+            "metric": "net revenue",
+            "value": 1.516,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q3 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "revenue above guidance midpoint",
+            "value": 66,
+            "currency": "USD",
+            "unit": "million",
+            "period": "Q3 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q3",
+            "passage_id": "MRVL-2025Q3-P010",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000197/q325_8kx1122024ex-991.htm",
+            "filed_at": "2024-12-03",
+            "period": "Q3 FY2025 results and Q4 outlook",
+            "document_sha256": "b0d0ca1a0adb59be5ea16a3fb14f3a317208d406eeed722471117ac03a561053",
+            "locator": "Normalized paragraph 10; lines 25-31",
+            "quote": "Net revenue for the third quarter of fiscal 2025 was $1.516 billion, $66.0 million above the mid-point of the Company’s guidance provided on August 29, 2024."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "Marvell reported Q3 FY2025 revenue of about $1.516 billion, $66 million above the prior guidance midpoint."
+      },
+      {
+        "claim_id": "legacy-M2",
+        "status": "supported",
+        "reason": "Evidence explicitly states Q3 gross margin was 23.0% GAAP and 60.5% non-GAAP.",
+        "facts": [
+          {
+            "metric": "gross margin",
+            "value": 23,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q3 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "gross margin",
+            "value": 60.5,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q3 FY2025",
+            "basis": "non-GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q3",
+            "passage_id": "MRVL-2025Q3-P007",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000197/q325_8kx1122024ex-991.htm",
+            "filed_at": "2024-12-03",
+            "period": "Q3 FY2025 results and Q4 outlook",
+            "document_sha256": "b0d0ca1a0adb59be5ea16a3fb14f3a317208d406eeed722471117ac03a561053",
+            "locator": "Normalized paragraph 7; lines 15-15",
+            "quote": "•Q3 Gross Margin: 23.0% GAAP gross margin; 60.5% non-GAAP gross margin"
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "Marvell reported Q3 FY2025 GAAP gross margin of 23.0% and non-GAAP gross margin of 60.5%."
+      },
+      {
+        "claim_id": "legacy-M3",
+        "status": "supported",
+        "reason": "Evidence states GAAP net loss was $(676.3) million and non-GAAP net income was $373.0 million for Q3 FY2025.",
+        "facts": [
+          {
+            "metric": "net loss",
+            "value": -676.3,
+            "currency": "USD",
+            "unit": "million",
+            "period": "Q3 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "net income",
+            "value": 373,
+            "currency": "USD",
+            "unit": "million",
+            "period": "Q3 FY2025",
+            "basis": "non-GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q3",
+            "passage_id": "MRVL-2025Q3-P010",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000197/q325_8kx1122024ex-991.htm",
+            "filed_at": "2024-12-03",
+            "period": "Q3 FY2025 results and Q4 outlook",
+            "document_sha256": "b0d0ca1a0adb59be5ea16a3fb14f3a317208d406eeed722471117ac03a561053",
+            "locator": "Normalized paragraph 10; lines 25-31",
+            "quote": "GAAP net loss for the third quarter of fiscal 2025 was $(676.3) million, or $(0.78) per diluted share. Non-GAAP net income for the third quarter of fiscal 2025 was $373.0 million, or $0.43 per diluted share."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "Marvell had a GAAP net loss of $676.3 million and non-GAAP net income of $373.0 million in Q3 FY2025."
+      },
+      {
+        "claim_id": "legacy-M4",
+        "status": "supported",
+        "reason": "Evidence states Q4 net revenue is expected to be $1.800 billion +/- 5%, and the document was filed December 3, 2024.",
+        "facts": [
+          {
+            "metric": "revenue outlook",
+            "value": 1.8,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q4 FY2025",
+            "basis": "not_applicable",
+            "origin": "management_guidance"
+          },
+          {
+            "metric": "revenue outlook range",
+            "value": 5,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q4 FY2025",
+            "basis": "not_applicable",
+            "origin": "management_guidance"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q3",
+            "passage_id": "MRVL-2025Q3-P013",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000197/q325_8kx1122024ex-991.htm",
+            "filed_at": "2024-12-03",
+            "period": "Q3 FY2025 results and Q4 outlook",
+            "document_sha256": "b0d0ca1a0adb59be5ea16a3fb14f3a317208d406eeed722471117ac03a561053",
+            "locator": "Normalized paragraph 13; lines 49-49",
+            "quote": "•Net revenue is expected to be $1.800 billion +/- 5%."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "As of December 3, 2024, Marvell's Q4 FY2025 revenue outlook was $1.800 billion plus or minus 5%."
+      },
+      {
+        "claim_id": "legacy-M6",
+        "status": "conflicted",
+        "reason": "Evidence states Q3 FY2025 net revenue was $1.516 billion, not $1.450 billion.",
+        "facts": [
+          {
+            "metric": "net revenue",
+            "value": 1.516,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q3 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q3",
+            "passage_id": "MRVL-2025Q3-P010",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000197/q325_8kx1122024ex-991.htm",
+            "filed_at": "2024-12-03",
+            "period": "Q3 FY2025 results and Q4 outlook",
+            "document_sha256": "b0d0ca1a0adb59be5ea16a3fb14f3a317208d406eeed722471117ac03a561053",
+            "locator": "Normalized paragraph 10; lines 25-31",
+            "quote": "Net revenue for the third quarter of fiscal 2025 was $1.516 billion, $66.0 million above the mid-point of the Company’s guidance provided on August 29, 2024."
+          },
+          {
+            "source_id": "MRVL-2025Q3",
+            "passage_id": "MRVL-2025Q3-P006",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000197/q325_8kx1122024ex-991.htm",
+            "filed_at": "2024-12-03",
+            "period": "Q3 FY2025 results and Q4 outlook",
+            "document_sha256": "b0d0ca1a0adb59be5ea16a3fb14f3a317208d406eeed722471117ac03a561053",
+            "locator": "Normalized paragraph 6; lines 13-13",
+            "quote": "•Q3 Net Revenue: $1.516 billion, grew by 7% year-on-year"
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "Marvell reported actual Q3 FY2025 net revenue of $1.450 billion."
+      },
+      {
+        "claim_id": "legacy-M7",
+        "status": "conflicted",
+        "reason": "Evidence states non-GAAP net income was $373.0 million, not $373.0 billion. The claim's unit is wrong by a factor of 1,000.",
+        "facts": [
+          {
+            "metric": "net income",
+            "value": 373,
+            "currency": "USD",
+            "unit": "million",
+            "period": "Q3 FY2025",
+            "basis": "non-GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q3",
+            "passage_id": "MRVL-2025Q3-P010",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000197/q325_8kx1122024ex-991.htm",
+            "filed_at": "2024-12-03",
+            "period": "Q3 FY2025 results and Q4 outlook",
+            "document_sha256": "b0d0ca1a0adb59be5ea16a3fb14f3a317208d406eeed722471117ac03a561053",
+            "locator": "Normalized paragraph 10; lines 25-31",
+            "quote": "Non-GAAP net income for the third quarter of fiscal 2025 was $373.0 million, or $0.43 per diluted share."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "Marvell reported non-GAAP net income of $373.0 billion in Q3 FY2025."
+      }
+    ],
+    "coverage": {
+      "supported": 4,
+      "conflicted": 2,
+      "insufficient": 0
+    },
+    "verified_summary": [
+      {
+        "claim_id": "legacy-M1",
+        "text": "Marvell reported Q3 FY2025 revenue of about $1.516 billion, $66 million above the prior guidance midpoint.",
+        "citations": [
+          "MRVL-2025Q3-P010"
+        ]
+      },
+      {
+        "claim_id": "legacy-M2",
+        "text": "Marvell reported Q3 FY2025 GAAP gross margin of 23.0% and non-GAAP gross margin of 60.5%.",
+        "citations": [
+          "MRVL-2025Q3-P007"
+        ]
+      },
+      {
+        "claim_id": "legacy-M3",
+        "text": "Marvell had a GAAP net loss of $676.3 million and non-GAAP net income of $373.0 million in Q3 FY2025.",
+        "citations": [
+          "MRVL-2025Q3-P010"
+        ]
+      },
+      {
+        "claim_id": "legacy-M4",
+        "text": "As of December 3, 2024, Marvell's Q4 FY2025 revenue outlook was $1.800 billion plus or minus 5%.",
+        "citations": [
+          "MRVL-2025Q3-P013"
+        ]
+      }
+    ],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 2439,
+      "output_tokens": 1594,
+      "estimated_usd": 0.0104282,
+      "provider_request_id": "202609051001420cdd829a639b41c9",
+      "model": "glm-5.2",
+      "elapsed_ms": 20227
+    }
+  },
+  "error": null,
+  "elapsed_ms": 20230
+}

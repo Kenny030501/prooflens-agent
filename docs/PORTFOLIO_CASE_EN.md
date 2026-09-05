@@ -1,5 +1,7 @@
 # ProofLens: an evidence gate research agents call before answering
 
+> 历史 v0.1 文档：已由 [v0.3 实施说明](PRD_V0.3_IMPLEMENTED.md) 与 [v2 实测报告](EVALUATION_V2_REPORT.md) 取代。下文保留原始设计，不代表当前功能或已验证成果。
+
 ## Summary
 
 ProofLens is a reliability layer for company-research agents. Before publishing, an agent submits its draft to ProofLens. The product turns prose into claims, checks a bounded primary-source corpus, and returns claim-level evidence plus a `pass`, `human_review`, or `block` gate.

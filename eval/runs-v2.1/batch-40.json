@@ -1,0 +1,329 @@
+{
+  "input": {
+    "request_id": "eval-40",
+    "entity": "NVDA",
+    "as_of": "2024-11-20",
+    "language": "en",
+    "source_ids": [
+      "NVDA-2025Q3"
+    ],
+    "claims": [
+      {
+        "claim_id": "NVDA-2025Q3-S0",
+        "text": "NVIDIA gross margin was 74.6% for Q3 FY2025."
+      },
+      {
+        "claim_id": "NVDA-2025Q3-C0",
+        "text": "NVIDIA gross margin was 75.8% for Q3 FY2025."
+      },
+      {
+        "claim_id": "NVDA-2025Q3-S1",
+        "text": "NVIDIA Q3 FY2025 Data Center compute revenue was $27.6 billion."
+      },
+      {
+        "claim_id": "NVDA-2025Q3-C1",
+        "text": "NVIDIA Q3 FY2025 Data Center compute revenue was $3.1 billion."
+      },
+      {
+        "claim_id": "NVDA-2025Q3-S2",
+        "text": "NVIDIA Q3 FY2025 networking revenue was down 15% sequentially."
+      },
+      {
+        "claim_id": "NVDA-2025Q3-C2",
+        "text": "NVIDIA Q3 FY2025 networking revenue was up 15% sequentially."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-40",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "NVDA",
+    "as_of": "2024-11-20",
+    "source_cutoff": "2024-11-20",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "NVDA-2025Q3-P449",
+      "NVDA-2025Q3-P445",
+      "NVDA-2025Q3-P446",
+      "NVDA-2025Q3-P500",
+      "NVDA-2025Q3-P480",
+      "NVDA-2025Q3-P448",
+      "NVDA-2025Q3-P501",
+      "NVDA-2025Q3-P482",
+      "NVDA-2025Q3-P442",
+      "NVDA-2025Q3-P502",
+      "NVDA-2025Q3-P447",
+      "NVDA-2025Q3-P417",
+      "NVDA-2025Q3-P640"
+    ],
+    "results": [
+      {
+        "claim_id": "NVDA-2025Q3-S0",
+        "status": "supported",
+        "reason": "The evidence explicitly states gross margin was 74.6% for Q3 FY2025.",
+        "facts": [
+          {
+            "metric": "gross margin",
+            "value": 74.6,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q3 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2025Q3",
+            "passage_id": "NVDA-2025Q3-P500",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000316/nvda-20241027.htm",
+            "filed_at": "2024-11-20",
+            "period": "Q3 FY2025 ended October 27 2024",
+            "document_sha256": "5cb3ef839fe641f8ef7bbdc37020fad887d4c0ba603bc02818cc7e923f5f5af6",
+            "locator": "Normalized paragraph 500; lines 2441-2446",
+            "quote": "Gross margins increased to 74.6% for the third quarter of fiscal year 2025 compared to 74.0% for the third quarter of fiscal year 2024, due to a higher mix of Data Center revenue."
+          },
+          {
+            "source_id": "NVDA-2025Q3",
+            "passage_id": "NVDA-2025Q3-P442",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000316/nvda-20241027.htm",
+            "filed_at": "2024-11-20",
+            "period": "Q3 FY2025 ended October 27 2024",
+            "document_sha256": "5cb3ef839fe641f8ef7bbdc37020fad887d4c0ba603bc02818cc7e923f5f5af6",
+            "locator": "Normalized paragraph 442; lines 2213-2220",
+            "quote": "Gross margin 74.6 % 75.1 % 74.0 % (0.5) pts 0.6 pts"
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "NVIDIA gross margin was 74.6% for Q3 FY2025."
+      },
+      {
+        "claim_id": "NVDA-2025Q3-C0",
+        "status": "conflicted",
+        "reason": "The claim states gross margin was 75.8% for Q3 FY2025, but the evidence states 75.8% was for the first nine months of FY2025, while Q3 FY2025 gross margin was 74.6%.",
+        "facts": [
+          {
+            "metric": "gross margin",
+            "value": 74.6,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q3 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "gross margin",
+            "value": 75.8,
+            "currency": null,
+            "unit": "percent",
+            "period": "first nine months of FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2025Q3",
+            "passage_id": "NVDA-2025Q3-P500",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000316/nvda-20241027.htm",
+            "filed_at": "2024-11-20",
+            "period": "Q3 FY2025 ended October 27 2024",
+            "document_sha256": "5cb3ef839fe641f8ef7bbdc37020fad887d4c0ba603bc02818cc7e923f5f5af6",
+            "locator": "Normalized paragraph 500; lines 2441-2446",
+            "quote": "Gross margins increased to 74.6% for the third quarter of fiscal year 2025 compared to 74.0% for the third quarter of fiscal year 2024, due to a higher mix of Data Center revenue. Gross margins increased to 75.8% for the first nine months of fiscal year 2025 compared to 70.9% for the first nine months of fiscal year 2024, primarily due to higher mix of Data Center revenue."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "NVIDIA gross margin was 75.8% for Q3 FY2025."
+      },
+      {
+        "claim_id": "NVDA-2025Q3-S1",
+        "status": "supported",
+        "reason": "The evidence explicitly states Data Center compute revenue was $27.6 billion for Q3 FY2025.",
+        "facts": [
+          {
+            "metric": "Data Center compute revenue",
+            "value": 27.6,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q3 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2025Q3",
+            "passage_id": "NVDA-2025Q3-P445",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000316/nvda-20241027.htm",
+            "filed_at": "2024-11-20",
+            "period": "Q3 FY2025 ended October 27 2024",
+            "document_sha256": "5cb3ef839fe641f8ef7bbdc37020fad887d4c0ba603bc02818cc7e923f5f5af6",
+            "locator": "Normalized paragraph 445; lines 2232-2247",
+            "quote": "Data Center compute revenue was $27.6 billion, up 132% from a year ago and up 22% sequentially."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "NVIDIA Q3 FY2025 Data Center compute revenue was $27.6 billion."
+      },
+      {
+        "claim_id": "NVDA-2025Q3-C1",
+        "status": "conflicted",
+        "reason": "The claim states Data Center compute revenue was $3.1 billion for Q3 FY2025, but the evidence states Data Center compute revenue was $27.6 billion; $3.1 billion was networking revenue.",
+        "facts": [
+          {
+            "metric": "Data Center compute revenue",
+            "value": 27.6,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q3 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "Networking revenue",
+            "value": 3.1,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q3 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2025Q3",
+            "passage_id": "NVDA-2025Q3-P445",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000316/nvda-20241027.htm",
+            "filed_at": "2024-11-20",
+            "period": "Q3 FY2025 ended October 27 2024",
+            "document_sha256": "5cb3ef839fe641f8ef7bbdc37020fad887d4c0ba603bc02818cc7e923f5f5af6",
+            "locator": "Normalized paragraph 445; lines 2232-2247",
+            "quote": "Data Center compute revenue was $27.6 billion, up 132% from a year ago and up 22% sequentially. Networking revenue was $3.1 billion, up 20% from a year ago driven by Ethernet for AI, which includes Spectrum-X end-to-end ethernet platform."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "NVIDIA Q3 FY2025 Data Center compute revenue was $3.1 billion."
+      },
+      {
+        "claim_id": "NVDA-2025Q3-S2",
+        "status": "supported",
+        "reason": "The evidence explicitly states networking revenue was sequentially down 15% in Q3 FY2025.",
+        "facts": [
+          {
+            "metric": "Networking revenue sequential change",
+            "value": -15,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q3 FY2025 vs Q2 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2025Q3",
+            "passage_id": "NVDA-2025Q3-P445",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000316/nvda-20241027.htm",
+            "filed_at": "2024-11-20",
+            "period": "Q3 FY2025 ended October 27 2024",
+            "document_sha256": "5cb3ef839fe641f8ef7bbdc37020fad887d4c0ba603bc02818cc7e923f5f5af6",
+            "locator": "Normalized paragraph 445; lines 2232-2247",
+            "quote": "Though networking revenue was sequentially down 15%, networking demand is strong and growing."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "NVIDIA Q3 FY2025 networking revenue was down 15% sequentially."
+      },
+      {
+        "claim_id": "NVDA-2025Q3-C2",
+        "status": "conflicted",
+        "reason": "The claim states networking revenue was up 15% sequentially, but the evidence states it was sequentially down 15% for Q3 FY2025.",
+        "facts": [
+          {
+            "metric": "Networking revenue sequential change",
+            "value": -15,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q3 FY2025 vs Q2 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2025Q3",
+            "passage_id": "NVDA-2025Q3-P445",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000316/nvda-20241027.htm",
+            "filed_at": "2024-11-20",
+            "period": "Q3 FY2025 ended October 27 2024",
+            "document_sha256": "5cb3ef839fe641f8ef7bbdc37020fad887d4c0ba603bc02818cc7e923f5f5af6",
+            "locator": "Normalized paragraph 445; lines 2232-2247",
+            "quote": "Though networking revenue was sequentially down 15%, networking demand is strong and growing."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "NVIDIA Q3 FY2025 networking revenue was up 15% sequentially."
+      }
+    ],
+    "coverage": {
+      "supported": 3,
+      "conflicted": 3,
+      "insufficient": 0
+    },
+    "verified_summary": [
+      {
+        "claim_id": "NVDA-2025Q3-S0",
+        "text": "NVIDIA gross margin was 74.6% for Q3 FY2025.",
+        "citations": [
+          "NVDA-2025Q3-P500",
+          "NVDA-2025Q3-P442"
+        ]
+      },
+      {
+        "claim_id": "NVDA-2025Q3-S1",
+        "text": "NVIDIA Q3 FY2025 Data Center compute revenue was $27.6 billion.",
+        "citations": [
+          "NVDA-2025Q3-P445"
+        ]
+      },
+      {
+        "claim_id": "NVDA-2025Q3-S2",
+        "text": "NVIDIA Q3 FY2025 networking revenue was down 15% sequentially.",
+        "citations": [
+          "NVDA-2025Q3-P445"
+        ]
+      }
+    ],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 3113,
+      "output_tokens": 1553,
+      "estimated_usd": 0.0111914,
+      "provider_request_id": "20260905100630353616312ac640ad",
+      "model": "glm-5.2",
+      "elapsed_ms": 17017
+    }
+  },
+  "error": null,
+  "elapsed_ms": 17033
+}

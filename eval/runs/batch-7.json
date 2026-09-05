@@ -1,0 +1,95 @@
+{
+  "input": {
+    "request_id": "eval-7",
+    "entity": "MRVL",
+    "as_of": "2024-12-03",
+    "language": "en",
+    "source_ids": [
+      "MRVL-2025Q2"
+    ],
+    "claims": [
+      {
+        "claim_id": "legacy-M5",
+        "text": "Marvell's Q2 FY2025 GAAP gross margin was 61.9%."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-7",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "MRVL",
+    "as_of": "2024-12-03",
+    "source_cutoff": "2024-08-29",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "MRVL-2025Q2-P007",
+      "MRVL-2025Q2-P014",
+      "MRVL-2025Q2-P015",
+      "MRVL-2025Q2-P030",
+      "MRVL-2025Q2-P010",
+      "MRVL-2025Q2-P047"
+    ],
+    "results": [
+      {
+        "claim_id": "legacy-M5",
+        "status": "conflicted",
+        "reason": "The claim states Marvell's Q2 FY2025 GAAP gross margin was 61.9%, but the evidence shows 61.9% was the non-GAAP gross margin; GAAP gross margin was 46.2%.",
+        "facts": [
+          {
+            "metric": "gross margin",
+            "value": 46.2,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q2 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "gross margin",
+            "value": 61.9,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q2 FY2025",
+            "basis": "non-GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q2",
+            "passage_id": "MRVL-2025Q2-P007",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000140/q225_8kx832024ex-991.htm",
+            "filed_at": "2024-08-29",
+            "period": "Q2 FY2025 results and Q3 outlook",
+            "document_sha256": "ddec39e83e02580c3bb1f1f6a027d1e00f25a9c44bcf928db50c97e32472eaba",
+            "locator": "Normalized paragraph 7; lines 15-15",
+            "quote": "•Q2 Gross Margin: 46.2% GAAP gross margin; 61.9% non-GAAP gross margin"
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "Marvell's Q2 FY2025 GAAP gross margin was 61.9%."
+      }
+    ],
+    "coverage": {
+      "supported": 0,
+      "conflicted": 1,
+      "insufficient": 0
+    },
+    "verified_summary": [],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 1246,
+      "output_tokens": 293,
+      "estimated_usd": 0.0030336,
+      "provider_request_id": "20260905100001095c9c20a12b4f84",
+      "model": "glm-5.2",
+      "elapsed_ms": 4797
+    }
+  },
+  "error": null,
+  "elapsed_ms": 4798
+}

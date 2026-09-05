@@ -1,0 +1,111 @@
+{
+  "input": {
+    "request_id": "eval-7",
+    "entity": "MRVL",
+    "as_of": "2024-12-03",
+    "language": "en",
+    "source_ids": [
+      "MRVL-2025Q2",
+      "MRVL-2025Q3",
+      "MRVL-2024FY"
+    ],
+    "claims": [
+      {
+        "claim_id": "legacy-M8",
+        "text": "Marvell held 70% of the global custom AI accelerator market in Q3 FY2025."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-7",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "MRVL",
+    "as_of": "2024-12-03",
+    "source_cutoff": "2024-12-03",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "MRVL-2025Q2-P011",
+      "MRVL-2025Q3-P011",
+      "MRVL-2025Q2-P030",
+      "MRVL-2025Q3-P030",
+      "MRVL-2025Q2-P047",
+      "MRVL-2025Q2-P070"
+    ],
+    "results": [
+      {
+        "claim_id": "legacy-M8",
+        "status": "insufficient",
+        "reason": "The evidence does not mention Marvell's share of the global custom AI accelerator market or any market-share figure. The passages only discuss revenue growth, custom AI silicon programs ramping/volume production, and demand from AI; none provide a 70% market share claim for Q3 FY2025.",
+        "facts": [
+          {
+            "metric": "revenue sequential growth",
+            "value": 19,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q3 FY2025",
+            "basis": "unknown",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "custom AI silicon programs status",
+            "value": null,
+            "currency": null,
+            "unit": null,
+            "period": "Q3 FY2025",
+            "basis": "not_applicable",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q3",
+            "passage_id": "MRVL-2025Q3-P011",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000197/q325_8kx1122024ex-991.htm",
+            "filed_at": "2024-12-03",
+            "period": "Q3 FY2025 results and Q4 outlook",
+            "document_sha256": "b0d0ca1a0adb59be5ea16a3fb14f3a317208d406eeed722471117ac03a561053",
+            "locator": "Normalized paragraph 11; lines 33-45",
+            "quote": "“Marvell’s fiscal third quarter 2025 revenue grew 19% sequentially, well above the mid-point of our guidance, driven by strong demand from AI."
+          },
+          {
+            "source_id": "MRVL-2025Q3",
+            "passage_id": "MRVL-2025Q3-P011",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000197/q325_8kx1122024ex-991.htm",
+            "filed_at": "2024-12-03",
+            "period": "Q3 FY2025 results and Q4 outlook",
+            "document_sha256": "b0d0ca1a0adb59be5ea16a3fb14f3a317208d406eeed722471117ac03a561053",
+            "locator": "Normalized paragraph 11; lines 33-45",
+            "quote": "are primarily driven by our custom AI silicon programs, which are now in volume production, further augmented by robust ongoing demand from cloud customers for our market-leading interconnect products."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [
+          "custom AI accelerator market share",
+          "global market scope",
+          "market share percentage"
+        ],
+        "next_action": "fetch_more_evidence",
+        "guard_downgraded": false,
+        "claim": "Marvell held 70% of the global custom AI accelerator market in Q3 FY2025."
+      }
+    ],
+    "coverage": {
+      "supported": 0,
+      "conflicted": 0,
+      "insufficient": 1
+    },
+    "verified_summary": [],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 1462,
+      "output_tokens": 392,
+      "estimated_usd": 0.0037716000000000004,
+      "provider_request_id": "202609051002295bcd43565a2347f6",
+      "model": "glm-5.2",
+      "elapsed_ms": 5376
+    }
+  },
+  "error": null,
+  "elapsed_ms": 5387
+}

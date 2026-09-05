@@ -1,0 +1,323 @@
+{
+  "input": {
+    "request_id": "eval-13",
+    "entity": "AMZN",
+    "as_of": "2024-05-01",
+    "language": "en",
+    "source_ids": [
+      "AMZN-2024Q1"
+    ],
+    "claims": [
+      {
+        "claim_id": "AMZN-2024Q1-S0",
+        "text": "AWS sales increased 17% year over year in Q1 2024."
+      },
+      {
+        "claim_id": "AMZN-2024Q1-C0",
+        "text": "AWS sales increased 71% year over year in Q1 2024."
+      },
+      {
+        "claim_id": "AMZN-2024Q1-S1",
+        "text": "Amazon operating income was $15.3 billion in Q1 2024."
+      },
+      {
+        "claim_id": "AMZN-2024Q1-C1",
+        "text": "Amazon operating income was $4.8 billion in Q1 2024."
+      },
+      {
+        "claim_id": "AMZN-2024Q1-S2",
+        "text": "Amazon operating income increased from Q1 2023 to Q1 2024."
+      },
+      {
+        "claim_id": "AMZN-2024Q1-C2",
+        "text": "Amazon operating income decreased from Q1 2023 to Q1 2024."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-13",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "AMZN",
+    "as_of": "2024-05-01",
+    "source_cutoff": "2024-05-01",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "AMZN-2024Q1-P471",
+      "AMZN-2024Q1-P482",
+      "AMZN-2024Q1-P483",
+      "AMZN-2024Q1-P473",
+      "AMZN-2024Q1-P484",
+      "AMZN-2024Q1-P835",
+      "AMZN-2024Q1-P845",
+      "AMZN-2024Q1-P470",
+      "AMZN-2024Q1-P846"
+    ],
+    "results": [
+      {
+        "claim_id": "AMZN-2024Q1-S0",
+        "status": "supported",
+        "reason": "The evidence explicitly states AWS sales increased 17% in Q1 2024 compared to the prior year period.",
+        "facts": [
+          {
+            "metric": "AWS sales year-over-year growth",
+            "value": 17,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q1 2024",
+            "basis": "not_applicable",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2024Q1",
+            "passage_id": "AMZN-2024Q1-P471",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000083/amzn-20240331.htm",
+            "filed_at": "2024-05-01",
+            "period": "Q1 2024",
+            "document_sha256": "66bc009ff6f816f73a134dc21f52a2cb3439fe1abffe1e7467ddfd9b693d2f85",
+            "locator": "Normalized paragraph 471; lines 2178-2181",
+            "quote": "AWS sales increased 17% in Q1 2024 compared to the comparable prior year period."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "AWS sales increased 17% year over year in Q1 2024."
+      },
+      {
+        "claim_id": "AMZN-2024Q1-C0",
+        "status": "conflicted",
+        "reason": "The claim states AWS sales increased 71% YoY in Q1 2024, but the evidence explicitly states the increase was 17%.",
+        "facts": [
+          {
+            "metric": "AWS sales year-over-year growth",
+            "value": 17,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q1 2024",
+            "basis": "not_applicable",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2024Q1",
+            "passage_id": "AMZN-2024Q1-P471",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000083/amzn-20240331.htm",
+            "filed_at": "2024-05-01",
+            "period": "Q1 2024",
+            "document_sha256": "66bc009ff6f816f73a134dc21f52a2cb3439fe1abffe1e7467ddfd9b693d2f85",
+            "locator": "Normalized paragraph 471; lines 2178-2181",
+            "quote": "AWS sales increased 17% in Q1 2024 compared to the comparable prior year period."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "AWS sales increased 71% year over year in Q1 2024."
+      },
+      {
+        "claim_id": "AMZN-2024Q1-S1",
+        "status": "supported",
+        "reason": "The evidence explicitly states operating income was $15.3 billion in Q1 2024.",
+        "facts": [
+          {
+            "metric": "Amazon operating income",
+            "value": 15.3,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q1 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2024Q1",
+            "passage_id": "AMZN-2024Q1-P482",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000083/amzn-20240331.htm",
+            "filed_at": "2024-05-01",
+            "period": "Q1 2024",
+            "document_sha256": "66bc009ff6f816f73a134dc21f52a2cb3439fe1abffe1e7467ddfd9b693d2f85",
+            "locator": "Normalized paragraph 482; lines 2210-2213",
+            "quote": "Operating income increased from $4.8 billion in Q1 2023 to $15.3 billion in Q1 2024."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "Amazon operating income was $15.3 billion in Q1 2024."
+      },
+      {
+        "claim_id": "AMZN-2024Q1-C1",
+        "status": "conflicted",
+        "reason": "The claim states Amazon operating income was $4.8 billion in Q1 2024, but the evidence states $4.8 billion was the Q1 2023 figure and Q1 2024 was $15.3 billion.",
+        "facts": [
+          {
+            "metric": "Amazon operating income",
+            "value": 15.3,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q1 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "Amazon operating income",
+            "value": 4.8,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q1 2023",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2024Q1",
+            "passage_id": "AMZN-2024Q1-P482",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000083/amzn-20240331.htm",
+            "filed_at": "2024-05-01",
+            "period": "Q1 2024",
+            "document_sha256": "66bc009ff6f816f73a134dc21f52a2cb3439fe1abffe1e7467ddfd9b693d2f85",
+            "locator": "Normalized paragraph 482; lines 2210-2213",
+            "quote": "Operating income increased from $4.8 billion in Q1 2023 to $15.3 billion in Q1 2024."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "Amazon operating income was $4.8 billion in Q1 2024."
+      },
+      {
+        "claim_id": "AMZN-2024Q1-S2",
+        "status": "supported",
+        "reason": "The evidence explicitly states operating income increased from $4.8 billion in Q1 2023 to $15.3 billion in Q1 2024.",
+        "facts": [
+          {
+            "metric": "Amazon operating income",
+            "value": 4.8,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q1 2023",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "Amazon operating income",
+            "value": 15.3,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q1 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2024Q1",
+            "passage_id": "AMZN-2024Q1-P482",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000083/amzn-20240331.htm",
+            "filed_at": "2024-05-01",
+            "period": "Q1 2024",
+            "document_sha256": "66bc009ff6f816f73a134dc21f52a2cb3439fe1abffe1e7467ddfd9b693d2f85",
+            "locator": "Normalized paragraph 482; lines 2210-2213",
+            "quote": "Operating income increased from $4.8 billion in Q1 2023 to $15.3 billion in Q1 2024."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "Amazon operating income increased from Q1 2023 to Q1 2024."
+      },
+      {
+        "claim_id": "AMZN-2024Q1-C2",
+        "status": "conflicted",
+        "reason": "The claim states operating income decreased from Q1 2023 to Q1 2024, but the evidence explicitly states it increased from $4.8 billion to $15.3 billion.",
+        "facts": [
+          {
+            "metric": "Amazon operating income",
+            "value": 4.8,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q1 2023",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "Amazon operating income",
+            "value": 15.3,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q1 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2024Q1",
+            "passage_id": "AMZN-2024Q1-P482",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000083/amzn-20240331.htm",
+            "filed_at": "2024-05-01",
+            "period": "Q1 2024",
+            "document_sha256": "66bc009ff6f816f73a134dc21f52a2cb3439fe1abffe1e7467ddfd9b693d2f85",
+            "locator": "Normalized paragraph 482; lines 2210-2213",
+            "quote": "Operating income increased from $4.8 billion in Q1 2023 to $15.3 billion in Q1 2024."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "Amazon operating income decreased from Q1 2023 to Q1 2024."
+      }
+    ],
+    "coverage": {
+      "supported": 3,
+      "conflicted": 3,
+      "insufficient": 0
+    },
+    "verified_summary": [
+      {
+        "claim_id": "AMZN-2024Q1-S0",
+        "text": "AWS sales increased 17% year over year in Q1 2024.",
+        "citations": [
+          "AMZN-2024Q1-P471"
+        ]
+      },
+      {
+        "claim_id": "AMZN-2024Q1-S1",
+        "text": "Amazon operating income was $15.3 billion in Q1 2024.",
+        "citations": [
+          "AMZN-2024Q1-P482"
+        ]
+      },
+      {
+        "claim_id": "AMZN-2024Q1-S2",
+        "text": "Amazon operating income increased from Q1 2023 to Q1 2024.",
+        "citations": [
+          "AMZN-2024Q1-P482"
+        ]
+      }
+    ],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 1669,
+      "output_tokens": 1458,
+      "estimated_usd": 0.0087518,
+      "provider_request_id": "20260905100324467b9fe975264533",
+      "model": "glm-5.2",
+      "elapsed_ms": 16223
+    }
+  },
+  "error": null,
+  "elapsed_ms": 16228
+}

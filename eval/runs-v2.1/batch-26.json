@@ -1,0 +1,68 @@
+{
+  "input": {
+    "request_id": "eval-26",
+    "entity": "AMZN",
+    "as_of": "2024-02-02",
+    "language": "en",
+    "source_ids": [
+      "AMZN-2023FY"
+    ],
+    "claims": [
+      {
+        "claim_id": "AMZN-2023FY-U",
+        "text": "AMZN management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-26",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "AMZN",
+    "as_of": "2024-02-02",
+    "source_cutoff": "2024-02-02",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "AMZN-2023FY-P1031",
+      "AMZN-2023FY-P869",
+      "AMZN-2023FY-P490",
+      "AMZN-2023FY-P756",
+      "AMZN-2023FY-P788",
+      "AMZN-2023FY-P397"
+    ],
+    "results": [
+      {
+        "claim_id": "AMZN-2023FY-U",
+        "status": "insufficient",
+        "reason": "The claim asserts that management proved all future revenue growth will be caused exclusively by generative AI and is guaranteed. The supplied evidence does not contain any statement that all future revenue growth is caused exclusively by generative AI or that such growth is guaranteed. The passages discuss deferred tax assets, goodwill, free cash flow, impairment testing, AWS performance obligations, and capital expenditures including an investment in Anthropic, but none establish the claimed causal exclusivity or guarantee.",
+        "facts": [],
+        "evidence": [],
+        "derivation": null,
+        "missing_fields": [
+          "management statement that all future revenue growth is caused exclusively by generative AI",
+          "evidence that future revenue growth is guaranteed"
+        ],
+        "next_action": "fetch_more_evidence",
+        "guard_downgraded": false,
+        "claim": "AMZN management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+      }
+    ],
+    "coverage": {
+      "supported": 0,
+      "conflicted": 0,
+      "insufficient": 1
+    },
+    "verified_summary": [],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 1807,
+      "output_tokens": 186,
+      "estimated_usd": 0.0033482,
+      "provider_request_id": "20260905100449bcc8467be5af4561",
+      "model": "glm-5.2",
+      "elapsed_ms": 3138
+    }
+  },
+  "error": null,
+  "elapsed_ms": 3139
+}

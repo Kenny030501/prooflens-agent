@@ -1,100 +1,58 @@
 # ProofLens for Agents
 
-ProofLens is a claim-level evidence gate for research agents. Before an agent publishes a company-research answer, it submits its draft to ProofLens. The service separates factual claims from inference, retrieves bounded SEC evidence, and returns one machine-readable decision: `pass`, `human_review`, or `block`.
+面向研究 Agent 的历史财务主张证据服务。当前为可运行的研究型 MVP：真实 GLM 推理、TF-IDF、12 份 SEC 文件 / 585 个选定片段、REST 与两种 MCP 接口。
 
-The MVP supports AMZN, MRVL, and NVDA with a dated twelve-record SEC evidence snapshot. It is a research and evaluation prototype, not an investment adviser.
+[私有在线演示](https://prooflens-agent.yaowenhu1215.chatgpt.site) · [项目 Notion](https://app.notion.com/p/3d2c4b789bd681a9bad0c88a14a8b3fa)
 
-## Why To-Agent
+## 当前完成范围
 
-Most research assistants focus on generating more text. ProofLens occupies a different layer: reliability infrastructure that agents call before delivery. Its primary product surface is the machine contract; the web console makes failures observable and lets a human reviewer override a verdict.
+产品流程推进至第六步“开发 MVP”。岗位矩阵、真实历史任务证据、产品定义、模拟原型测试、评测设计与代码已交付。真实市场采用、严格外部对照、长期效果和公开作品集发布属于后续工作。
 
-```mermaid
-flowchart LR
-  A[Research agent draft] --> B[ProofLens audit]
-  B --> C[Claim extraction]
-  C --> D[Bounded SEC evidence]
-  D --> E[Claim verdicts]
-  E --> F{Publication gate}
-  F -->|pass| G[Publish]
-  F -->|human_review| H[Reviewer console]
-  F -->|block| I[Revise or remove claim]
-  H --> G
+原型升级后不再提供旧规则引擎的默认 pass，不保存草稿正文，不输出可信度总分，不生成交易建议。
+
+## 快速运行
+
+```sh
+npm ci
+npm run db:local
+node scripts/dev-with-key.mjs /ABSOLUTE/PATH/your-existing.env
 ```
 
-## Product surfaces
+环境文件需含服务端 ZHIPU_API_KEY。辅助程序生成被 Git 忽略的 .dev.vars，权限 600。本地使用 http://localhost:3000。托管版需项目所有者登录；它与 localhost 是不同运行环境。
 
-- `POST /api/audit`: strict JSON interface for agents.
-- `GET /api/evidence`: inspect the bounded primary-source corpus.
-- `npm run mcp`: local MCP server with `audit_research_draft` and `list_evidence_sources`.
-- Browser WebMCP: progressively exposes `audit_research_draft` and updates the visible console when supported.
-- Trace Console: run an audit, inspect evidence, override verdicts, record confidence, and export JSON.
-
-## Quick start
-
-```bash
-npm install
-npm run dev
+```sh
+npm run typecheck
+npm run lint
+npm test
+npm run test:integration
+npm run build
 ```
 
-Open `http://localhost:3000`.
+联通测试需本地服务，使用无可用历史证据的日期，不产生模型费用。不要运行已废弃的 v1 测试来证明 v2 质量。
 
-Run the engine and MCP contract checks:
+## 交付导航
 
-```bash
-npm run test:engine
-npm run test:mcp
-```
+- [10 份 JD 与竞品矩阵](docs/ROLE_AND_COMPETITOR_MATRIX.md)
+- [实施 PRD 与设计差异](docs/PRD_V0.3_IMPLEMENTED.md)
+- [任务旅程与原型验证](docs/JOURNEY_AND_PROTOTYPE.md)
+- [API / MCP 契约](docs/API_V2.md)
+- [120 条评测报告](docs/EVALUATION_V2_REPORT.md)
+- [模拟行为、标签分歧和迭代](docs/SIMULATION_AND_ITERATION.md)
+- [运行与验收说明](docs/TEST_AND_RUNBOOK.md)
+- [测试样本](eval/cases.json)、[全部逐题结果](eval/results-v2.1.json)、[模型调用原始回执](eval/runs-v2.1/)
 
-Start the MCP server:
+旧 v0.1 文档、规则引擎与早期测试作为历史记录保留，不代表当前服务。
 
-```bash
-npm run mcp
-```
+## 实测结果与边界
 
-Example Codex/Claude Desktop-style MCP configuration:
+120 条合成诊断题：115/120 标签一致；32 条文档留出题：30/32。未观察到错误放行，但这不证明真实错误率为零。第二模型复核24条，23条与预设标签一致，存在1条边界分歧。
 
-```json
-{
-  "mcpServers": {
-    "prooflens": {
-      "command": "npm",
-      "args": ["run", "mcp"],
-      "cwd": "/absolute/path/to/prooflens-agent"
-    }
-  }
-}
-```
+五种模拟角色 × 两模型 = 10 次任务；全部调用了工具，只有4次最终回答满足严格JSON解析及发布选择要求。模拟角色不能当真人用户；Bootstrap 2,000 次重采样也不增加真实样本。
 
-## API example
+没有真人 SUS、信心校准改善、留存或付费数据。旧规则基线性能较低，不能据此声称优于普通检索或竞品。具体失败分母、来源分组和费用口径见报告。
 
-```bash
-curl -X POST http://localhost:3000/api/audit \
-  -H "Content-Type: application/json" \
-  -d '{
-    "language": "en",
-    "agentId": "equity_research_agent",
-    "ticker": "NVDA",
-    "question": "Verify Q1 FY2025 growth claims",
-    "draftText": "NVIDIA Data Center revenue was $22.6 billion, up 427%.",
-    "preConfidence": 86
-  }'
-```
+## 安全与成本
 
-The response contains dated evidence, claim-level verdicts, a verified brief, and the publication gate. Invalid or under-specified requests receive a structured 4xx response.
+三家公司、固定公共来源；拒绝未知来源、空输入、超长输入与重复ID冲突。模型输出漏项、引用伪造、算术错误或上游失败不放行。模型仍可能误判支持关系；ISO财务期间和逐输入推导绑定尚需增强。
 
-## Evaluation status
-
-The repository includes a 120-row annotation sheet. Twelve rows are seed expectations for regression testing; they are explicitly marked `seed-not-human-labeled`. The remaining 108 rows remain blank until two human annotators complete them. No user-study outcome or model-quality target is represented as achieved before collection.
-
-- [PRD](docs/PRD.md)
-- [Evaluation plan](docs/EVALUATION.md)
-- [User research kit](docs/USER_RESEARCH.md)
-- [Chinese portfolio case](docs/PORTFOLIO_CASE_ZH.md)
-- [English portfolio case](docs/PORTFOLIO_CASE_EN.md)
-- [Interview pitch](docs/INTERVIEW_PITCH.md)
-
-## Privacy and limitations
-
-The public workflow does not persist raw drafts. Anonymous telemetry stores only run metadata when the database binding is available. The current deterministic engine is deliberately bounded and cannot establish truth outside the included corpus. Production use would add document ingestion, hybrid retrieval, model-assisted judgment, authentication, rate limiting, and a larger independently labeled benchmark.
-
-All source materials are linked to SEC filings. Users must review the underlying filing before relying on an output.
+预算分配：研究$5、本地$3、托管$12。服务每日$2和50次限制；金额为保守估算，供应商账单未知。禁止把密钥、私人历史对话、账户信息或机密材料提交到仓库。

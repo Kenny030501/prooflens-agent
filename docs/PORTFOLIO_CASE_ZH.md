@@ -1,5 +1,7 @@
 # ProofLens：让研究 Agent 在回答前完成证据审计
 
+> 历史 v0.1 文档：已由 [v0.3 实施说明](PRD_V0.3_IMPLEMENTED.md) 与 [v2 实测报告](EVALUATION_V2_REPORT.md) 取代。下文保留原始设计，不代表当前功能或已验证成果。
+
 ## 项目摘要
 
 ProofLens 是一层面向研究 Agent 的可信执行基础设施。Agent 在发布公司研究答案前调用 ProofLens；系统将草稿拆成事实主张，匹配限定的一手资料，返回逐条证据判断和 `允许发布 / 人工复核 / 阻止发布` 门禁。

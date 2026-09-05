@@ -1,0 +1,126 @@
+{
+  "input": {
+    "request_id": "eval-41",
+    "entity": "NVDA",
+    "as_of": "2024-11-20",
+    "language": "en",
+    "source_ids": [
+      "NVDA-2025Q3"
+    ],
+    "claims": [
+      {
+        "claim_id": "NVDA-2025Q3-U",
+        "text": "NVDA management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-41",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "NVDA",
+    "as_of": "2024-11-20",
+    "source_cutoff": "2024-11-20",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "NVDA-2025Q3-P619",
+      "NVDA-2025Q3-P418",
+      "NVDA-2025Q3-P445",
+      "NVDA-2025Q3-P417",
+      "NVDA-2025Q3-P640",
+      "NVDA-2025Q3-P594"
+    ],
+    "results": [
+      {
+        "claim_id": "NVDA-2025Q3-U",
+        "status": "insufficient",
+        "reason": "The claim asserts that management proved all future revenue growth will be caused exclusively by generative AI and is guaranteed. The evidence explicitly states that demand estimates can be incorrect, that NVIDIA may not generate significant revenue, and that it is difficult to estimate the impact of generative AI on revenue. This directly contradicts both the exclusivity and guarantee assertions.",
+        "facts": [
+          {
+            "metric": "demand_estimates_reliability",
+            "value": null,
+            "currency": null,
+            "unit": null,
+            "period": "Q3 FY2025 ended October 27 2024",
+            "basis": "not_applicable",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "generative_ai_revenue_impact_estimability",
+            "value": null,
+            "currency": null,
+            "unit": null,
+            "period": "Q3 FY2025 ended October 27 2024",
+            "basis": "not_applicable",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "data_center_revenue_yoy_growth",
+            "value": 112,
+            "currency": "USD",
+            "unit": "percent",
+            "period": "Q3 FY2025 ended October 27 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2025Q3",
+            "passage_id": "NVDA-2025Q3-P619",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000316/nvda-20241027.htm",
+            "filed_at": "2024-11-20",
+            "period": "Q3 FY2025 ended October 27 2024",
+            "document_sha256": "5cb3ef839fe641f8ef7bbdc37020fad887d4c0ba603bc02818cc7e923f5f5af6",
+            "locator": "Normalized paragraph 619; lines 3035-3043",
+            "quote": "Demand estimates for our products, applications, and services can be incorrect and create volatility in our revenue or supply levels. We may not be able to generate significant revenue from them."
+          },
+          {
+            "source_id": "NVDA-2025Q3",
+            "passage_id": "NVDA-2025Q3-P619",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000316/nvda-20241027.htm",
+            "filed_at": "2024-11-20",
+            "period": "Q3 FY2025 ended October 27 2024",
+            "document_sha256": "5cb3ef839fe641f8ef7bbdc37020fad887d4c0ba603bc02818cc7e923f5f5af6",
+            "locator": "Normalized paragraph 619; lines 3035-3043",
+            "quote": "Because our products may be used in multiple use cases and applications, it is difficult for us to estimate with any reasonable degree of precision the impact of generative AI models on our reported revenue or forecasted demand."
+          },
+          {
+            "source_id": "NVDA-2025Q3",
+            "passage_id": "NVDA-2025Q3-P445",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000316/nvda-20241027.htm",
+            "filed_at": "2024-11-20",
+            "period": "Q3 FY2025 ended October 27 2024",
+            "document_sha256": "5cb3ef839fe641f8ef7bbdc37020fad887d4c0ba603bc02818cc7e923f5f5af6",
+            "locator": "Normalized paragraph 445; lines 2232-2247",
+            "quote": "The strong year-on-year and sequential growth was driven by demand for our Hopper computing platform for training and inferencing of large language models, recommendation engines, and generative AI applications."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [
+          "invalid_or_nonverbatim_citation"
+        ],
+        "next_action": "fetch_more_evidence",
+        "guard_downgraded": true,
+        "claim": "NVDA management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+      }
+    ],
+    "coverage": {
+      "supported": 0,
+      "conflicted": 0,
+      "insufficient": 1
+    },
+    "verified_summary": [],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 1928,
+      "output_tokens": 628,
+      "estimated_usd": 0.0054624,
+      "provider_request_id": "20260905100647df1f93edf0654d65",
+      "model": "glm-5.2",
+      "elapsed_ms": 10401
+    }
+  },
+  "error": null,
+  "elapsed_ms": 10402
+}

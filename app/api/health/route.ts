@@ -1,9 +1,11 @@
+import { runtimeStatus } from '@/lib/v2/runtime';
+import { errorResponse } from '@/lib/v2/contracts';
 export async function GET() {
-  return Response.json({
-    status: 'ok',
-    product: 'ProofLens for Agents',
-    version: '0.1.0',
-    engine: 'deterministic-demo',
-    rawInputRetention: false,
-  });
+  try {
+    return Response.json(await runtimeStatus(), {
+      headers: { 'Cache-Control': 'no-store' },
+    });
+  } catch (e) {
+    return errorResponse(e);
+  }
 }

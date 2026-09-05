@@ -1,0 +1,143 @@
+{
+  "input": {
+    "request_id": "eval-35",
+    "entity": "MRVL",
+    "as_of": "2024-05-31",
+    "language": "en",
+    "source_ids": [
+      "MRVL-2025Q1"
+    ],
+    "claims": [
+      {
+        "claim_id": "MRVL-2025Q1-U",
+        "text": "MRVL management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-35",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "MRVL",
+    "as_of": "2024-05-31",
+    "source_cutoff": "2024-05-31",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "MRVL-2025Q1-P691",
+      "MRVL-2025Q1-P683",
+      "MRVL-2025Q1-P545",
+      "MRVL-2025Q1-P498",
+      "MRVL-2025Q1-P609",
+      "MRVL-2025Q1-P770"
+    ],
+    "results": [
+      {
+        "claim_id": "MRVL-2025Q1-U",
+        "status": "conflicted",
+        "reason": "The claim asserts that management proved all future revenue growth will be caused exclusively by generative AI and is guaranteed. The evidence shows AI applications contributed to data center revenue growth, but it also states that uncertain conditions in 5G, Cloud and AI markets may cause fluctuations in revenue growth, that results are difficult to predict, and that future revenue cannot be assured. This directly conflicts with the claim's guarantee of exclusive AI-driven growth.",
+        "facts": [
+          {
+            "metric": "net revenue change",
+            "value": -12,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q1 FY2025 (three months ended May 4, 2024)",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "data center revenue growth driver",
+            "value": null,
+            "currency": null,
+            "unit": null,
+            "period": "Q1 FY2025 ended May 4 2024",
+            "basis": "not_applicable",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "revenue growth risk",
+            "value": null,
+            "currency": null,
+            "unit": null,
+            "period": "Q1 FY2025 ended May 4 2024",
+            "basis": "not_applicable",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "future revenue predictability",
+            "value": null,
+            "currency": null,
+            "unit": null,
+            "period": "Q1 FY2025 ended May 4 2024",
+            "basis": "not_applicable",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q1",
+            "passage_id": "MRVL-2025Q1-P691",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000063/mrvl-20240504.htm",
+            "filed_at": "2024-05-31",
+            "period": "Q1 FY2025 ended May 4 2024",
+            "document_sha256": "dcba6705b9d586f839fc7e6a5c03c9958267c77302781dc0a4848690b266e408",
+            "locator": "Normalized paragraph 691; lines 3334-3335",
+            "quote": "Unfavorable or uncertain conditions in the 5G, Cloud and AI markets may cause fluctuations in our rate of revenue growth or financial results."
+          },
+          {
+            "source_id": "MRVL-2025Q1",
+            "passage_id": "MRVL-2025Q1-P498",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000063/mrvl-20240504.htm",
+            "filed_at": "2024-05-31",
+            "period": "Q1 FY2025 ended May 4 2024",
+            "document_sha256": "dcba6705b9d586f839fc7e6a5c03c9958267c77302781dc0a4848690b266e408",
+            "locator": "Normalized paragraph 498; lines 2322-2330",
+            "quote": "We have seen strong revenue growth from our data center end market, driven by demand for our electro-optics products from AI applications."
+          },
+          {
+            "source_id": "MRVL-2025Q1",
+            "passage_id": "MRVL-2025Q1-P683",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000063/mrvl-20240504.htm",
+            "filed_at": "2024-05-31",
+            "period": "Q1 FY2025 ended May 4 2024",
+            "document_sha256": "dcba6705b9d586f839fc7e6a5c03c9958267c77302781dc0a4848690b266e408",
+            "locator": "Normalized paragraph 683; lines 3265-3280",
+            "quote": "Our quarterly results of operations have fluctuated in the past and could do so in the future. Because our results of operations are difficult to predict, you should not rely on quarterly comparisons of our results of operations as an indication of our future performance."
+          },
+          {
+            "source_id": "MRVL-2025Q1",
+            "passage_id": "MRVL-2025Q1-P770",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000063/mrvl-20240504.htm",
+            "filed_at": "2024-05-31",
+            "period": "Q1 FY2025 ended May 4 2024",
+            "document_sha256": "dcba6705b9d586f839fc7e6a5c03c9958267c77302781dc0a4848690b266e408",
+            "locator": "Normalized paragraph 770; lines 3991-3996",
+            "quote": "As a result, we may be unable to accurately forecast the volume and timing of our orders and revenues associated with any new product introductions."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "MRVL management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+      }
+    ],
+    "coverage": {
+      "supported": 0,
+      "conflicted": 1,
+      "insufficient": 0
+    },
+    "verified_summary": [],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 1626,
+      "output_tokens": 672,
+      "estimated_usd": 0.0052331999999999995,
+      "provider_request_id": "2026090510055910f55354ccef42f1",
+      "model": "glm-5.2",
+      "elapsed_ms": 8284
+    }
+  },
+  "error": null,
+  "elapsed_ms": 8287
+}

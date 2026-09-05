@@ -1,0 +1,329 @@
+{
+  "input": {
+    "request_id": "eval-17",
+    "entity": "MRVL",
+    "as_of": "2024-08-29",
+    "language": "en",
+    "source_ids": [
+      "MRVL-2025Q2"
+    ],
+    "claims": [
+      {
+        "claim_id": "MRVL-2025Q2-S0",
+        "text": "Marvell Q2 FY2025 revenue was $1.273 billion."
+      },
+      {
+        "claim_id": "MRVL-2025Q2-C0",
+        "text": "Marvell Q2 FY2025 revenue was $2.273 billion."
+      },
+      {
+        "claim_id": "MRVL-2025Q2-S1",
+        "text": "Marvell Q2 FY2025 non-GAAP net income was $266.2 million."
+      },
+      {
+        "claim_id": "MRVL-2025Q2-C1",
+        "text": "Marvell Q2 FY2025 GAAP net income was $266.2 million."
+      },
+      {
+        "claim_id": "MRVL-2025Q2-S2",
+        "text": "Marvell expected Q3 FY2025 net revenue of $1.450 billion plus or minus 5%."
+      },
+      {
+        "claim_id": "MRVL-2025Q2-C2",
+        "text": "Marvell expected Q3 FY2025 net revenue of $1.800 billion plus or minus 5%."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-17",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "MRVL",
+    "as_of": "2024-08-29",
+    "source_cutoff": "2024-08-29",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "MRVL-2025Q2-P006",
+      "MRVL-2025Q2-P013",
+      "MRVL-2025Q2-P010",
+      "MRVL-2025Q2-P170",
+      "MRVL-2025Q2-P008",
+      "MRVL-2025Q2-P047",
+      "MRVL-2025Q2-P030",
+      "MRVL-2025Q2-P189",
+      "MRVL-2025Q2-P070",
+      "MRVL-2025Q2-P198",
+      "MRVL-2025Q2-P110",
+      "MRVL-2025Q2-P035"
+    ],
+    "results": [
+      {
+        "claim_id": "MRVL-2025Q2-S0",
+        "status": "supported",
+        "reason": "Evidence states Q2 FY2025 net revenue was $1.273 billion.",
+        "facts": [
+          {
+            "metric": "net revenue",
+            "value": 1.273,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q2 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q2",
+            "passage_id": "MRVL-2025Q2-P010",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000140/q225_8kx832024ex-991.htm",
+            "filed_at": "2024-08-29",
+            "period": "Q2 FY2025 results and Q3 outlook",
+            "document_sha256": "ddec39e83e02580c3bb1f1f6a027d1e00f25a9c44bcf928db50c97e32472eaba",
+            "locator": "Normalized paragraph 10; lines 25-31",
+            "quote": "Net revenue for the second quarter of fiscal 2025 was $1.273 billion"
+          },
+          {
+            "source_id": "MRVL-2025Q2",
+            "passage_id": "MRVL-2025Q2-P006",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000140/q225_8kx832024ex-991.htm",
+            "filed_at": "2024-08-29",
+            "period": "Q2 FY2025 results and Q3 outlook",
+            "document_sha256": "ddec39e83e02580c3bb1f1f6a027d1e00f25a9c44bcf928db50c97e32472eaba",
+            "locator": "Normalized paragraph 6; lines 13-13",
+            "quote": "•Q2 Net Revenue: $1.273 billion, declined by (5)% year-on-year"
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "Marvell Q2 FY2025 revenue was $1.273 billion."
+      },
+      {
+        "claim_id": "MRVL-2025Q2-C0",
+        "status": "conflicted",
+        "reason": "Evidence states Q2 FY2025 net revenue was $1.273 billion, not $2.273 billion.",
+        "facts": [
+          {
+            "metric": "net revenue",
+            "value": 1.273,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q2 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q2",
+            "passage_id": "MRVL-2025Q2-P010",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000140/q225_8kx832024ex-991.htm",
+            "filed_at": "2024-08-29",
+            "period": "Q2 FY2025 results and Q3 outlook",
+            "document_sha256": "ddec39e83e02580c3bb1f1f6a027d1e00f25a9c44bcf928db50c97e32472eaba",
+            "locator": "Normalized paragraph 10; lines 25-31",
+            "quote": "Net revenue for the second quarter of fiscal 2025 was $1.273 billion"
+          },
+          {
+            "source_id": "MRVL-2025Q2",
+            "passage_id": "MRVL-2025Q2-P006",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000140/q225_8kx832024ex-991.htm",
+            "filed_at": "2024-08-29",
+            "period": "Q2 FY2025 results and Q3 outlook",
+            "document_sha256": "ddec39e83e02580c3bb1f1f6a027d1e00f25a9c44bcf928db50c97e32472eaba",
+            "locator": "Normalized paragraph 6; lines 13-13",
+            "quote": "•Q2 Net Revenue: $1.273 billion, declined by (5)% year-on-year"
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "Marvell Q2 FY2025 revenue was $2.273 billion."
+      },
+      {
+        "claim_id": "MRVL-2025Q2-S1",
+        "status": "supported",
+        "reason": "Evidence states Q2 FY2025 non-GAAP net income was $266.2 million.",
+        "facts": [
+          {
+            "metric": "non-GAAP net income",
+            "value": 266.2,
+            "currency": "USD",
+            "unit": "million",
+            "period": "Q2 FY2025",
+            "basis": "non-GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q2",
+            "passage_id": "MRVL-2025Q2-P010",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000140/q225_8kx832024ex-991.htm",
+            "filed_at": "2024-08-29",
+            "period": "Q2 FY2025 results and Q3 outlook",
+            "document_sha256": "ddec39e83e02580c3bb1f1f6a027d1e00f25a9c44bcf928db50c97e32472eaba",
+            "locator": "Normalized paragraph 10; lines 25-31",
+            "quote": "Non-GAAP net income for the second quarter of fiscal 2025 was $266.2 million, or $0.30 per diluted share."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "Marvell Q2 FY2025 non-GAAP net income was $266.2 million."
+      },
+      {
+        "claim_id": "MRVL-2025Q2-C1",
+        "status": "conflicted",
+        "reason": "Evidence states Q2 FY2025 GAAP net loss was $(193.3) million, while non-GAAP net income was $266.2 million. The $266.2 million figure is explicitly non-GAAP, not GAAP.",
+        "facts": [
+          {
+            "metric": "GAAP net loss",
+            "value": -193.3,
+            "currency": "USD",
+            "unit": "million",
+            "period": "Q2 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "non-GAAP net income",
+            "value": 266.2,
+            "currency": "USD",
+            "unit": "million",
+            "period": "Q2 FY2025",
+            "basis": "non-GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q2",
+            "passage_id": "MRVL-2025Q2-P010",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000140/q225_8kx832024ex-991.htm",
+            "filed_at": "2024-08-29",
+            "period": "Q2 FY2025 results and Q3 outlook",
+            "document_sha256": "ddec39e83e02580c3bb1f1f6a027d1e00f25a9c44bcf928db50c97e32472eaba",
+            "locator": "Normalized paragraph 10; lines 25-31",
+            "quote": "GAAP net loss for the second quarter of fiscal 2025 was $(193.3) million, or $(0.22) per diluted share. Non-GAAP net income for the second quarter of fiscal 2025 was $266.2 million, or $0.30 per diluted share."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "Marvell Q2 FY2025 GAAP net income was $266.2 million."
+      },
+      {
+        "claim_id": "MRVL-2025Q2-S2",
+        "status": "supported",
+        "reason": "Evidence states Q3 FY2025 net revenue is expected to be $1.450 billion +/- 5%.",
+        "facts": [
+          {
+            "metric": "net revenue guidance",
+            "value": 1.45,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q3 FY2025",
+            "basis": "not_applicable",
+            "origin": "management_guidance"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q2",
+            "passage_id": "MRVL-2025Q2-P013",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000140/q225_8kx832024ex-991.htm",
+            "filed_at": "2024-08-29",
+            "period": "Q2 FY2025 results and Q3 outlook",
+            "document_sha256": "ddec39e83e02580c3bb1f1f6a027d1e00f25a9c44bcf928db50c97e32472eaba",
+            "locator": "Normalized paragraph 13; lines 46-46",
+            "quote": "•Net revenue is expected to be $1.450 billion +/- 5%."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "Marvell expected Q3 FY2025 net revenue of $1.450 billion plus or minus 5%."
+      },
+      {
+        "claim_id": "MRVL-2025Q2-C2",
+        "status": "conflicted",
+        "reason": "Evidence states Q3 FY2025 net revenue guidance was $1.450 billion +/- 5%, not $1.800 billion +/- 5%.",
+        "facts": [
+          {
+            "metric": "net revenue guidance",
+            "value": 1.45,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q3 FY2025",
+            "basis": "not_applicable",
+            "origin": "management_guidance"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q2",
+            "passage_id": "MRVL-2025Q2-P013",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000140/q225_8kx832024ex-991.htm",
+            "filed_at": "2024-08-29",
+            "period": "Q2 FY2025 results and Q3 outlook",
+            "document_sha256": "ddec39e83e02580c3bb1f1f6a027d1e00f25a9c44bcf928db50c97e32472eaba",
+            "locator": "Normalized paragraph 13; lines 46-46",
+            "quote": "•Net revenue is expected to be $1.450 billion +/- 5%."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "Marvell expected Q3 FY2025 net revenue of $1.800 billion plus or minus 5%."
+      }
+    ],
+    "coverage": {
+      "supported": 3,
+      "conflicted": 3,
+      "insufficient": 0
+    },
+    "verified_summary": [
+      {
+        "claim_id": "MRVL-2025Q2-S0",
+        "text": "Marvell Q2 FY2025 revenue was $1.273 billion.",
+        "citations": [
+          "MRVL-2025Q2-P010",
+          "MRVL-2025Q2-P006"
+        ]
+      },
+      {
+        "claim_id": "MRVL-2025Q2-S1",
+        "text": "Marvell Q2 FY2025 non-GAAP net income was $266.2 million.",
+        "citations": [
+          "MRVL-2025Q2-P010"
+        ]
+      },
+      {
+        "claim_id": "MRVL-2025Q2-S2",
+        "text": "Marvell expected Q3 FY2025 net revenue of $1.450 billion plus or minus 5%.",
+        "citations": [
+          "MRVL-2025Q2-P013"
+        ]
+      }
+    ],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 2032,
+      "output_tokens": 1425,
+      "estimated_usd": 0.009114800000000001,
+      "provider_request_id": "202609051003440cf66d13bb71470d",
+      "model": "glm-5.2",
+      "elapsed_ms": 14541
+    }
+  },
+  "error": null,
+  "elapsed_ms": 14547
+}

@@ -1,0 +1,58 @@
+{
+  "input": {
+    "request_id": "eval-3",
+    "entity": "AMZN",
+    "as_of": "2024-08-02",
+    "language": "en",
+    "source_ids": [],
+    "claims": [
+      {
+        "claim_id": "legacy-A8",
+        "text": "Trainium held 70% of global inference market share as of June 2024."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-3",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "AMZN",
+    "as_of": "2024-08-02",
+    "source_cutoff": null,
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [],
+    "results": [
+      {
+        "claim_id": "legacy-A8",
+        "claim": "Trainium held 70% of global inference market share as of June 2024.",
+        "status": "insufficient",
+        "reason": "No eligible evidence before as_of.",
+        "facts": [],
+        "evidence": [],
+        "derivation": null,
+        "missing_fields": [
+          "eligible_evidence"
+        ],
+        "next_action": "fetch_more_evidence",
+        "guard_downgraded": false
+      }
+    ],
+    "coverage": {
+      "supported": 0,
+      "conflicted": 0,
+      "insufficient": 1
+    },
+    "verified_summary": [],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_usd": 0,
+      "model": "not_called",
+      "provider_request_id": "",
+      "elapsed_ms": 0
+    }
+  },
+  "error": null,
+  "elapsed_ms": 0
+}

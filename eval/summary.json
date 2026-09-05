@@ -1,0 +1,77 @@
+{
+  "all": {
+    "n": 120,
+    "accuracy_pct": 95.83333333333333,
+    "legacy_accuracy_pct": 35.833333333333336,
+    "unsupported_recall_pct": 100,
+    "false_challenge_pct": 4.166666666666667,
+    "false_pass_count": 0,
+    "execution_failed": 0
+  },
+  "development": {
+    "n": 88,
+    "accuracy_pct": 96.5909090909091,
+    "legacy_accuracy_pct": 36.36363636363637,
+    "unsupported_recall_pct": 100,
+    "false_challenge_pct": 5.555555555555555,
+    "false_pass_count": 0,
+    "execution_failed": 0
+  },
+  "heldout": {
+    "n": 32,
+    "accuracy_pct": 93.75,
+    "legacy_accuracy_pct": 34.375,
+    "unsupported_recall_pct": 100,
+    "false_challenge_pct": 0,
+    "false_pass_count": 0,
+    "execution_failed": 0
+  },
+  "bootstrap_heldout": {
+    "method": "cluster percentile bootstrap",
+    "resamples": 2000,
+    "seed": 20260904,
+    "independent_source_groups": 4,
+    "accuracy_interval_pct": [
+      87.5,
+      100
+    ],
+    "note": "Resampling does not create new cases or users. Four heldout document groups and repeated mutation templates limit inference. Degenerate intervals do not imply zero risk."
+  },
+  "requests": 43,
+  "complete_requests": 43,
+  "citation_integrity": {
+    "valid": 132,
+    "total": 132,
+    "percent": 100,
+    "definition": "Known source + verbatim excerpt + eligible date; not independent semantic entailment."
+  },
+  "estimated_usd": 0.2093144,
+  "errors": [
+    {
+      "id": "legacy-N1",
+      "expected": "supported",
+      "predicted": "insufficient"
+    },
+    {
+      "id": "legacy-N4",
+      "expected": "supported",
+      "predicted": "insufficient"
+    },
+    {
+      "id": "NVDA-2025Q2-U",
+      "expected": "insufficient",
+      "predicted": "conflicted"
+    },
+    {
+      "id": "AMZN-2024Q3-U",
+      "expected": "insufficient",
+      "predicted": "conflicted"
+    },
+    {
+      "id": "MRVL-2025Q1-U",
+      "expected": "insufficient",
+      "predicted": "conflicted"
+    }
+  ],
+  "real_human_users": 0
+}

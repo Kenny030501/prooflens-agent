@@ -1,0 +1,71 @@
+{
+  "input": {
+    "request_id": "eval-12",
+    "entity": "NVDA",
+    "as_of": "2024-08-28",
+    "language": "en",
+    "source_ids": [
+      "NVDA-2025Q1",
+      "NVDA-2025Q2",
+      "NVDA-2024FY"
+    ],
+    "claims": [
+      {
+        "claim_id": "legacy-N8",
+        "text": "NVIDIA disclosed that OpenAI alone accounted for 43% of its Q2 FY2025 Data Center revenue."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-12",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "NVDA",
+    "as_of": "2024-08-28",
+    "source_cutoff": "2024-08-28",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "NVDA-2025Q2-P695",
+      "NVDA-2025Q1-P453",
+      "NVDA-2025Q1-P687",
+      "NVDA-2024FY-P585",
+      "NVDA-2025Q1-P451",
+      "NVDA-2025Q2-P693"
+    ],
+    "results": [
+      {
+        "claim_id": "legacy-N8",
+        "status": "insufficient",
+        "reason": "The supplied evidence does not mention OpenAI or any customer-specific concentration for Q2 FY2025 Data Center revenue. The only Q2 FY2025 passages are redacted/signature pages and contain no revenue disclosure.",
+        "facts": [],
+        "evidence": [],
+        "derivation": null,
+        "missing_fields": [
+          "OpenAI percentage of Q2 FY2025 Data Center revenue",
+          "Q2 FY2025 Data Center revenue",
+          "customer concentration disclosure for Q2 FY2025"
+        ],
+        "next_action": "fetch_more_evidence",
+        "guard_downgraded": false,
+        "claim": "NVIDIA disclosed that OpenAI alone accounted for 43% of its Q2 FY2025 Data Center revenue."
+      }
+    ],
+    "coverage": {
+      "supported": 0,
+      "conflicted": 0,
+      "insufficient": 1
+    },
+    "verified_summary": [],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 1402,
+      "output_tokens": 147,
+      "estimated_usd": 0.0026096,
+      "provider_request_id": "202609051003225521901c24764293",
+      "model": "glm-5.2",
+      "elapsed_ms": 2775
+    }
+  },
+  "error": null,
+  "elapsed_ms": 2784
+}

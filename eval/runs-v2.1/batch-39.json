@@ -1,0 +1,60 @@
+{
+  "input": {
+    "request_id": "eval-39",
+    "entity": "NVDA",
+    "as_of": "2020-01-01",
+    "language": "en",
+    "source_ids": [
+      "NVDA-2024FY"
+    ],
+    "claims": [
+      {
+        "claim_id": "NVDA-2024FY-T",
+        "text": "NVIDIA fiscal 2024 Data Center revenue was $47.5 billion."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-39",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "NVDA",
+    "as_of": "2020-01-01",
+    "source_cutoff": null,
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [],
+    "results": [
+      {
+        "claim_id": "NVDA-2024FY-T",
+        "claim": "NVIDIA fiscal 2024 Data Center revenue was $47.5 billion.",
+        "status": "insufficient",
+        "reason": "No eligible evidence before as_of.",
+        "facts": [],
+        "evidence": [],
+        "derivation": null,
+        "missing_fields": [
+          "eligible_evidence"
+        ],
+        "next_action": "fetch_more_evidence",
+        "guard_downgraded": false
+      }
+    ],
+    "coverage": {
+      "supported": 0,
+      "conflicted": 0,
+      "insufficient": 1
+    },
+    "verified_summary": [],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "estimated_usd": 0,
+      "model": "not_called",
+      "provider_request_id": "",
+      "elapsed_ms": 0
+    }
+  },
+  "error": null,
+  "elapsed_ms": 0
+}

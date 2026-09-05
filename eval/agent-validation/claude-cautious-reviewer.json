@@ -1,0 +1,420 @@
+{
+  "profile": {
+    "id": "cautious-reviewer",
+    "role": "Simulate a cautious analyst who checks reporting period, GAAP and guidance before deciding whether to reuse a claim."
+  },
+  "claims": [
+    {
+      "claim_id": "C1",
+      "text": "AWS sales increased 17% year over year in Q1 2024."
+    },
+    {
+      "claim_id": "C2",
+      "text": "Amazon Q1 2024 operating income was $4.8 billion."
+    },
+    {
+      "claim_id": "C3",
+      "text": "Trainium held 70% of global inference market share in June 2024."
+    }
+  ],
+  "outcome": {
+    "provider": "claude",
+    "profile": "cautious-reviewer",
+    "synthetic": true,
+    "independent_human_users": 0,
+    "tool_called": true,
+    "final": null,
+    "error": "invalid_final_json",
+    "elapsed_ms": 24078,
+    "all_and_only_supported_published": false
+  },
+  "trace": [
+    {
+      "step": 0,
+      "model_response": {
+        "model": "claude-sonnet-5",
+        "id": "msg_011CejUKoJ2T5z9QBmzaYXjE",
+        "type": "message",
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "I'll approach this cautiously: first check what evidence sources are available for AMZN, then verify the claims against dated evidence. These can be done together since the source listing informs but doesn't block the verification call (verification tool itself handles evidence lookup internally).\n\nActually, let me be more careful — I should list evidence sources first to understand coverage before deciding on source_ids, since making an uninformed verification call could waste the bounded call. But since I only get one audit call and one source-list call, and the verification tool doesn't strictly require source_ids to be pre-specified, I'll run both in parallel: source listing to understand coverage, and the verification call with all three claims as-is (letting the tool match against its own evidence base)."
+          },
+          {
+            "type": "tool_use",
+            "id": "toolu_01K4poEF2oAXyvWqqPHeDKsx",
+            "name": "list_evidence_sources",
+            "input": {
+              "ticker": "AMZN"
+            },
+            "caller": {
+              "type": "direct"
+            }
+          },
+          {
+            "type": "tool_use",
+            "id": "toolu_014V7sQFxSSj7Uzw3eJfvWdt",
+            "name": "verify_financial_claims",
+            "input": {
+              "request_id": "sim-claude-cautious-reviewer-1788573853909",
+              "entity": "AMZN",
+              "as_of": "2024-08-02",
+              "claims": [
+                {
+                  "claim_id": "C1",
+                  "text": "AWS sales increased 17% year over year in Q1 2024."
+                },
+                {
+                  "claim_id": "C2",
+                  "text": "Amazon Q1 2024 operating income was $4.8 billion."
+                },
+                {
+                  "claim_id": "C3",
+                  "text": "Trainium held 70% of global inference market share in June 2024."
+                }
+              ]
+            },
+            "caller": {
+              "type": "direct"
+            }
+          }
+        ],
+        "stop_reason": "tool_use",
+        "stop_sequence": null,
+        "stop_details": null,
+        "usage": {
+          "input_tokens": 1458,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 539,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        }
+      }
+    },
+    {
+      "tool_call": {
+        "id": "toolu_01K4poEF2oAXyvWqqPHeDKsx",
+        "name": "list_evidence_sources",
+        "args": {
+          "ticker": "AMZN"
+        }
+      },
+      "tool_result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"version\":\"prooflens-corpus-2.0\",\"scope\":\"selected passages\",\"documents\":[{\"id\":\"AMZN-2024Q1\",\"ticker\":\"AMZN\",\"period\":\"Q1 2024\",\"filedAt\":\"2024-05-01\",\"form\":\"10-Q\",\"url\":\"https://www.sec.gov/Archives/edgar/data/1018724/000101872424000083/amzn-20240331.htm\",\"fetched_at\":\"2026-09-05T01:16:34.318Z\",\"sha256\":\"66bc009ff6f816f73a134dc21f52a2cb3439fe1abffe1e7467ddfd9b693d2f85\",\"full_text_chars\":306035,\"selected_text_chars\":6534,\"selected_passages\":20,\"anchorHits\":[{\"anchor\":\"AWS sales increased 17%\",\"found\":true},{\"anchor\":\"Operating income increased from $4.8\",\"found\":true},{\"anchor\":\"Net Sales\",\"found\":true}],\"scope\":\"Selected contextual and distractor passages; full filing retained locally but not all of it is sent to models.\"},{\"id\":\"AMZN-2024Q2\",\"ticker\":\"AMZN\",\"period\":\"Q2 2024 and first half 2024\",\"filedAt\":\"2024-08-02\",\"form\":\"10-Q\",\"url\":\"https://www.sec.gov/Archives/edgar/data/1018724/000101872424000130/amzn-20240630.htm\",\"fetched_at\":\"2026-09-05T01:16:36.100Z\",\"sha256\":\"38369a0019a6ccb2323ccb22ee46457664ec77b90821425ccf8ca75662b69b75\",\"full_text_chars\":325663,\"selected_text_chars\":6657,\"selected_passages\":20,\"anchorHits\":[{\"anchor\":\"AWS sales increased 19%\",\"found\":true},{\"anchor\":\"Operating income increased from $7.7\",\"found\":true},{\"anchor\":\"Net Sales\",\"found\":true}],\"scope\":\"Selected contextual and distractor passages; full filing retained locally but not all of it is sent to models.\"},{\"id\":\"AMZN-2023FY\",\"ticker\":\"AMZN\",\"period\":\"FY2023\",\"filedAt\":\"2024-02-02\",\"form\":\"10-K\",\"url\":\"https://www.sec.gov/Archives/edgar/data/1018724/000101872424000008/amzn-20231231.htm\",\"fetched_at\":\"2026-09-05T01:52:28.808Z\",\"sha256\":\"a469a0feca6dd5728b10c73076c2c120db58116938614c5b1b864fe13674266d\",\"full_text_chars\":571791,\"selected_text_chars\":41674,\"selected_passages\":80,\"scope\":\"Selected financial and product passages. Full filing downloadable from SEC.\"},{\"id\":\"AMZN-2024Q3\",\"ticker\":\"AMZN\",\"period\":\"Q3 2024 and nine months 2024\",\"filedAt\":\"2024-11-01\",\"form\":\"10-Q\",\"url\":\"https://www.sec.gov/Archives/edgar/data/1018724/000101872424000161/amzn-20240930.htm\",\"fetched_at\":\"2026-09-05T01:52:30.698Z\",\"sha256\":\"07260ab0297fd274a4b1fa2101dacf4e3b2c27829c3fa1a3a598536b4c0d47bc\",\"full_text_chars\":340923,\"selected_text_chars\":40387,\"selected_passages\":76,\"scope\":\"Selected financial and product passages. Full filing downloadable from SEC.\"}]}"
+          }
+        ],
+        "structuredContent": {
+          "version": "prooflens-corpus-2.0",
+          "scope": "selected passages",
+          "documents": [
+            {
+              "id": "AMZN-2024Q1",
+              "ticker": "AMZN",
+              "period": "Q1 2024",
+              "filedAt": "2024-05-01",
+              "form": "10-Q",
+              "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000083/amzn-20240331.htm",
+              "fetched_at": "2026-09-05T01:16:34.318Z",
+              "sha256": "66bc009ff6f816f73a134dc21f52a2cb3439fe1abffe1e7467ddfd9b693d2f85",
+              "full_text_chars": 306035,
+              "selected_text_chars": 6534,
+              "selected_passages": 20,
+              "anchorHits": [
+                {
+                  "anchor": "AWS sales increased 17%",
+                  "found": true
+                },
+                {
+                  "anchor": "Operating income increased from $4.8",
+                  "found": true
+                },
+                {
+                  "anchor": "Net Sales",
+                  "found": true
+                }
+              ],
+              "scope": "Selected contextual and distractor passages; full filing retained locally but not all of it is sent to models."
+            },
+            {
+              "id": "AMZN-2024Q2",
+              "ticker": "AMZN",
+              "period": "Q2 2024 and first half 2024",
+              "filedAt": "2024-08-02",
+              "form": "10-Q",
+              "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000130/amzn-20240630.htm",
+              "fetched_at": "2026-09-05T01:16:36.100Z",
+              "sha256": "38369a0019a6ccb2323ccb22ee46457664ec77b90821425ccf8ca75662b69b75",
+              "full_text_chars": 325663,
+              "selected_text_chars": 6657,
+              "selected_passages": 20,
+              "anchorHits": [
+                {
+                  "anchor": "AWS sales increased 19%",
+                  "found": true
+                },
+                {
+                  "anchor": "Operating income increased from $7.7",
+                  "found": true
+                },
+                {
+                  "anchor": "Net Sales",
+                  "found": true
+                }
+              ],
+              "scope": "Selected contextual and distractor passages; full filing retained locally but not all of it is sent to models."
+            },
+            {
+              "id": "AMZN-2023FY",
+              "ticker": "AMZN",
+              "period": "FY2023",
+              "filedAt": "2024-02-02",
+              "form": "10-K",
+              "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000008/amzn-20231231.htm",
+              "fetched_at": "2026-09-05T01:52:28.808Z",
+              "sha256": "a469a0feca6dd5728b10c73076c2c120db58116938614c5b1b864fe13674266d",
+              "full_text_chars": 571791,
+              "selected_text_chars": 41674,
+              "selected_passages": 80,
+              "scope": "Selected financial and product passages. Full filing downloadable from SEC."
+            },
+            {
+              "id": "AMZN-2024Q3",
+              "ticker": "AMZN",
+              "period": "Q3 2024 and nine months 2024",
+              "filedAt": "2024-11-01",
+              "form": "10-Q",
+              "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000161/amzn-20240930.htm",
+              "fetched_at": "2026-09-05T01:52:30.698Z",
+              "sha256": "07260ab0297fd274a4b1fa2101dacf4e3b2c27829c3fa1a3a598536b4c0d47bc",
+              "full_text_chars": 340923,
+              "selected_text_chars": 40387,
+              "selected_passages": 76,
+              "scope": "Selected financial and product passages. Full filing downloadable from SEC."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "tool_call": {
+        "id": "toolu_014V7sQFxSSj7Uzw3eJfvWdt",
+        "name": "verify_financial_claims",
+        "args": {
+          "request_id": "sim-claude-cautious-reviewer-1788573853909",
+          "entity": "AMZN",
+          "as_of": "2024-08-02",
+          "claims": [
+            {
+              "claim_id": "C1",
+              "text": "AWS sales increased 17% year over year in Q1 2024."
+            },
+            {
+              "claim_id": "C2",
+              "text": "Amazon Q1 2024 operating income was $4.8 billion."
+            },
+            {
+              "claim_id": "C3",
+              "text": "Trainium held 70% of global inference market share in June 2024."
+            }
+          ]
+        }
+      },
+      "tool_result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"request_id\":\"sim-claude-cautious-reviewer-1788573853909\",\"engine_mode\":\"llm_tfidf_v2\",\"prompt_version\":\"prooflens-v2.0.0\",\"entity\":\"AMZN\",\"as_of\":\"2024-08-02\",\"source_cutoff\":\"2024-08-02\",\"source_scope\":\"Selected, versioned primary-source passages; absence is not proof of falsity.\",\"retrieved_passage_ids\":[\"AMZN-2024Q1-P471\",\"AMZN-2024Q1-P482\",\"AMZN-2024Q2-P483\",\"AMZN-2024Q1-P483\",\"AMZN-2024Q1-P473\",\"AMZN-2024Q2-P481\",\"AMZN-2024Q1-P484\",\"AMZN-2023FY-P519\",\"AMZN-2024Q2-P482\",\"AMZN-2023FY-P426\",\"AMZN-2023FY-P656\",\"AMZN-2024Q2-P470\",\"AMZN-2024Q2-P469\",\"AMZN-2023FY-P421\",\"AMZN-2024Q2-P472\"],\"results\":[{\"claim_id\":\"C1\",\"status\":\"supported\",\"reason\":\"The evidence explicitly states AWS sales increased 17% in Q1 2024 compared to the comparable prior year period.\",\"facts\":[{\"metric\":\"AWS sales growth\",\"value\":17,\"currency\":null,\"unit\":\"percent\",\"period\":\"Q1 2024\",\"basis\":\"not_applicable\",\"origin\":\"reported_actual\"}],\"evidence\":[{\"source_id\":\"AMZN-2024Q1\",\"passage_id\":\"AMZN-2024Q1-P471\",\"url\":\"https://www.sec.gov/Archives/edgar/data/1018724/000101872424000083/amzn-20240331.htm\",\"filed_at\":\"2024-05-01\",\"period\":\"Q1 2024\",\"document_sha256\":\"66bc009ff6f816f73a134dc21f52a2cb3439fe1abffe1e7467ddfd9b693d2f85\",\"locator\":\"Normalized paragraph 471; lines 2178-2181\",\"quote\":\"AWS sales increased 17% in Q1 2024 compared to the comparable prior year period.\"}],\"derivation\":null,\"missing_fields\":[],\"next_action\":\"use_with_citation\",\"guard_downgraded\":false,\"claim\":\"AWS sales increased 17% year over year in Q1 2024.\"},{\"claim_id\":\"C2\",\"status\":\"conflicted\",\"reason\":\"The claim states Q1 2024 operating income was $4.8 billion, but the evidence shows $4.8 billion was Q1 2023 operating income, and Q1 2024 operating income was $15.3 billion.\",\"facts\":[{\"metric\":\"operating income\",\"value\":4.8,\"currency\":\"USD\",\"unit\":\"billion\",\"period\":\"Q1 2023\",\"basis\":\"GAAP\",\"origin\":\"reported_actual\"},{\"metric\":\"operating income\",\"value\":15.3,\"currency\":\"USD\",\"unit\":\"billion\",\"period\":\"Q1 2024\",\"basis\":\"GAAP\",\"origin\":\"reported_actual\"}],\"evidence\":[{\"source_id\":\"AMZN-2024Q1\",\"passage_id\":\"AMZN-2024Q1-P482\",\"url\":\"https://www.sec.gov/Archives/edgar/data/1018724/000101872424000083/amzn-20240331.htm\",\"filed_at\":\"2024-05-01\",\"period\":\"Q1 2024\",\"document_sha256\":\"66bc009ff6f816f73a134dc21f52a2cb3439fe1abffe1e7467ddfd9b693d2f85\",\"locator\":\"Normalized paragraph 482; lines 2210-2213\",\"quote\":\"Operating income increased from $4.8 billion in Q1 2023 to $15.3 billion in Q1 2024.\"}],\"derivation\":null,\"missing_fields\":[],\"next_action\":\"revise_claim\",\"guard_downgraded\":false,\"claim\":\"Amazon Q1 2024 operating income was $4.8 billion.\"},{\"claim_id\":\"C3\",\"status\":\"insufficient\",\"reason\":\"No evidence is provided about Trainium's market share in the global inference market for June 2024 or any other period.\",\"facts\":[],\"evidence\":[],\"derivation\":null,\"missing_fields\":[\"Trainium global inference market share\",\"market share period\",\"market share source\"],\"next_action\":\"fetch_more_evidence\",\"guard_downgraded\":false,\"claim\":\"Trainium held 70% of global inference market share in June 2024.\"}],\"coverage\":{\"supported\":1,\"conflicted\":1,\"insufficient\":1},\"verified_summary\":[{\"claim_id\":\"C1\",\"text\":\"AWS sales increased 17% year over year in Q1 2024.\",\"citations\":[\"AMZN-2024Q1-P471\"]}],\"gate\":\"hold\",\"usage\":{\"input_tokens\":2256,\"output_tokens\":583,\"estimated_usd\":0.0057236000000000006,\"provider_request_id\":\"20260905100419968871eb419b476e\",\"model\":\"glm-5.2\",\"elapsed_ms\":7194},\"cached\":false}"
+          }
+        ],
+        "structuredContent": {
+          "request_id": "sim-claude-cautious-reviewer-1788573853909",
+          "engine_mode": "llm_tfidf_v2",
+          "prompt_version": "prooflens-v2.0.0",
+          "entity": "AMZN",
+          "as_of": "2024-08-02",
+          "source_cutoff": "2024-08-02",
+          "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+          "retrieved_passage_ids": [
+            "AMZN-2024Q1-P471",
+            "AMZN-2024Q1-P482",
+            "AMZN-2024Q2-P483",
+            "AMZN-2024Q1-P483",
+            "AMZN-2024Q1-P473",
+            "AMZN-2024Q2-P481",
+            "AMZN-2024Q1-P484",
+            "AMZN-2023FY-P519",
+            "AMZN-2024Q2-P482",
+            "AMZN-2023FY-P426",
+            "AMZN-2023FY-P656",
+            "AMZN-2024Q2-P470",
+            "AMZN-2024Q2-P469",
+            "AMZN-2023FY-P421",
+            "AMZN-2024Q2-P472"
+          ],
+          "results": [
+            {
+              "claim_id": "C1",
+              "status": "supported",
+              "reason": "The evidence explicitly states AWS sales increased 17% in Q1 2024 compared to the comparable prior year period.",
+              "facts": [
+                {
+                  "metric": "AWS sales growth",
+                  "value": 17,
+                  "currency": null,
+                  "unit": "percent",
+                  "period": "Q1 2024",
+                  "basis": "not_applicable",
+                  "origin": "reported_actual"
+                }
+              ],
+              "evidence": [
+                {
+                  "source_id": "AMZN-2024Q1",
+                  "passage_id": "AMZN-2024Q1-P471",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000083/amzn-20240331.htm",
+                  "filed_at": "2024-05-01",
+                  "period": "Q1 2024",
+                  "document_sha256": "66bc009ff6f816f73a134dc21f52a2cb3439fe1abffe1e7467ddfd9b693d2f85",
+                  "locator": "Normalized paragraph 471; lines 2178-2181",
+                  "quote": "AWS sales increased 17% in Q1 2024 compared to the comparable prior year period."
+                }
+              ],
+              "derivation": null,
+              "missing_fields": [],
+              "next_action": "use_with_citation",
+              "guard_downgraded": false,
+              "claim": "AWS sales increased 17% year over year in Q1 2024."
+            },
+            {
+              "claim_id": "C2",
+              "status": "conflicted",
+              "reason": "The claim states Q1 2024 operating income was $4.8 billion, but the evidence shows $4.8 billion was Q1 2023 operating income, and Q1 2024 operating income was $15.3 billion.",
+              "facts": [
+                {
+                  "metric": "operating income",
+                  "value": 4.8,
+                  "currency": "USD",
+                  "unit": "billion",
+                  "period": "Q1 2023",
+                  "basis": "GAAP",
+                  "origin": "reported_actual"
+                },
+                {
+                  "metric": "operating income",
+                  "value": 15.3,
+                  "currency": "USD",
+                  "unit": "billion",
+                  "period": "Q1 2024",
+                  "basis": "GAAP",
+                  "origin": "reported_actual"
+                }
+              ],
+              "evidence": [
+                {
+                  "source_id": "AMZN-2024Q1",
+                  "passage_id": "AMZN-2024Q1-P482",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000083/amzn-20240331.htm",
+                  "filed_at": "2024-05-01",
+                  "period": "Q1 2024",
+                  "document_sha256": "66bc009ff6f816f73a134dc21f52a2cb3439fe1abffe1e7467ddfd9b693d2f85",
+                  "locator": "Normalized paragraph 482; lines 2210-2213",
+                  "quote": "Operating income increased from $4.8 billion in Q1 2023 to $15.3 billion in Q1 2024."
+                }
+              ],
+              "derivation": null,
+              "missing_fields": [],
+              "next_action": "revise_claim",
+              "guard_downgraded": false,
+              "claim": "Amazon Q1 2024 operating income was $4.8 billion."
+            },
+            {
+              "claim_id": "C3",
+              "status": "insufficient",
+              "reason": "No evidence is provided about Trainium's market share in the global inference market for June 2024 or any other period.",
+              "facts": [],
+              "evidence": [],
+              "derivation": null,
+              "missing_fields": [
+                "Trainium global inference market share",
+                "market share period",
+                "market share source"
+              ],
+              "next_action": "fetch_more_evidence",
+              "guard_downgraded": false,
+              "claim": "Trainium held 70% of global inference market share in June 2024."
+            }
+          ],
+          "coverage": {
+            "supported": 1,
+            "conflicted": 1,
+            "insufficient": 1
+          },
+          "verified_summary": [
+            {
+              "claim_id": "C1",
+              "text": "AWS sales increased 17% year over year in Q1 2024.",
+              "citations": [
+                "AMZN-2024Q1-P471"
+              ]
+            }
+          ],
+          "gate": "hold",
+          "usage": {
+            "input_tokens": 2256,
+            "output_tokens": 583,
+            "estimated_usd": 0.0057236000000000006,
+            "provider_request_id": "20260905100419968871eb419b476e",
+            "model": "glm-5.2",
+            "elapsed_ms": 7194
+          },
+          "cached": false
+        }
+      }
+    },
+    {
+      "step": 1,
+      "model_response": {
+        "model": "claude-sonnet-5",
+        "id": "msg_011CejULhrdoSvoVJQaAcsuT",
+        "type": "message",
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Results are clear:\n\n- **C1**: Supported — 10-Q (Q1 2024) explicitly states AWS sales increased 17% YoY. Citable.\n- **C2**: Conflicted — the $4.8B figure is Q1 **2023** operating income; Q1 2024 operating income was actually $15.3B per the same filing. Claim as worded misattributes the period and must not be published as-is.\n- **C3**: Insufficient — no evidence in the corpus (SEC filings) addresses Trainium inference market share; this is a market-share/analyst-estimate type claim not found in GAAP filings. Cannot be verified from this source set.\n\n```json\n{\n  \"publishable_claim_ids\": [\"C1\"],\n  \"actions\": [\n    {\n      \"claim_id\": \"C1\",\n      \"action\": \"publish\",\n      \"reason\": \"Supported by AMZN Q1 2024 10-Q (filed 2024-05-01): 'AWS sales increased 17% in Q1 2024 compared to the comparable prior year period.' Cite AMZN-2024Q1-P471.\"\n    },\n    {\n      \"claim_id\": \"C2\",\n      \"action\": \"revise_then_hold\",\n      \"reason\": \"Conflicted: $4.8B is Q1 2023 operating income, not Q1 2024. Actual Q1 2024 GAAP operating income was $15.3B per the same 10-Q. Do not publish as stated; if reused, must be corrected to $15.3 billion with explicit period label, or reworded to describe the YoY comparison ('increased from $4.8B in Q1 2023 to $15.3B in Q1 2024').\"\n    },\n    {\n      \"claim_id\": \"C3\",\n      \"action\": \"hold_fetch_more_evidence\",\n      \"reason\": \"No primary-source (10-Q/10-K) evidence covers Trainium inference market share; this appears to be a third-party market-share estimate outside SEC filing scope. Needs a non-SEC source (e.g., industry analyst report) before it can be evaluated, and even then GAAP/SEC verification tooling cannot confirm it — flag as out of scope for this evidence corpus rather than merely 'missing.'\"\n    }\n  ],\n  \"friction\": [\n    \"C2 is a classic period-mismatch error: the number is correct but attributed to the wrong fiscal quarter — a common transcription mistake when comparing YoY figures in filings.\",\n    \"C3 cannot be resolved by this tool's evidence base at all since it verifies against SEC filings, not market-research/analyst share data; repeated fetch attempts would not help without adding a different source type.\",\n    \"As-of date 2024-08-02 coincides exactly with the Q2 2024 10-Q filing date, so evidence availability is right at the boundary — Q2 figures exist in the corpus but were not needed for these particular claims.\"\n  ],\n  \"simulation_limitations\": \"This is a synthetic role-play using a bounded verification tool against a fixed, versioned passage corpus (not live SEC EDGAR). Results reflect only the passages retrieved by the tool's retrieval mechanism ('absence is not proof of falsity'), not exhaustive filing review. No trading advice is implied or intended; all figures are for research-brief drafting purposes only and should be independently confirmed against the primary filings (URLs provided) before external publication.\"\n}\n```"
+          }
+        ],
+        "stop_reason": "end_turn",
+        "stop_sequence": null,
+        "stop_details": null,
+        "usage": {
+          "input_tokens": 8364,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 1109,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        }
+      }
+    }
+  ]
+}

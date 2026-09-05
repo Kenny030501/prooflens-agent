@@ -1,0 +1,313 @@
+{
+  "input": {
+    "request_id": "eval-1",
+    "entity": "AMZN",
+    "as_of": "2024-08-02",
+    "language": "en",
+    "source_ids": [
+      "AMZN-2024Q2"
+    ],
+    "claims": [
+      {
+        "claim_id": "legacy-A3",
+        "text": "Amazon reported $30.0 billion of operating income for the six months ended June 30, 2024."
+      },
+      {
+        "claim_id": "legacy-A4",
+        "text": "AWS sales increased 18% year over year for the six months ended June 30, 2024."
+      },
+      {
+        "claim_id": "legacy-A5",
+        "text": "AWS sales increased 18% year over year in Q2 2024 alone."
+      },
+      {
+        "claim_id": "legacy-A6",
+        "text": "Amazon reported $30.0 billion of operating income in Q2 2024 alone."
+      },
+      {
+        "claim_id": "AMZN-2024Q2-S0",
+        "text": "AWS sales increased 19% year over year in Q2 2024."
+      },
+      {
+        "claim_id": "AMZN-2024Q2-C0",
+        "text": "AWS sales increased 18% year over year in Q2 2024."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-1",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "AMZN",
+    "as_of": "2024-08-02",
+    "source_cutoff": "2024-08-02",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "AMZN-2024Q2-P481",
+      "AMZN-2024Q2-P470",
+      "AMZN-2024Q2-P483",
+      "AMZN-2024Q2-P482",
+      "AMZN-2024Q2-P472",
+      "AMZN-2024Q2-P469",
+      "AMZN-2024Q2-P844",
+      "AMZN-2024Q2-P834"
+    ],
+    "results": [
+      {
+        "claim_id": "legacy-A3",
+        "status": "supported",
+        "reason": "The evidence explicitly states operating income was $30.0 billion for the six months ended June 30, 2024.",
+        "facts": [
+          {
+            "metric": "operating income",
+            "value": 30,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "six months ended June 30, 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2024Q2",
+            "passage_id": "AMZN-2024Q2-P481",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000130/amzn-20240630.htm",
+            "filed_at": "2024-08-02",
+            "period": "Q2 2024 and first half 2024",
+            "document_sha256": "38369a0019a6ccb2323ccb22ee46457664ec77b90821425ccf8ca75662b69b75",
+            "locator": "Normalized paragraph 481; lines 2258-2263",
+            "quote": "increased from $12.5 billion for the six months ended June 30, 2023 to $30.0 billion for the six months ended June 30, 2024."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "Amazon reported $30.0 billion of operating income for the six months ended June 30, 2024."
+      },
+      {
+        "claim_id": "legacy-A4",
+        "status": "supported",
+        "reason": "The evidence explicitly states AWS sales increased 18% for the six months ended June 30, 2024.",
+        "facts": [
+          {
+            "metric": "AWS sales year-over-year growth",
+            "value": 18,
+            "currency": null,
+            "unit": "percent",
+            "period": "six months ended June 30, 2024",
+            "basis": "not_applicable",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2024Q2",
+            "passage_id": "AMZN-2024Q2-P470",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000130/amzn-20240630.htm",
+            "filed_at": "2024-08-02",
+            "period": "Q2 2024 and first half 2024",
+            "document_sha256": "38369a0019a6ccb2323ccb22ee46457664ec77b90821425ccf8ca75662b69b75",
+            "locator": "Normalized paragraph 470; lines 2227-2230",
+            "quote": "AWS sales increased 19% in Q2 2024, and 18% for the six months ended June 30, 2024 compared to the comparable prior year periods."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "AWS sales increased 18% year over year for the six months ended June 30, 2024."
+      },
+      {
+        "claim_id": "legacy-A5",
+        "status": "conflicted",
+        "reason": "The claim states AWS sales increased 18% year over year in Q2 2024, but the evidence states AWS sales increased 19% in Q2 2024.",
+        "facts": [
+          {
+            "metric": "AWS sales year-over-year growth",
+            "value": 19,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q2 2024",
+            "basis": "not_applicable",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2024Q2",
+            "passage_id": "AMZN-2024Q2-P470",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000130/amzn-20240630.htm",
+            "filed_at": "2024-08-02",
+            "period": "Q2 2024 and first half 2024",
+            "document_sha256": "38369a0019a6ccb2323ccb22ee46457664ec77b90821425ccf8ca75662b69b75",
+            "locator": "Normalized paragraph 470; lines 2227-2230",
+            "quote": "AWS sales increased 19% in Q2 2024, and 18% for the six months ended June 30, 2024 compared to the comparable prior year periods."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "AWS sales increased 18% year over year in Q2 2024 alone."
+      },
+      {
+        "claim_id": "legacy-A6",
+        "status": "conflicted",
+        "reason": "The claim states $30.0 billion of operating income in Q2 2024 alone, but the evidence states Q2 2024 operating income was $14.7 billion; $30.0 billion was for the six months ended June 30, 2024.",
+        "facts": [
+          {
+            "metric": "operating income",
+            "value": 14.7,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q2 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "operating income",
+            "value": 30,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "six months ended June 30, 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2024Q2",
+            "passage_id": "AMZN-2024Q2-P481",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000130/amzn-20240630.htm",
+            "filed_at": "2024-08-02",
+            "period": "Q2 2024 and first half 2024",
+            "document_sha256": "38369a0019a6ccb2323ccb22ee46457664ec77b90821425ccf8ca75662b69b75",
+            "locator": "Normalized paragraph 481; lines 2258-2263",
+            "quote": "Operating income increased from $7.7 billion in Q2 2023 to $14.7 billion in Q2 2024, and increased from $12.5 billion for the six months ended June 30, 2023 to $30.0 billion for the six months ended June 30, 2024."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "Amazon reported $30.0 billion of operating income in Q2 2024 alone."
+      },
+      {
+        "claim_id": "AMZN-2024Q2-S0",
+        "status": "supported",
+        "reason": "The evidence explicitly states AWS sales increased 19% in Q2 2024.",
+        "facts": [
+          {
+            "metric": "AWS sales year-over-year growth",
+            "value": 19,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q2 2024",
+            "basis": "not_applicable",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2024Q2",
+            "passage_id": "AMZN-2024Q2-P470",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000130/amzn-20240630.htm",
+            "filed_at": "2024-08-02",
+            "period": "Q2 2024 and first half 2024",
+            "document_sha256": "38369a0019a6ccb2323ccb22ee46457664ec77b90821425ccf8ca75662b69b75",
+            "locator": "Normalized paragraph 470; lines 2227-2230",
+            "quote": "AWS sales increased 19% in Q2 2024, and 18% for the six months ended June 30, 2024 compared to the comparable prior year periods."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "AWS sales increased 19% year over year in Q2 2024."
+      },
+      {
+        "claim_id": "AMZN-2024Q2-C0",
+        "status": "conflicted",
+        "reason": "The claim states AWS sales increased 18% year over year in Q2 2024, but the evidence states AWS sales increased 19% in Q2 2024. The 18% figure applies to the six months ended June 30, 2024, not Q2 alone.",
+        "facts": [
+          {
+            "metric": "AWS sales year-over-year growth",
+            "value": 19,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q2 2024",
+            "basis": "not_applicable",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "AWS sales year-over-year growth",
+            "value": 18,
+            "currency": null,
+            "unit": "percent",
+            "period": "six months ended June 30, 2024",
+            "basis": "not_applicable",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2024Q2",
+            "passage_id": "AMZN-2024Q2-P470",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000130/amzn-20240630.htm",
+            "filed_at": "2024-08-02",
+            "period": "Q2 2024 and first half 2024",
+            "document_sha256": "38369a0019a6ccb2323ccb22ee46457664ec77b90821425ccf8ca75662b69b75",
+            "locator": "Normalized paragraph 470; lines 2227-2230",
+            "quote": "AWS sales increased 19% in Q2 2024, and 18% for the six months ended June 30, 2024 compared to the comparable prior year periods."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "AWS sales increased 18% year over year in Q2 2024."
+      }
+    ],
+    "coverage": {
+      "supported": 3,
+      "conflicted": 3,
+      "insufficient": 0
+    },
+    "verified_summary": [
+      {
+        "claim_id": "legacy-A3",
+        "text": "Amazon reported $30.0 billion of operating income for the six months ended June 30, 2024.",
+        "citations": [
+          "AMZN-2024Q2-P481"
+        ]
+      },
+      {
+        "claim_id": "legacy-A4",
+        "text": "AWS sales increased 18% year over year for the six months ended June 30, 2024.",
+        "citations": [
+          "AMZN-2024Q2-P470"
+        ]
+      },
+      {
+        "claim_id": "AMZN-2024Q2-S0",
+        "text": "AWS sales increased 19% year over year in Q2 2024.",
+        "citations": [
+          "AMZN-2024Q2-P470"
+        ]
+      }
+    ],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 1767,
+      "output_tokens": 1517,
+      "estimated_usd": 0.0091486,
+      "provider_request_id": "20260905100108256d145d1dc845e6",
+      "model": "glm-5.2",
+      "elapsed_ms": 20763
+    }
+  },
+  "error": null,
+  "elapsed_ms": 20768
+}

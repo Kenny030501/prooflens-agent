@@ -1,32 +1,44 @@
-import { eq } from 'drizzle-orm';
-import { getDb } from '@/db';
-import { auditRuns, behaviorEvents } from '@/db/schema';
-
-const allowedEvents = new Set(['audit_started', 'audit_completed', 'evidence_opened', 'claim_overridden', 'result_exported', 'post_confidence_recorded']);
-
+import { env } from 'cloudflare:workers';
+import { z } from 'zod';
+import { readJson } from '@/lib/v2/runtime';
+import { AuditError, errorResponse } from '@/lib/v2/contracts';
+const event = z
+  .object({
+    event_name: z.enum([
+      'audit_started',
+      'audit_completed',
+      'evidence_opened',
+      'result_exported',
+    ]),
+    duration_ms: z.number().int().min(0).max(3600000).optional(),
+    entity: z.enum(['AMZN', 'MRVL', 'NVDA']),
+    session_id: z.uuid(),
+  })
+  .strict();
 export async function POST(request: Request) {
-  const payload = await request.json().catch(() => null) as null | Record<string, unknown>;
-  if (!payload || typeof payload.eventName !== 'string' || !allowedEvents.has(payload.eventName)) {
-    return Response.json({ error: { code: 'invalid_event', message: 'Unsupported eventName.' } }, { status: 422 });
-  }
-
-  const createdAt = new Date().toISOString();
   try {
-    const db = getDb();
-    await db.insert(behaviorEvents).values({
-      id: `evt_${crypto.randomUUID().slice(0, 14)}`,
-      caseId: typeof payload.caseId === 'string' ? payload.caseId : null,
-      eventName: payload.eventName,
-      agentId: typeof payload.agentId === 'string' ? payload.agentId : null,
-      ticker: typeof payload.ticker === 'string' ? payload.ticker : null,
-      metadataJson: JSON.stringify(payload.metadata ?? {}),
-      createdAt,
-    });
-    if (payload.eventName === 'post_confidence_recorded' && typeof payload.caseId === 'string' && typeof payload.postConfidence === 'number') {
-      await db.update(auditRuns).set({ postConfidence: Math.max(0, Math.min(100, Math.round(payload.postConfidence))) }).where(eq(auditRuns.id, payload.caseId));
-    }
-  } catch {
-    return Response.json({ accepted: true, persisted: false, createdAt });
+    const parsed = event.safeParse(await readJson(request));
+    if (!parsed.success)
+      throw new AuditError(
+        'invalid_event',
+        'Only anonymous event, session, entity and duration fields accepted.',
+      );
+    const p = parsed.data;
+    await (env.DB as D1Database)
+      .prepare(
+        'INSERT INTO behavior_events (id,case_id,event_name,ticker,metadata_json,created_at) VALUES (?,?,?,?,?,?)',
+      )
+      .bind(
+        crypto.randomUUID(),
+        p.session_id,
+        p.event_name,
+        p.entity,
+        JSON.stringify({ duration_ms: p.duration_ms ?? null }),
+        new Date().toISOString(),
+      )
+      .run();
+    return Response.json({ accepted: true, persisted: true });
+  } catch (e) {
+    return errorResponse(e);
   }
-  return Response.json({ accepted: true, persisted: true, createdAt });
 }

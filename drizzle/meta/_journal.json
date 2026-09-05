@@ -8,6 +8,13 @@
       "when": 1788490895460,
       "tag": "0000_yellow_apocalypse",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1788573147046,
+      "tag": "0001_naive_rawhide_kid",
+      "breakpoints": true
     }
   ]
 }

@@ -1,0 +1,94 @@
+{
+  "input": {
+    "request_id": "eval-11",
+    "entity": "NVDA",
+    "as_of": "2024-08-28",
+    "language": "en",
+    "source_ids": [
+      "NVDA-2025Q1"
+    ],
+    "claims": [
+      {
+        "claim_id": "legacy-N3",
+        "text": "In its Q1 FY2025 filing, NVIDIA estimated inference drove about 40% of Data Center revenue over the trailing four quarters."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-11",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "NVDA",
+    "as_of": "2024-08-28",
+    "source_cutoff": "2024-05-29",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "NVDA-2025Q1-P451",
+      "NVDA-2025Q1-P444",
+      "NVDA-2025Q1-P453",
+      "NVDA-2025Q1-P687",
+      "NVDA-2025Q1-P685",
+      "NVDA-2025Q1-P679"
+    ],
+    "results": [
+      {
+        "claim_id": "legacy-N3",
+        "status": "supported",
+        "reason": "The Q1 FY2025 filing explicitly states that over the trailing 4 quarters, NVIDIA estimated inference drove about 40% of Data Center revenue.",
+        "facts": [
+          {
+            "metric": "Inference share of Data Center revenue (trailing 4 quarters)",
+            "value": 40,
+            "currency": null,
+            "unit": "percent",
+            "period": "trailing 4 quarters ending Q1 FY2025",
+            "basis": "not_applicable",
+            "origin": "management_guidance"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2025Q1",
+            "passage_id": "NVDA-2025Q1-P451",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000124/nvda-20240428.htm",
+            "filed_at": "2024-05-29",
+            "period": "Q1 FY2025",
+            "document_sha256": "0d5b058779ec2cbbc24b67ea9bbc8b5c455177b86ce972f3c203329b99fadde8",
+            "locator": "Normalized paragraph 451; lines 2234-2245",
+            "quote": "In our trailing 4 quarters, we estimate that inference drove about 40% of our Data Center revenue."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "In its Q1 FY2025 filing, NVIDIA estimated inference drove about 40% of Data Center revenue over the trailing four quarters."
+      }
+    ],
+    "coverage": {
+      "supported": 1,
+      "conflicted": 0,
+      "insufficient": 0
+    },
+    "verified_summary": [
+      {
+        "claim_id": "legacy-N3",
+        "text": "In its Q1 FY2025 filing, NVIDIA estimated inference drove about 40% of Data Center revenue over the trailing four quarters.",
+        "citations": [
+          "NVDA-2025Q1-P451"
+        ]
+      }
+    ],
+    "gate": "evidence_ready",
+    "usage": {
+      "input_tokens": 1516,
+      "output_tokens": 224,
+      "estimated_usd": 0.003108,
+      "provider_request_id": "20260905100319fa5be0c702e5482b",
+      "model": "glm-5.2",
+      "elapsed_ms": 3155
+    }
+  },
+  "error": null,
+  "elapsed_ms": 3156
+}

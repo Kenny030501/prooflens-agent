@@ -1,0 +1,1851 @@
+{
+  "scope": "Second model, not a second human annotator. Selection every fifth case, 20% coverage.",
+  "reviewCost": 0.190424,
+  "reviews": [
+    {
+      "id": "legacy-A1",
+      "expected": "supported",
+      "reviewer": "supported",
+      "agree": true,
+      "result": {
+        "request_id": "review-legacy-A1",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "AMZN",
+        "as_of": "2024-08-02",
+        "source_cutoff": "2024-08-02",
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [
+          "AMZN-2024Q1-P482",
+          "AMZN-2024Q2-P481",
+          "AMZN-2024Q2-P472",
+          "AMZN-2024Q1-P484",
+          "AMZN-2024Q1-P473",
+          "AMZN-2024Q2-P483"
+        ],
+        "results": [
+          {
+            "claim_id": "legacy-A1",
+            "status": "supported",
+            "reason": "Both quarterly operating income figures are confirmed by the evidence: $15.3B in Q1 2024 and $14.7B in Q2 2024, representing a decline as claimed.",
+            "facts": [
+              {
+                "metric": "operating income",
+                "value": 15.3,
+                "currency": "USD",
+                "unit": "billion",
+                "period": "Q1 2024",
+                "basis": "GAAP",
+                "origin": "reported_actual"
+              },
+              {
+                "metric": "operating income",
+                "value": 14.7,
+                "currency": "USD",
+                "unit": "billion",
+                "period": "Q2 2024",
+                "basis": "GAAP",
+                "origin": "reported_actual"
+              }
+            ],
+            "evidence": [
+              {
+                "source_id": "AMZN-2024Q1",
+                "passage_id": "AMZN-2024Q1-P482",
+                "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000083/amzn-20240331.htm",
+                "filed_at": "2024-05-01",
+                "period": "Q1 2024",
+                "document_sha256": "66bc009ff6f816f73a134dc21f52a2cb3439fe1abffe1e7467ddfd9b693d2f85",
+                "locator": "Normalized paragraph 482; lines 2210-2213",
+                "quote": "Operating income increased from $4.8 billion in Q1 2023 to $15.3 billion in Q1 2024."
+              },
+              {
+                "source_id": "AMZN-2024Q2",
+                "passage_id": "AMZN-2024Q2-P481",
+                "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000130/amzn-20240630.htm",
+                "filed_at": "2024-08-02",
+                "period": "Q2 2024 and first half 2024",
+                "document_sha256": "38369a0019a6ccb2323ccb22ee46457664ec77b90821425ccf8ca75662b69b75",
+                "locator": "Normalized paragraph 481; lines 2258-2263",
+                "quote": "Operating income increased from $7.7 billion in Q2 2023 to $14.7 billion in Q2 2024"
+              }
+            ],
+            "derivation": null,
+            "missing_fields": [],
+            "next_action": "use_with_citation",
+            "guard_downgraded": false,
+            "claim": "Amazon operating income fell from about $15.3 billion in Q1 2024 to about $14.7 billion in Q2 2024."
+          }
+        ],
+        "coverage": {
+          "supported": 1,
+          "conflicted": 0,
+          "insufficient": 0
+        },
+        "verified_summary": [
+          {
+            "claim_id": "legacy-A1",
+            "text": "Amazon operating income fell from about $15.3 billion in Q1 2024 to about $14.7 billion in Q2 2024.",
+            "citations": [
+              "AMZN-2024Q1-P482",
+              "AMZN-2024Q2-P481"
+            ]
+          }
+        ],
+        "gate": "evidence_ready",
+        "usage": {
+          "input_tokens": 2553,
+          "output_tokens": 372,
+          "estimated_usd": 0.008826,
+          "provider_request_id": "msg_011CejUSuW2sdCGJidjb7Swx",
+          "model": "claude-sonnet-5",
+          "elapsed_ms": 6184
+        }
+      }
+    },
+    {
+      "id": "legacy-A6",
+      "expected": "conflicted",
+      "reviewer": "conflicted",
+      "agree": true,
+      "result": {
+        "request_id": "review-legacy-A6",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "AMZN",
+        "as_of": "2024-08-02",
+        "source_cutoff": "2024-08-02",
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [
+          "AMZN-2024Q2-P481",
+          "AMZN-2024Q2-P472",
+          "AMZN-2024Q2-P483",
+          "AMZN-2024Q2-P482",
+          "AMZN-2024Q2-P834",
+          "AMZN-2024Q2-P844"
+        ],
+        "results": [
+          {
+            "claim_id": "legacy-A6",
+            "status": "conflicted",
+            "reason": "The $30.0 billion figure is for the six months ended June 30, 2024 (first half 2024), not Q2 2024 alone. Q2 2024 operating income was $14.7 billion.",
+            "facts": [
+              {
+                "metric": "operating income",
+                "value": 14.7,
+                "currency": "USD",
+                "unit": "billion",
+                "period": "Q2 2024",
+                "basis": "GAAP",
+                "origin": "reported_actual"
+              },
+              {
+                "metric": "operating income",
+                "value": 30,
+                "currency": "USD",
+                "unit": "billion",
+                "period": "H1 2024",
+                "basis": "GAAP",
+                "origin": "reported_actual"
+              }
+            ],
+            "evidence": [
+              {
+                "source_id": "AMZN-2024Q2",
+                "passage_id": "AMZN-2024Q2-P481",
+                "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000130/amzn-20240630.htm",
+                "filed_at": "2024-08-02",
+                "period": "Q2 2024 and first half 2024",
+                "document_sha256": "38369a0019a6ccb2323ccb22ee46457664ec77b90821425ccf8ca75662b69b75",
+                "locator": "Normalized paragraph 481; lines 2258-2263",
+                "quote": "Operating income increased from $7.7 billion in Q2 2023 to $14.7 billion in Q2 2024, and increased from $12.5 billion for the six months ended June 30, 2023 to $30.0 billion for the six months ended June 30, 2024."
+              }
+            ],
+            "derivation": null,
+            "missing_fields": [],
+            "next_action": "revise_claim",
+            "guard_downgraded": false,
+            "claim": "Amazon reported $30.0 billion of operating income in Q2 2024 alone."
+          }
+        ],
+        "coverage": {
+          "supported": 0,
+          "conflicted": 1,
+          "insufficient": 0
+        },
+        "verified_summary": [],
+        "gate": "hold",
+        "usage": {
+          "input_tokens": 2604,
+          "output_tokens": 358,
+          "estimated_usd": 0.008788,
+          "provider_request_id": "msg_011CejUTE9Co6KF8cJkpQjY9",
+          "model": "claude-sonnet-5",
+          "elapsed_ms": 4016
+        }
+      }
+    },
+    {
+      "id": "legacy-M3",
+      "expected": "supported",
+      "reviewer": "supported",
+      "agree": true,
+      "result": {
+        "request_id": "review-legacy-M3",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "MRVL",
+        "as_of": "2024-12-03",
+        "source_cutoff": "2024-12-03",
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [
+          "MRVL-2025Q3-P010",
+          "MRVL-2025Q3-P008",
+          "MRVL-2025Q3-P030",
+          "MRVL-2025Q3-P172",
+          "MRVL-2025Q3-P035",
+          "MRVL-2025Q3-P022"
+        ],
+        "results": [
+          {
+            "claim_id": "legacy-M3",
+            "status": "supported",
+            "reason": "Both figures exactly match reported GAAP net loss and non-GAAP net income for Q3 FY2025.",
+            "facts": [
+              {
+                "metric": "GAAP net loss",
+                "value": 676.3,
+                "currency": "USD",
+                "unit": "million",
+                "period": "Q3 FY2025",
+                "basis": "GAAP",
+                "origin": "reported_actual"
+              },
+              {
+                "metric": "Non-GAAP net income",
+                "value": 373,
+                "currency": "USD",
+                "unit": "million",
+                "period": "Q3 FY2025",
+                "basis": "non-GAAP",
+                "origin": "reported_actual"
+              }
+            ],
+            "evidence": [
+              {
+                "source_id": "MRVL-2025Q3",
+                "passage_id": "MRVL-2025Q3-P010",
+                "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000197/q325_8kx1122024ex-991.htm",
+                "filed_at": "2024-12-03",
+                "period": "Q3 FY2025 results and Q4 outlook",
+                "document_sha256": "b0d0ca1a0adb59be5ea16a3fb14f3a317208d406eeed722471117ac03a561053",
+                "locator": "Normalized paragraph 10; lines 25-31",
+                "quote": "GAAP net loss for the third quarter of fiscal 2025 was $(676.3) million, or $(0.78) per diluted share."
+              },
+              {
+                "source_id": "MRVL-2025Q3",
+                "passage_id": "MRVL-2025Q3-P010",
+                "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000197/q325_8kx1122024ex-991.htm",
+                "filed_at": "2024-12-03",
+                "period": "Q3 FY2025 results and Q4 outlook",
+                "document_sha256": "b0d0ca1a0adb59be5ea16a3fb14f3a317208d406eeed722471117ac03a561053",
+                "locator": "Normalized paragraph 10; lines 25-31",
+                "quote": "Non-GAAP net income for the third quarter of fiscal 2025 was $373.0 million, or $0.43 per diluted share."
+              }
+            ],
+            "derivation": null,
+            "missing_fields": [],
+            "next_action": "use_with_citation",
+            "guard_downgraded": false,
+            "claim": "Marvell had a GAAP net loss of $676.3 million and non-GAAP net income of $373.0 million in Q3 FY2025."
+          }
+        ],
+        "coverage": {
+          "supported": 1,
+          "conflicted": 0,
+          "insufficient": 0
+        },
+        "verified_summary": [
+          {
+            "claim_id": "legacy-M3",
+            "text": "Marvell had a GAAP net loss of $676.3 million and non-GAAP net income of $373.0 million in Q3 FY2025.",
+            "citations": [
+              "MRVL-2025Q3-P010",
+              "MRVL-2025Q3-P010"
+            ]
+          }
+        ],
+        "gate": "evidence_ready",
+        "usage": {
+          "input_tokens": 2818,
+          "output_tokens": 375,
+          "estimated_usd": 0.009386,
+          "provider_request_id": "msg_011CejUTWmq5HXNcZGDuT7Fd",
+          "model": "claude-sonnet-5",
+          "elapsed_ms": 3986
+        }
+      }
+    },
+    {
+      "id": "legacy-M8",
+      "expected": "insufficient",
+      "reviewer": "insufficient",
+      "agree": true,
+      "result": {
+        "request_id": "review-legacy-M8",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "MRVL",
+        "as_of": "2024-12-03",
+        "source_cutoff": "2024-12-03",
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [
+          "MRVL-2025Q2-P011",
+          "MRVL-2025Q3-P011",
+          "MRVL-2025Q2-P030",
+          "MRVL-2025Q3-P030",
+          "MRVL-2025Q2-P047",
+          "MRVL-2025Q2-P070"
+        ],
+        "results": [
+          {
+            "claim_id": "legacy-M8",
+            "status": "insufficient",
+            "reason": "No evidence in the supplied passages mentions market share figures or a 70% custom AI accelerator market share for Marvell in any period.",
+            "facts": [],
+            "evidence": [],
+            "derivation": null,
+            "missing_fields": [
+              "market_share_metric",
+              "period",
+              "source_for_market_share"
+            ],
+            "next_action": "fetch_more_evidence",
+            "guard_downgraded": false,
+            "claim": "Marvell held 70% of the global custom AI accelerator market in Q3 FY2025."
+          }
+        ],
+        "coverage": {
+          "supported": 0,
+          "conflicted": 0,
+          "insufficient": 1
+        },
+        "verified_summary": [],
+        "gate": "hold",
+        "usage": {
+          "input_tokens": 2974,
+          "output_tokens": 122,
+          "estimated_usd": 0.007168,
+          "provider_request_id": "msg_011CejUTorVDdr27F7VqFzux",
+          "model": "claude-sonnet-5",
+          "elapsed_ms": 2852
+        }
+      }
+    },
+    {
+      "id": "legacy-N5",
+      "expected": "conflicted",
+      "reviewer": "conflicted",
+      "agree": true,
+      "result": {
+        "request_id": "review-legacy-N5",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "NVDA",
+        "as_of": "2024-08-28",
+        "source_cutoff": "2024-08-28",
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [
+          "NVDA-2025Q2-P455",
+          "NVDA-2025Q2-P695",
+          "NVDA-2025Q2-P457",
+          "NVDA-2025Q2-P418",
+          "NVDA-2025Q2-P445",
+          "NVDA-2025Q2-P444"
+        ],
+        "results": [
+          {
+            "claim_id": "legacy-N5",
+            "status": "conflicted",
+            "reason": "The evidence states inference was an estimate over the trailing four quarters (not Q2 FY2025 alone) and was 'over 40%', not 'exactly 40%'.",
+            "facts": [
+              {
+                "metric": "Inference share of Data Center revenue",
+                "value": 40,
+                "currency": null,
+                "unit": "percent",
+                "period": "Trailing four quarters ending Q2 FY2025",
+                "basis": "non-GAAP",
+                "origin": "management_guidance"
+              }
+            ],
+            "evidence": [
+              {
+                "source_id": "NVDA-2025Q2",
+                "passage_id": "NVDA-2025Q2-P455",
+                "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000264/nvda-20240728.htm",
+                "filed_at": "2024-08-28",
+                "period": "Q2 FY2025",
+                "document_sha256": "af5d2297eea965341271a23a0d8cb5c52ff9213d654d8f0489da34cec739ead1",
+                "locator": "Normalized paragraph 455; lines 2298-2316",
+                "quote": "Over the trailing four quarters, we estimate that inference drove over 40% of our Data Center revenue."
+              }
+            ],
+            "derivation": null,
+            "missing_fields": [],
+            "next_action": "revise_claim",
+            "guard_downgraded": false,
+            "claim": "NVIDIA disclosed that inference was exactly 40% of Data Center revenue in Q2 FY2025 alone."
+          }
+        ],
+        "coverage": {
+          "supported": 0,
+          "conflicted": 1,
+          "insufficient": 0
+        },
+        "verified_summary": [],
+        "gate": "hold",
+        "usage": {
+          "input_tokens": 3315,
+          "output_tokens": 260,
+          "estimated_usd": 0.00923,
+          "provider_request_id": "msg_011CejUU2P3vM3Qh5PUANe9e",
+          "model": "claude-sonnet-5",
+          "elapsed_ms": 4193
+        }
+      }
+    },
+    {
+      "id": "AMZN-2024Q1-C0",
+      "expected": "conflicted",
+      "reviewer": "conflicted",
+      "agree": true,
+      "result": {
+        "request_id": "review-AMZN-2024Q1-C0",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "AMZN",
+        "as_of": "2024-05-01",
+        "source_cutoff": "2024-05-01",
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [
+          "AMZN-2024Q1-P471",
+          "AMZN-2024Q1-P483",
+          "AMZN-2024Q1-P484",
+          "AMZN-2024Q1-P835",
+          "AMZN-2024Q1-P482",
+          "AMZN-2024Q1-P470"
+        ],
+        "results": [
+          {
+            "claim_id": "AMZN-2024Q1-C0",
+            "status": "conflicted",
+            "reason": "Evidence states AWS sales increased 17% year over year in Q1 2024, not 71%.",
+            "facts": [
+              {
+                "metric": "AWS sales growth YoY",
+                "value": 17,
+                "currency": null,
+                "unit": "percent",
+                "period": "Q1 2024",
+                "basis": "GAAP",
+                "origin": "reported_actual"
+              }
+            ],
+            "evidence": [
+              {
+                "source_id": "AMZN-2024Q1",
+                "passage_id": "AMZN-2024Q1-P471",
+                "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000083/amzn-20240331.htm",
+                "filed_at": "2024-05-01",
+                "period": "Q1 2024",
+                "document_sha256": "66bc009ff6f816f73a134dc21f52a2cb3439fe1abffe1e7467ddfd9b693d2f85",
+                "locator": "Normalized paragraph 471; lines 2178-2181",
+                "quote": "AWS sales increased 17% in Q1 2024 compared to the comparable prior year period."
+              }
+            ],
+            "derivation": null,
+            "missing_fields": [],
+            "next_action": "revise_claim",
+            "guard_downgraded": false,
+            "claim": "AWS sales increased 71% year over year in Q1 2024."
+          }
+        ],
+        "coverage": {
+          "supported": 0,
+          "conflicted": 1,
+          "insufficient": 0
+        },
+        "verified_summary": [],
+        "gate": "hold",
+        "usage": {
+          "input_tokens": 2493,
+          "output_tokens": 225,
+          "estimated_usd": 0.007236,
+          "provider_request_id": "msg_011CejUUL2hKaUjJ2MhzgpXq",
+          "model": "claude-sonnet-5",
+          "elapsed_ms": 3270
+        }
+      }
+    },
+    {
+      "id": "AMZN-2024Q1-U",
+      "expected": "insufficient",
+      "reviewer": "insufficient",
+      "agree": true,
+      "result": {
+        "request_id": "review-AMZN-2024Q1-U",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "AMZN",
+        "as_of": "2024-05-01",
+        "source_cutoff": "2024-05-01",
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [
+          "AMZN-2024Q1-P787",
+          "AMZN-2024Q1-P858",
+          "AMZN-2024Q1-P473",
+          "AMZN-2024Q1-P482",
+          "AMZN-2024Q1-P471",
+          "AMZN-2024Q1-P483"
+        ],
+        "results": [
+          {
+            "claim_id": "AMZN-2024Q1-U",
+            "status": "insufficient",
+            "reason": "The evidence contains no statement guaranteeing future revenue growth or attributing all future growth exclusively to generative AI; this is unsupported causal speculation about the future.",
+            "facts": [],
+            "evidence": [],
+            "derivation": null,
+            "missing_fields": [
+              "management_statement_on_future_revenue_causation",
+              "guidance_on_generative_AI_exclusivity"
+            ],
+            "next_action": "fetch_more_evidence",
+            "guard_downgraded": false,
+            "claim": "AMZN management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+          }
+        ],
+        "coverage": {
+          "supported": 0,
+          "conflicted": 0,
+          "insufficient": 1
+        },
+        "verified_summary": [],
+        "gate": "hold",
+        "usage": {
+          "input_tokens": 2536,
+          "output_tokens": 157,
+          "estimated_usd": 0.006642,
+          "provider_request_id": "msg_011CejUUa1KW9WQdpURQHXdD",
+          "model": "claude-sonnet-5",
+          "elapsed_ms": 3017
+        }
+      }
+    },
+    {
+      "id": "AMZN-2024Q2-C1",
+      "expected": "conflicted",
+      "reviewer": "conflicted",
+      "agree": true,
+      "result": {
+        "request_id": "review-AMZN-2024Q2-C1",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "AMZN",
+        "as_of": "2024-08-02",
+        "source_cutoff": "2024-08-02",
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [
+          "AMZN-2024Q2-P481",
+          "AMZN-2024Q2-P483",
+          "AMZN-2024Q2-P482",
+          "AMZN-2024Q2-P469",
+          "AMZN-2024Q2-P470",
+          "AMZN-2024Q2-P472"
+        ],
+        "results": [
+          {
+            "claim_id": "AMZN-2024Q2-C1",
+            "status": "conflicted",
+            "reason": "The $30.0 billion figure is for the six months ended June 30, 2024 (first half), not for Q2 2024 alone. The evidence states Q2 2024 operating income was $14.7 billion.",
+            "facts": [
+              {
+                "metric": "operating income",
+                "value": 14.7,
+                "currency": "USD",
+                "unit": "billion",
+                "period": "Q2 2024",
+                "basis": "GAAP",
+                "origin": "reported_actual"
+              },
+              {
+                "metric": "operating income",
+                "value": 30,
+                "currency": "USD",
+                "unit": "billion",
+                "period": "H1 2024 (six months ended June 30, 2024)",
+                "basis": "GAAP",
+                "origin": "reported_actual"
+              }
+            ],
+            "evidence": [
+              {
+                "source_id": "AMZN-2024Q2",
+                "passage_id": "AMZN-2024Q2-P481",
+                "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000130/amzn-20240630.htm",
+                "filed_at": "2024-08-02",
+                "period": "Q2 2024 and first half 2024",
+                "document_sha256": "38369a0019a6ccb2323ccb22ee46457664ec77b90821425ccf8ca75662b69b75",
+                "locator": "Normalized paragraph 481; lines 2258-2263",
+                "quote": "Operating income increased from $7.7 billion in Q2 2023 to $14.7 billion in Q2 2024, and increased from $12.5 billion for the six months ended June 30, 2023 to $30.0 billion for the six months ended June 30, 2024."
+              }
+            ],
+            "derivation": null,
+            "missing_fields": [],
+            "next_action": "revise_claim",
+            "guard_downgraded": false,
+            "claim": "Amazon operating income was $30.0 billion for the three months ended June 30, 2024."
+          }
+        ],
+        "coverage": {
+          "supported": 0,
+          "conflicted": 1,
+          "insufficient": 0
+        },
+        "verified_summary": [],
+        "gate": "hold",
+        "usage": {
+          "input_tokens": 2730,
+          "output_tokens": 382,
+          "estimated_usd": 0.00928,
+          "provider_request_id": "msg_011CejUUnXA4advTZMG1AQ2U",
+          "model": "claude-sonnet-5",
+          "elapsed_ms": 4224
+        }
+      }
+    },
+    {
+      "id": "MRVL-2025Q2-S0",
+      "expected": "supported",
+      "reviewer": "supported",
+      "agree": true,
+      "result": {
+        "request_id": "review-MRVL-2025Q2-S0",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "MRVL",
+        "as_of": "2024-08-29",
+        "source_cutoff": "2024-08-29",
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [
+          "MRVL-2025Q2-P006",
+          "MRVL-2025Q2-P010",
+          "MRVL-2025Q2-P013",
+          "MRVL-2025Q2-P047",
+          "MRVL-2025Q2-P070",
+          "MRVL-2025Q2-P110"
+        ],
+        "results": [
+          {
+            "claim_id": "MRVL-2025Q2-S0",
+            "status": "supported",
+            "reason": "Reported actual Q2 FY2025 net revenue matches the claimed $1.273 billion.",
+            "facts": [
+              {
+                "metric": "Net revenue",
+                "value": 1.273,
+                "currency": "USD",
+                "unit": "billion",
+                "period": "Q2 FY2025",
+                "basis": "GAAP",
+                "origin": "reported_actual"
+              }
+            ],
+            "evidence": [
+              {
+                "source_id": "MRVL-2025Q2",
+                "passage_id": "MRVL-2025Q2-P006",
+                "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000140/q225_8kx832024ex-991.htm",
+                "filed_at": "2024-08-29",
+                "period": "Q2 FY2025 results and Q3 outlook",
+                "document_sha256": "ddec39e83e02580c3bb1f1f6a027d1e00f25a9c44bcf928db50c97e32472eaba",
+                "locator": "Normalized paragraph 6; lines 13-13",
+                "quote": "Q2 Net Revenue: $1.273 billion, declined by (5)% year-on-year"
+              },
+              {
+                "source_id": "MRVL-2025Q2",
+                "passage_id": "MRVL-2025Q2-P010",
+                "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000140/q225_8kx832024ex-991.htm",
+                "filed_at": "2024-08-29",
+                "period": "Q2 FY2025 results and Q3 outlook",
+                "document_sha256": "ddec39e83e02580c3bb1f1f6a027d1e00f25a9c44bcf928db50c97e32472eaba",
+                "locator": "Normalized paragraph 10; lines 25-31",
+                "quote": "Net revenue for the second quarter of fiscal 2025 was $1.273 billion"
+              }
+            ],
+            "derivation": null,
+            "missing_fields": [],
+            "next_action": "use_with_citation",
+            "guard_downgraded": false,
+            "claim": "Marvell Q2 FY2025 revenue was $1.273 billion."
+          }
+        ],
+        "coverage": {
+          "supported": 1,
+          "conflicted": 0,
+          "insufficient": 0
+        },
+        "verified_summary": [
+          {
+            "claim_id": "MRVL-2025Q2-S0",
+            "text": "Marvell Q2 FY2025 revenue was $1.273 billion.",
+            "citations": [
+              "MRVL-2025Q2-P006",
+              "MRVL-2025Q2-P010"
+            ]
+          }
+        ],
+        "gate": "evidence_ready",
+        "usage": {
+          "input_tokens": 2598,
+          "output_tokens": 280,
+          "estimated_usd": 0.007996,
+          "provider_request_id": "msg_011CejUV7A5411NsB68v3z3U",
+          "model": "claude-sonnet-5",
+          "elapsed_ms": 3670
+        }
+      }
+    },
+    {
+      "id": "MRVL-2025Q2-C2",
+      "expected": "conflicted",
+      "reviewer": "conflicted",
+      "agree": true,
+      "result": {
+        "request_id": "review-MRVL-2025Q2-C2",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "MRVL",
+        "as_of": "2024-08-29",
+        "source_cutoff": "2024-08-29",
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [
+          "MRVL-2025Q2-P013",
+          "MRVL-2025Q2-P006",
+          "MRVL-2025Q2-P010",
+          "MRVL-2025Q2-P189",
+          "MRVL-2025Q2-P198",
+          "MRVL-2025Q2-P035"
+        ],
+        "results": [
+          {
+            "claim_id": "MRVL-2025Q2-C2",
+            "status": "conflicted",
+            "reason": "The evidence shows Q3 FY2025 guidance was $1.450 billion +/- 5%, not $1.800 billion as claimed.",
+            "facts": [
+              {
+                "metric": "net revenue guidance",
+                "value": 1450000000,
+                "currency": "USD",
+                "unit": "USD",
+                "period": "Q3 FY2025",
+                "basis": "non-GAAP",
+                "origin": "management_guidance"
+              }
+            ],
+            "evidence": [
+              {
+                "source_id": "MRVL-2025Q2",
+                "passage_id": "MRVL-2025Q2-P013",
+                "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000140/q225_8kx832024ex-991.htm",
+                "filed_at": "2024-08-29",
+                "period": "Q2 FY2025 results and Q3 outlook",
+                "document_sha256": "ddec39e83e02580c3bb1f1f6a027d1e00f25a9c44bcf928db50c97e32472eaba",
+                "locator": "Normalized paragraph 13; lines 46-46",
+                "quote": "Net revenue is expected to be $1.450 billion +/- 5%."
+              }
+            ],
+            "derivation": null,
+            "missing_fields": [],
+            "next_action": "revise_claim",
+            "guard_downgraded": false,
+            "claim": "Marvell expected Q3 FY2025 net revenue of $1.800 billion plus or minus 5%."
+          }
+        ],
+        "coverage": {
+          "supported": 0,
+          "conflicted": 1,
+          "insufficient": 0
+        },
+        "verified_summary": [],
+        "gate": "hold",
+        "usage": {
+          "input_tokens": 2700,
+          "output_tokens": 237,
+          "estimated_usd": 0.00777,
+          "provider_request_id": "msg_011CejUVNwqXHwatihPhgNfC",
+          "model": "claude-sonnet-5",
+          "elapsed_ms": 3055
+        }
+      }
+    },
+    {
+      "id": "MRVL-2025Q3-S1",
+      "expected": "supported",
+      "reviewer": "supported",
+      "agree": true,
+      "result": {
+        "request_id": "review-MRVL-2025Q3-S1",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "MRVL",
+        "as_of": "2024-12-03",
+        "source_cutoff": "2024-12-03",
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [
+          "MRVL-2025Q3-P010",
+          "MRVL-2025Q3-P172",
+          "MRVL-2025Q3-P008",
+          "MRVL-2025Q3-P030",
+          "MRVL-2025Q3-P047",
+          "MRVL-2025Q3-P070"
+        ],
+        "results": [
+          {
+            "claim_id": "MRVL-2025Q3-S1",
+            "status": "supported",
+            "reason": "Directly confirmed by the earnings release stating non-GAAP net income of $373.0 million for Q3 FY2025.",
+            "facts": [
+              {
+                "metric": "non-GAAP net income",
+                "value": 373,
+                "currency": "USD",
+                "unit": "million",
+                "period": "Q3 FY2025",
+                "basis": "non-GAAP",
+                "origin": "reported_actual"
+              }
+            ],
+            "evidence": [
+              {
+                "source_id": "MRVL-2025Q3",
+                "passage_id": "MRVL-2025Q3-P010",
+                "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000197/q325_8kx1122024ex-991.htm",
+                "filed_at": "2024-12-03",
+                "period": "Q3 FY2025 results and Q4 outlook",
+                "document_sha256": "b0d0ca1a0adb59be5ea16a3fb14f3a317208d406eeed722471117ac03a561053",
+                "locator": "Normalized paragraph 10; lines 25-31",
+                "quote": "Non-GAAP net income for the third quarter of fiscal 2025 was $373.0 million, or $0.43 per diluted share."
+              }
+            ],
+            "derivation": null,
+            "missing_fields": [],
+            "next_action": "use_with_citation",
+            "guard_downgraded": false,
+            "claim": "Marvell Q3 FY2025 non-GAAP net income was $373.0 million."
+          }
+        ],
+        "coverage": {
+          "supported": 1,
+          "conflicted": 0,
+          "insufficient": 0
+        },
+        "verified_summary": [
+          {
+            "claim_id": "MRVL-2025Q3-S1",
+            "text": "Marvell Q3 FY2025 non-GAAP net income was $373.0 million.",
+            "citations": [
+              "MRVL-2025Q3-P010"
+            ]
+          }
+        ],
+        "gate": "evidence_ready",
+        "usage": {
+          "input_tokens": 2737,
+          "output_tokens": 248,
+          "estimated_usd": 0.007954,
+          "provider_request_id": "msg_011CejUVbnkhBDJjLGyt6mgj",
+          "model": "claude-sonnet-5",
+          "elapsed_ms": 3469
+        }
+      }
+    },
+    {
+      "id": "MRVL-2025Q3-T",
+      "expected": "insufficient",
+      "reviewer": "insufficient",
+      "agree": true,
+      "result": {
+        "request_id": "review-MRVL-2025Q3-T",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "MRVL",
+        "as_of": "2020-01-01",
+        "source_cutoff": null,
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [],
+        "results": [
+          {
+            "claim_id": "MRVL-2025Q3-T",
+            "claim": "Marvell Q3 FY2025 revenue was $1.516 billion.",
+            "status": "insufficient",
+            "reason": "No eligible evidence before as_of.",
+            "facts": [],
+            "evidence": [],
+            "derivation": null,
+            "missing_fields": [
+              "eligible_evidence"
+            ],
+            "next_action": "fetch_more_evidence",
+            "guard_downgraded": false
+          }
+        ],
+        "coverage": {
+          "supported": 0,
+          "conflicted": 0,
+          "insufficient": 1
+        },
+        "verified_summary": [],
+        "gate": "hold",
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_usd": 0,
+          "model": "not_called",
+          "provider_request_id": "",
+          "elapsed_ms": 0
+        }
+      }
+    },
+    {
+      "id": "NVDA-2025Q1-S2",
+      "expected": "supported",
+      "reviewer": "supported",
+      "agree": true,
+      "result": {
+        "request_id": "review-NVDA-2025Q1-S2",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "NVDA",
+        "as_of": "2024-05-29",
+        "source_cutoff": "2024-05-29",
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [
+          "NVDA-2025Q1-P443",
+          "NVDA-2025Q1-P444",
+          "NVDA-2025Q1-P445",
+          "NVDA-2025Q1-P451",
+          "NVDA-2025Q1-P453",
+          "NVDA-2025Q1-P687"
+        ],
+        "results": [
+          {
+            "claim_id": "NVDA-2025Q1-S2",
+            "status": "supported",
+            "reason": "Directly stated in the passage that revenue was up 262% from a year ago for Q1 FY2025.",
+            "facts": [
+              {
+                "metric": "Revenue growth YoY",
+                "value": 262,
+                "currency": null,
+                "unit": "percent",
+                "period": "Q1 FY2025",
+                "basis": "unknown",
+                "origin": "reported_actual"
+              },
+              {
+                "metric": "Revenue",
+                "value": 26,
+                "currency": "USD",
+                "unit": "billion",
+                "period": "Q1 FY2025",
+                "basis": "unknown",
+                "origin": "reported_actual"
+              }
+            ],
+            "evidence": [
+              {
+                "source_id": "NVDA-2025Q1",
+                "passage_id": "NVDA-2025Q1-P443",
+                "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000124/nvda-20240428.htm",
+                "filed_at": "2024-05-29",
+                "period": "Q1 FY2025",
+                "document_sha256": "0d5b058779ec2cbbc24b67ea9bbc8b5c455177b86ce972f3c203329b99fadde8",
+                "locator": "Normalized paragraph 443; lines 2192-2193",
+                "quote": "Revenue was $26.0 billion, up 262% from a year ago and up 18% sequentially."
+              }
+            ],
+            "derivation": null,
+            "missing_fields": [],
+            "next_action": "use_with_citation",
+            "guard_downgraded": false,
+            "claim": "NVIDIA Q1 FY2025 revenue was up 262% from a year ago."
+          }
+        ],
+        "coverage": {
+          "supported": 1,
+          "conflicted": 0,
+          "insufficient": 0
+        },
+        "verified_summary": [
+          {
+            "claim_id": "NVDA-2025Q1-S2",
+            "text": "NVIDIA Q1 FY2025 revenue was up 262% from a year ago.",
+            "citations": [
+              "NVDA-2025Q1-P443"
+            ]
+          }
+        ],
+        "gate": "evidence_ready",
+        "usage": {
+          "input_tokens": 2814,
+          "output_tokens": 288,
+          "estimated_usd": 0.008508,
+          "provider_request_id": "msg_011CejUVrp94p2ULnXX2cW78",
+          "model": "claude-sonnet-5",
+          "elapsed_ms": 3779
+        }
+      }
+    },
+    {
+      "id": "NVDA-2025Q2-C0",
+      "expected": "conflicted",
+      "reviewer": "conflicted",
+      "agree": true,
+      "result": {
+        "request_id": "review-NVDA-2025Q2-C0",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "NVDA",
+        "as_of": "2024-08-28",
+        "source_cutoff": "2024-08-28",
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [
+          "NVDA-2025Q2-P695",
+          "NVDA-2025Q2-P444",
+          "NVDA-2025Q2-P457",
+          "NVDA-2025Q2-P456",
+          "NVDA-2025Q2-P455",
+          "NVDA-2025Q2-P445"
+        ],
+        "results": [
+          {
+            "claim_id": "NVDA-2025Q2-C0",
+            "status": "conflicted",
+            "reason": "Evidence states Q2 FY2025 revenue was $30.0 billion, not $26.0 billion as claimed.",
+            "facts": [
+              {
+                "metric": "total revenue",
+                "value": 30,
+                "currency": "USD",
+                "unit": "billion",
+                "period": "Q2 FY2025",
+                "basis": "GAAP",
+                "origin": "reported_actual"
+              }
+            ],
+            "evidence": [
+              {
+                "source_id": "NVDA-2025Q2",
+                "passage_id": "NVDA-2025Q2-P444",
+                "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000264/nvda-20240728.htm",
+                "filed_at": "2024-08-28",
+                "period": "Q2 FY2025",
+                "document_sha256": "af5d2297eea965341271a23a0d8cb5c52ff9213d654d8f0489da34cec739ead1",
+                "locator": "Normalized paragraph 444; lines 2241-2242",
+                "quote": "Revenue was $30.0 billion, up 122% from a year ago and up 15% sequentially."
+              }
+            ],
+            "derivation": null,
+            "missing_fields": [],
+            "next_action": "revise_claim",
+            "guard_downgraded": false,
+            "claim": "NVIDIA Q2 FY2025 revenue was $26.0 billion."
+          }
+        ],
+        "coverage": {
+          "supported": 0,
+          "conflicted": 1,
+          "insufficient": 0
+        },
+        "verified_summary": [],
+        "gate": "hold",
+        "usage": {
+          "input_tokens": 3245,
+          "output_tokens": 232,
+          "estimated_usd": 0.00881,
+          "provider_request_id": "msg_011CejUW8wFhJnjsUwWn27me",
+          "model": "claude-sonnet-5",
+          "elapsed_ms": 3254
+        }
+      }
+    },
+    {
+      "id": "NVDA-2025Q2-U",
+      "expected": "insufficient",
+      "reviewer": "conflicted",
+      "agree": false,
+      "result": {
+        "request_id": "review-NVDA-2025Q2-U",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "NVDA",
+        "as_of": "2024-08-28",
+        "source_cutoff": "2024-08-28",
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [
+          "NVDA-2025Q2-P687",
+          "NVDA-2025Q2-P445",
+          "NVDA-2025Q2-P419",
+          "NVDA-2025Q2-P693",
+          "NVDA-2025Q2-P418",
+          "NVDA-2025Q2-P457"
+        ],
+        "results": [
+          {
+            "claim_id": "NVDA-2025Q2-U",
+            "status": "conflicted",
+            "reason": "The evidence explicitly disclaims certainty and exclusivity: growth was driven by multiple factors (compute, networking, various customer types) not exclusively generative AI, and management states the long-term trajectory of generative AI demand is unknown, contradicting any 'guaranteed' or 'exclusive cause' claim.",
+            "facts": [
+              {
+                "metric": "Data Center revenue growth",
+                "value": 154,
+                "currency": null,
+                "unit": "percent",
+                "period": "Q2 FY2025",
+                "basis": "not_applicable",
+                "origin": "reported_actual"
+              }
+            ],
+            "evidence": [
+              {
+                "source_id": "NVDA-2025Q2",
+                "passage_id": "NVDA-2025Q2-P445",
+                "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000264/nvda-20240728.htm",
+                "filed_at": "2024-08-28",
+                "period": "Q2 FY2025",
+                "document_sha256": "af5d2297eea965341271a23a0d8cb5c52ff9213d654d8f0489da34cec739ead1",
+                "locator": "Normalized paragraph 445; lines 2244-2259",
+                "quote": "Strong year-on-year growth was driven by all customer types from both compute and networking revenue."
+              },
+              {
+                "source_id": "NVDA-2025Q2",
+                "passage_id": "NVDA-2025Q2-P419",
+                "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000264/nvda-20240728.htm",
+                "filed_at": "2024-08-28",
+                "period": "Q2 FY2025",
+                "document_sha256": "af5d2297eea965341271a23a0d8cb5c52ff9213d654d8f0489da34cec739ead1",
+                "locator": "Normalized paragraph 419; lines 2063-2068",
+                "quote": "Recent technologies, such as generative AI models, have emerged, and while they have driven increased demand for Data Center, the long-term trajectory is unknown."
+              }
+            ],
+            "derivation": null,
+            "missing_fields": [],
+            "next_action": "revise_claim",
+            "guard_downgraded": false,
+            "claim": "NVDA management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+          }
+        ],
+        "coverage": {
+          "supported": 0,
+          "conflicted": 1,
+          "insufficient": 0
+        },
+        "verified_summary": [],
+        "gate": "hold",
+        "usage": {
+          "input_tokens": 3212,
+          "output_tokens": 372,
+          "estimated_usd": 0.010144,
+          "provider_request_id": "msg_011CejUWNnwT3ZPNtCxkTeic",
+          "model": "claude-sonnet-5",
+          "elapsed_ms": 4776
+        }
+      }
+    },
+    {
+      "id": "AMZN-2023FY-C1",
+      "expected": "conflicted",
+      "reviewer": "conflicted",
+      "agree": true,
+      "result": {
+        "request_id": "review-AMZN-2023FY-C1",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "AMZN",
+        "as_of": "2024-02-02",
+        "source_cutoff": "2024-02-02",
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [
+          "AMZN-2023FY-P426",
+          "AMZN-2023FY-P787",
+          "AMZN-2023FY-P519",
+          "AMZN-2023FY-P392",
+          "AMZN-2023FY-P427",
+          "AMZN-2023FY-P429"
+        ],
+        "results": [
+          {
+            "claim_id": "AMZN-2023FY-C1",
+            "status": "conflicted",
+            "reason": "The evidence shows $12.2 billion was the operating income for 2022, not 2023. FY2023 operating income was $36.9 billion.",
+            "facts": [
+              {
+                "metric": "operating income",
+                "value": 12.2,
+                "currency": "USD",
+                "unit": "billion",
+                "period": "FY2022",
+                "basis": "GAAP",
+                "origin": "reported_actual"
+              },
+              {
+                "metric": "operating income",
+                "value": 36.9,
+                "currency": "USD",
+                "unit": "billion",
+                "period": "FY2023",
+                "basis": "GAAP",
+                "origin": "reported_actual"
+              }
+            ],
+            "evidence": [
+              {
+                "source_id": "AMZN-2023FY",
+                "passage_id": "AMZN-2023FY-P426",
+                "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000008/amzn-20231231.htm",
+                "filed_at": "2024-02-02",
+                "period": "FY2023",
+                "document_sha256": "a469a0feca6dd5728b10c73076c2c120db58116938614c5b1b864fe13674266d",
+                "locator": "Normalized paragraph 426; lines 2585-2588",
+                "quote": "Operating income was $12.2 billion and $36.9 billion for 2022 and 2023."
+              }
+            ],
+            "derivation": null,
+            "missing_fields": [],
+            "next_action": "revise_claim",
+            "guard_downgraded": false,
+            "claim": "Amazon operating income was $12.2 billion in 2023."
+          }
+        ],
+        "coverage": {
+          "supported": 0,
+          "conflicted": 1,
+          "insufficient": 0
+        },
+        "verified_summary": [],
+        "gate": "hold",
+        "usage": {
+          "input_tokens": 2892,
+          "output_tokens": 288,
+          "estimated_usd": 0.008664,
+          "provider_request_id": "msg_011CejUWjC2XzK94HCar66Kc",
+          "model": "claude-sonnet-5",
+          "elapsed_ms": 3614
+        }
+      }
+    },
+    {
+      "id": "AMZN-2024Q3-S0",
+      "expected": "supported",
+      "reviewer": "supported",
+      "agree": true,
+      "result": {
+        "request_id": "review-AMZN-2024Q3-S0",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "AMZN",
+        "as_of": "2024-11-01",
+        "source_cutoff": "2024-11-01",
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [
+          "AMZN-2024Q3-P479",
+          "AMZN-2024Q3-P491",
+          "AMZN-2024Q3-P492",
+          "AMZN-2024Q3-P526",
+          "AMZN-2024Q3-P395",
+          "AMZN-2024Q3-P493"
+        ],
+        "results": [
+          {
+            "claim_id": "AMZN-2024Q3-S0",
+            "status": "supported",
+            "reason": "Directly confirmed by evidence stating AWS sales increased 19% in Q3 2024 compared to the prior year period.",
+            "facts": [
+              {
+                "metric": "AWS sales growth",
+                "value": 19,
+                "currency": null,
+                "unit": "percent",
+                "period": "Q3 2024",
+                "basis": "GAAP",
+                "origin": "reported_actual"
+              }
+            ],
+            "evidence": [
+              {
+                "source_id": "AMZN-2024Q3",
+                "passage_id": "AMZN-2024Q3-P479",
+                "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000161/amzn-20240930.htm",
+                "filed_at": "2024-11-01",
+                "period": "Q3 2024 and nine months 2024",
+                "document_sha256": "07260ab0297fd274a4b1fa2101dacf4e3b2c27829c3fa1a3a598536b4c0d47bc",
+                "locator": "Normalized paragraph 479; lines 2324-2328",
+                "quote": "AWS sales increased 19% in Q3 2024, and 18% for the nine months ended September 30, 2024 compared to the comparable prior year periods."
+              }
+            ],
+            "derivation": null,
+            "missing_fields": [],
+            "next_action": "use_with_citation",
+            "guard_downgraded": false,
+            "claim": "AWS sales increased 19% in Q3 2024 year over year."
+          }
+        ],
+        "coverage": {
+          "supported": 1,
+          "conflicted": 0,
+          "insufficient": 0
+        },
+        "verified_summary": [
+          {
+            "claim_id": "AMZN-2024Q3-S0",
+            "text": "AWS sales increased 19% in Q3 2024 year over year.",
+            "citations": [
+              "AMZN-2024Q3-P479"
+            ]
+          }
+        ],
+        "gate": "evidence_ready",
+        "usage": {
+          "input_tokens": 2848,
+          "output_tokens": 247,
+          "estimated_usd": 0.008166,
+          "provider_request_id": "msg_011CejUWzub2eNhjDHwCtZ8M",
+          "model": "claude-sonnet-5",
+          "elapsed_ms": 3686
+        }
+      }
+    },
+    {
+      "id": "AMZN-2024Q3-C2",
+      "expected": "conflicted",
+      "reviewer": "conflicted",
+      "agree": true,
+      "result": {
+        "request_id": "review-AMZN-2024Q3-C2",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "AMZN",
+        "as_of": "2024-11-01",
+        "source_cutoff": "2024-11-01",
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [
+          "AMZN-2024Q3-P490",
+          "AMZN-2024Q3-P492",
+          "AMZN-2024Q3-P493",
+          "AMZN-2024Q3-P185",
+          "AMZN-2024Q3-P450",
+          "AMZN-2024Q3-P491"
+        ],
+        "results": [
+          {
+            "claim_id": "AMZN-2024Q3-C2",
+            "status": "conflicted",
+            "reason": "The $47.4 billion figure is explicitly the operating income for the nine months ended September 30, 2024, not for the three-month Q3 2024 period. The evidence shows Q3 2024 operating income was $17.4 billion.",
+            "facts": [
+              {
+                "metric": "operating income",
+                "value": 17.4,
+                "currency": "USD",
+                "unit": "billion",
+                "period": "Q3 2024",
+                "basis": "GAAP",
+                "origin": "reported_actual"
+              },
+              {
+                "metric": "operating income",
+                "value": 47.4,
+                "currency": "USD",
+                "unit": "billion",
+                "period": "nine months ended September 30, 2024",
+                "basis": "GAAP",
+                "origin": "reported_actual"
+              }
+            ],
+            "evidence": [
+              {
+                "source_id": "AMZN-2024Q3",
+                "passage_id": "AMZN-2024Q3-P490",
+                "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000161/amzn-20240930.htm",
+                "filed_at": "2024-11-01",
+                "period": "Q3 2024 and nine months 2024",
+                "document_sha256": "07260ab0297fd274a4b1fa2101dacf4e3b2c27829c3fa1a3a598536b4c0d47bc",
+                "locator": "Normalized paragraph 490; lines 2357-2362",
+                "quote": "increased from $11.2 billion in Q3 2023 to $17.4 billion in Q3 2024, and increased from $23.6 billion for the nine months ended September 30, 2023 to $47.4 billion for the nine months ended September 30, 2024"
+              }
+            ],
+            "derivation": null,
+            "missing_fields": [],
+            "next_action": "revise_claim",
+            "guard_downgraded": false,
+            "claim": "Amazon operating income was $47.4 billion for the three months ended September 30, 2024."
+          }
+        ],
+        "coverage": {
+          "supported": 0,
+          "conflicted": 1,
+          "insufficient": 0
+        },
+        "verified_summary": [],
+        "gate": "hold",
+        "usage": {
+          "input_tokens": 3180,
+          "output_tokens": 382,
+          "estimated_usd": 0.01018,
+          "provider_request_id": "msg_011CejUXGWCbZFkHWcnQiKpD",
+          "model": "claude-sonnet-5",
+          "elapsed_ms": 4461
+        }
+      }
+    },
+    {
+      "id": "MRVL-2024FY-S1",
+      "expected": "supported",
+      "reviewer": "supported",
+      "agree": true,
+      "result": {
+        "request_id": "review-MRVL-2024FY-S1",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "MRVL",
+        "as_of": "2024-03-13",
+        "source_cutoff": "2024-03-13",
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [
+          "MRVL-2024FY-P623",
+          "MRVL-2024FY-P982",
+          "MRVL-2024FY-P681",
+          "MRVL-2024FY-P682",
+          "MRVL-2024FY-P768",
+          "MRVL-2024FY-P1434"
+        ],
+        "results": [
+          {
+            "claim_id": "MRVL-2024FY-S1",
+            "status": "supported",
+            "reason": "Filing explicitly states FY2024 net revenue was $5.5 billion, 7.0% lower than FY2023's $5.9 billion.",
+            "facts": [
+              {
+                "metric": "net_revenue",
+                "value": 5.5,
+                "currency": "USD",
+                "unit": "billion",
+                "period": "FY2024 ended February 3 2024",
+                "basis": "GAAP",
+                "origin": "reported_actual"
+              },
+              {
+                "metric": "net_revenue",
+                "value": 5.9,
+                "currency": "USD",
+                "unit": "billion",
+                "period": "FY2023",
+                "basis": "GAAP",
+                "origin": "reported_actual"
+              }
+            ],
+            "evidence": [
+              {
+                "source_id": "MRVL-2024FY",
+                "passage_id": "MRVL-2024FY-P623",
+                "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000009/mrvl-20240203.htm",
+                "filed_at": "2024-03-13",
+                "period": "FY2024 ended February 3 2024",
+                "document_sha256": "d769c7845f49cbe348bfba2dcdd178a0573cf071e76a287c2d25555eece36add",
+                "locator": "Normalized paragraph 623; lines 4430-4437",
+                "quote": "Net revenue in fiscal 2024 was $5.5 billion and was 7.0% lower than net revenue of $5.9 billion in fiscal 2023."
+              }
+            ],
+            "derivation": null,
+            "missing_fields": [],
+            "next_action": "use_with_citation",
+            "guard_downgraded": false,
+            "claim": "Marvell fiscal 2024 net revenue was 7.0% lower than fiscal 2023."
+          }
+        ],
+        "coverage": {
+          "supported": 1,
+          "conflicted": 0,
+          "insufficient": 0
+        },
+        "verified_summary": [
+          {
+            "claim_id": "MRVL-2024FY-S1",
+            "text": "Marvell fiscal 2024 net revenue was 7.0% lower than fiscal 2023.",
+            "citations": [
+              "MRVL-2024FY-P623"
+            ]
+          }
+        ],
+        "gate": "evidence_ready",
+        "usage": {
+          "input_tokens": 3118,
+          "output_tokens": 324,
+          "estimated_usd": 0.009476,
+          "provider_request_id": "msg_011CejUXb6e6DpHKHubX1Q9x",
+          "model": "claude-sonnet-5",
+          "elapsed_ms": 3781
+        }
+      }
+    },
+    {
+      "id": "MRVL-2024FY-T",
+      "expected": "insufficient",
+      "reviewer": "insufficient",
+      "agree": true,
+      "result": {
+        "request_id": "review-MRVL-2024FY-T",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "MRVL",
+        "as_of": "2020-01-01",
+        "source_cutoff": null,
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [],
+        "results": [
+          {
+            "claim_id": "MRVL-2024FY-T",
+            "claim": "Marvell fiscal 2024 net revenue was about $5.5 billion.",
+            "status": "insufficient",
+            "reason": "No eligible evidence before as_of.",
+            "facts": [],
+            "evidence": [],
+            "derivation": null,
+            "missing_fields": [
+              "eligible_evidence"
+            ],
+            "next_action": "fetch_more_evidence",
+            "guard_downgraded": false
+          }
+        ],
+        "coverage": {
+          "supported": 0,
+          "conflicted": 0,
+          "insufficient": 1
+        },
+        "verified_summary": [],
+        "gate": "hold",
+        "usage": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "estimated_usd": 0,
+          "model": "not_called",
+          "provider_request_id": "",
+          "elapsed_ms": 0
+        }
+      }
+    },
+    {
+      "id": "MRVL-2025Q1-S2",
+      "expected": "supported",
+      "reviewer": "supported",
+      "agree": true,
+      "result": {
+        "request_id": "review-MRVL-2025Q1-S2",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "MRVL",
+        "as_of": "2024-05-31",
+        "source_cutoff": "2024-05-31",
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [
+          "MRVL-2025Q1-P558",
+          "MRVL-2025Q1-P999",
+          "MRVL-2025Q1-P544",
+          "MRVL-2025Q1-P1001",
+          "MRVL-2025Q1-P724",
+          "MRVL-2025Q1-P507"
+        ],
+        "results": [
+          {
+            "claim_id": "MRVL-2025Q1-S2",
+            "status": "supported",
+            "reason": "Directly matches the filing statement on gross margin increase for Q1 FY2025 vs Q1 FY2024.",
+            "facts": [
+              {
+                "metric": "gross margin change YoY",
+                "value": 3.3,
+                "currency": null,
+                "unit": "percentage_points",
+                "period": "Q1 FY2025 (three months ended May 4, 2024) vs Q1 FY2024 (three months ended April 29, 2023)",
+                "basis": "unknown",
+                "origin": "reported_actual"
+              }
+            ],
+            "evidence": [
+              {
+                "source_id": "MRVL-2025Q1",
+                "passage_id": "MRVL-2025Q1-P558",
+                "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000063/mrvl-20240504.htm",
+                "filed_at": "2024-05-31",
+                "period": "Q1 FY2025 ended May 4 2024",
+                "document_sha256": "dcba6705b9d586f839fc7e6a5c03c9958267c77302781dc0a4848690b266e408",
+                "locator": "Normalized paragraph 558; lines 2602-2606",
+                "quote": "gross margin for the three months ended May 4, 2024 increased by 3.3 percentage points compared to the three months ended April 29, 2023"
+              }
+            ],
+            "derivation": null,
+            "missing_fields": [],
+            "next_action": "use_with_citation",
+            "guard_downgraded": false,
+            "claim": "Marvell gross margin increased by 3.3 percentage points year over year for the three months ended May 4, 2024."
+          }
+        ],
+        "coverage": {
+          "supported": 1,
+          "conflicted": 0,
+          "insufficient": 0
+        },
+        "verified_summary": [
+          {
+            "claim_id": "MRVL-2025Q1-S2",
+            "text": "Marvell gross margin increased by 3.3 percentage points year over year for the three months ended May 4, 2024.",
+            "citations": [
+              "MRVL-2025Q1-P558"
+            ]
+          }
+        ],
+        "gate": "evidence_ready",
+        "usage": {
+          "input_tokens": 3028,
+          "output_tokens": 286,
+          "estimated_usd": 0.008916,
+          "provider_request_id": "msg_011CejUXsvAw9hJN1RvU1NRd",
+          "model": "claude-sonnet-5",
+          "elapsed_ms": 3855
+        }
+      }
+    },
+    {
+      "id": "NVDA-2024FY-C0",
+      "expected": "conflicted",
+      "reviewer": "conflicted",
+      "agree": true,
+      "result": {
+        "request_id": "review-NVDA-2024FY-C0",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "NVDA",
+        "as_of": "2024-02-21",
+        "source_cutoff": "2024-02-21",
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [
+          "NVDA-2024FY-P585",
+          "NVDA-2024FY-P578",
+          "NVDA-2024FY-P582",
+          "NVDA-2024FY-P661",
+          "NVDA-2024FY-P645",
+          "NVDA-2024FY-P587"
+        ],
+        "results": [
+          {
+            "claim_id": "NVDA-2024FY-C0",
+            "status": "conflicted",
+            "reason": "Evidence states FY2024 Data Center revenue was $47.5 billion, not $60.9 billion as claimed.",
+            "facts": [
+              {
+                "metric": "Data Center revenue",
+                "value": 47.5,
+                "currency": "USD",
+                "unit": "billion",
+                "period": "FY2024 ended January 28 2024",
+                "basis": "unknown",
+                "origin": "reported_actual"
+              }
+            ],
+            "evidence": [
+              {
+                "source_id": "NVDA-2024FY",
+                "passage_id": "NVDA-2024FY-P585",
+                "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
+                "filed_at": "2024-02-21",
+                "period": "FY2024 ended January 28 2024",
+                "document_sha256": "3ee6c75beb947d9e815464e5c0b6392db4f8ca20aa2f99666bc17c92b82d7759",
+                "locator": "Normalized paragraph 585; lines 3952-3965",
+                "quote": "Data Center revenue for fiscal year 2024 was $47.5 billion, up 217% from fiscal year 2023."
+              }
+            ],
+            "derivation": null,
+            "missing_fields": [],
+            "next_action": "revise_claim",
+            "guard_downgraded": false,
+            "claim": "NVIDIA fiscal 2024 Data Center revenue was $60.9 billion."
+          }
+        ],
+        "coverage": {
+          "supported": 0,
+          "conflicted": 1,
+          "insufficient": 0
+        },
+        "verified_summary": [],
+        "gate": "hold",
+        "usage": {
+          "input_tokens": 2964,
+          "output_tokens": 245,
+          "estimated_usd": 0.008378,
+          "provider_request_id": "msg_011CejUYAUq8B5Pu9J9BTsM1",
+          "model": "claude-sonnet-5",
+          "elapsed_ms": 3335
+        }
+      }
+    },
+    {
+      "id": "NVDA-2024FY-U",
+      "expected": "insufficient",
+      "reviewer": "insufficient",
+      "agree": true,
+      "result": {
+        "request_id": "review-NVDA-2024FY-U",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "NVDA",
+        "as_of": "2024-02-21",
+        "source_cutoff": "2024-02-21",
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [
+          "NVDA-2024FY-P1219",
+          "NVDA-2024FY-P1226",
+          "NVDA-2024FY-P585",
+          "NVDA-2024FY-P582",
+          "NVDA-2024FY-P939",
+          "NVDA-2024FY-P645"
+        ],
+        "results": [
+          {
+            "claim_id": "NVDA-2024FY-U",
+            "status": "insufficient",
+            "reason": "The evidence discusses generative AI as a driver of Data Center revenue growth in FY2024, but does not state that all future revenue growth will be caused exclusively by generative AI, nor that this is guaranteed. This is unsupported forward-looking speculation not entailed by the supplied passages.",
+            "facts": [],
+            "evidence": [],
+            "derivation": null,
+            "missing_fields": [
+              "explicit management statement guaranteeing future revenue growth",
+              "explicit statement attributing all future growth exclusively to generative AI"
+            ],
+            "next_action": "fetch_more_evidence",
+            "guard_downgraded": false,
+            "claim": "NVDA management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+          }
+        ],
+        "coverage": {
+          "supported": 0,
+          "conflicted": 0,
+          "insufficient": 1
+        },
+        "verified_summary": [],
+        "gate": "hold",
+        "usage": {
+          "input_tokens": 2948,
+          "output_tokens": 203,
+          "estimated_usd": 0.007926,
+          "provider_request_id": "msg_011CejUYQAbwn6uNCDfczmyR",
+          "model": "claude-sonnet-5",
+          "elapsed_ms": 3401
+        }
+      }
+    },
+    {
+      "id": "NVDA-2025Q3-C1",
+      "expected": "conflicted",
+      "reviewer": "conflicted",
+      "agree": true,
+      "result": {
+        "request_id": "review-NVDA-2025Q3-C1",
+        "engine_mode": "llm_tfidf_v2",
+        "prompt_version": "prooflens-v2.0.0",
+        "entity": "NVDA",
+        "as_of": "2024-11-20",
+        "source_cutoff": "2024-11-20",
+        "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+        "retrieved_passage_ids": [
+          "NVDA-2025Q3-P445",
+          "NVDA-2025Q3-P480",
+          "NVDA-2025Q3-P482",
+          "NVDA-2025Q3-P449",
+          "NVDA-2025Q3-P417",
+          "NVDA-2025Q3-P500"
+        ],
+        "results": [
+          {
+            "claim_id": "NVDA-2025Q3-C1",
+            "status": "conflicted",
+            "reason": "Evidence states Data Center compute revenue was $27.6 billion (also corroborated as growing 133% YoY), not $3.1 billion. The $3.1 billion figure in the evidence refers to Networking revenue, a different line item.",
+            "facts": [
+              {
+                "metric": "Data Center compute revenue",
+                "value": 27.6,
+                "currency": "USD",
+                "unit": "billion",
+                "period": "Q3 FY2025 ended October 27 2024",
+                "basis": "GAAP",
+                "origin": "reported_actual"
+              },
+              {
+                "metric": "Networking revenue",
+                "value": 3.1,
+                "currency": "USD",
+                "unit": "billion",
+                "period": "Q3 FY2025 ended October 27 2024",
+                "basis": "GAAP",
+                "origin": "reported_actual"
+              }
+            ],
+            "evidence": [
+              {
+                "source_id": "NVDA-2025Q3",
+                "passage_id": "NVDA-2025Q3-P445",
+                "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000316/nvda-20241027.htm",
+                "filed_at": "2024-11-20",
+                "period": "Q3 FY2025 ended October 27 2024",
+                "document_sha256": "5cb3ef839fe641f8ef7bbdc37020fad887d4c0ba603bc02818cc7e923f5f5af6",
+                "locator": "Normalized paragraph 445; lines 2232-2247",
+                "quote": "Data Center compute revenue was $27.6 billion, up 132% from a year ago and up 22% sequentially."
+              },
+              {
+                "source_id": "NVDA-2025Q3",
+                "passage_id": "NVDA-2025Q3-P445",
+                "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000316/nvda-20241027.htm",
+                "filed_at": "2024-11-20",
+                "period": "Q3 FY2025 ended October 27 2024",
+                "document_sha256": "5cb3ef839fe641f8ef7bbdc37020fad887d4c0ba603bc02818cc7e923f5f5af6",
+                "locator": "Normalized paragraph 445; lines 2232-2247",
+                "quote": "Networking revenue was $3.1 billion, up 20% from a year ago driven by Ethernet for AI"
+              }
+            ],
+            "derivation": null,
+            "missing_fields": [],
+            "next_action": "revise_claim",
+            "guard_downgraded": false,
+            "claim": "NVIDIA Q3 FY2025 Data Center compute revenue was $3.1 billion."
+          }
+        ],
+        "coverage": {
+          "supported": 0,
+          "conflicted": 1,
+          "insufficient": 0
+        },
+        "verified_summary": [],
+        "gate": "hold",
+        "usage": {
+          "input_tokens": 3355,
+          "output_tokens": 427,
+          "estimated_usd": 0.01098,
+          "provider_request_id": "msg_011CejUYfeWi822wuoPJuq1u",
+          "model": "claude-sonnet-5",
+          "elapsed_ms": 4629
+        }
+      }
+    }
+  ]
+}

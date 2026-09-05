@@ -1,0 +1,174 @@
+{
+  "input": {
+    "request_id": "eval-6",
+    "entity": "MRVL",
+    "as_of": "2024-12-03",
+    "language": "en",
+    "source_ids": [
+      "MRVL-2025Q3"
+    ],
+    "claims": [
+      {
+        "claim_id": "MRVL-2025Q3-U",
+        "text": "MRVL management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-6",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "MRVL",
+    "as_of": "2024-12-03",
+    "source_cutoff": "2024-12-03",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "MRVL-2025Q3-P013",
+      "MRVL-2025Q3-P011",
+      "MRVL-2025Q3-P014",
+      "MRVL-2025Q3-P015",
+      "MRVL-2025Q3-P006",
+      "MRVL-2025Q3-P041"
+    ],
+    "results": [
+      {
+        "claim_id": "MRVL-2025Q3-U",
+        "status": "insufficient",
+        "reason": "The claim asserts that management 'proved' all future revenue growth will be caused exclusively by generative AI and is guaranteed. The evidence shows AI/custom AI silicon and interconnect demand drove Q3 and Q4 outlook, and management expects momentum to continue, but it does not prove exclusivity for all future growth nor guarantee it. Guidance/forecasts are not proven facts, and no evidence states all future revenue growth will be caused exclusively by generative AI.",
+        "facts": [
+          {
+            "metric": "net_revenue",
+            "value": 1.516,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q3 FY2025",
+            "basis": "unknown",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "year_on_year_revenue_growth",
+            "value": 7,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q3 FY2025",
+            "basis": "unknown",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "sequential_revenue_growth",
+            "value": 19,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q3 FY2025",
+            "basis": "unknown",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "net_revenue_guidance",
+            "value": 1.8,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q4 FY2025",
+            "basis": "unknown",
+            "origin": "management_guidance"
+          },
+          {
+            "metric": "sequential_revenue_growth_guidance_midpoint",
+            "value": 19,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q4 FY2025",
+            "basis": "unknown",
+            "origin": "management_guidance"
+          },
+          {
+            "metric": "year_over_year_revenue_growth_guidance",
+            "value": 26,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q4 FY2025",
+            "basis": "unknown",
+            "origin": "management_guidance"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q3",
+            "passage_id": "MRVL-2025Q3-P011",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000197/q325_8kx1122024ex-991.htm",
+            "filed_at": "2024-12-03",
+            "period": "Q3 FY2025 results and Q4 outlook",
+            "document_sha256": "b0d0ca1a0adb59be5ea16a3fb14f3a317208d406eeed722471117ac03a561053",
+            "locator": "Normalized paragraph 11; lines 33-45",
+            "quote": "“Marvell’s fiscal third quarter 2025 revenue grew 19% sequentially, well above the mid-point of our guidance, driven by strong demand from AI. For the fourth quarter, we are forecasting another 19% sequential revenue growth at the midpoint of guidance, while year-over-year, we expect revenue growth to accelerate significantly to 26%, marking the beginning of a new era of growth for Marvell,” said Matt Murphy, Marvell’s Chairman and CEO."
+          },
+          {
+            "source_id": "MRVL-2025Q3",
+            "passage_id": "MRVL-2025Q3-P011",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000197/q325_8kx1122024ex-991.htm",
+            "filed_at": "2024-12-03",
+            "period": "Q3 FY2025 results and Q4 outlook",
+            "document_sha256": "b0d0ca1a0adb59be5ea16a3fb14f3a317208d406eeed722471117ac03a561053",
+            "locator": "Normalized paragraph 11; lines 33-45",
+            "quote": "The exceptional performance in the third quarter, and our strong forecast for the fourth quarter, are primarily driven by our custom AI silicon programs, which are now in volume production, further augmented by robust ongoing demand from cloud customers for our market-leading interconnect products."
+          },
+          {
+            "source_id": "MRVL-2025Q3",
+            "passage_id": "MRVL-2025Q3-P011",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000197/q325_8kx1122024ex-991.htm",
+            "filed_at": "2024-12-03",
+            "period": "Q3 FY2025 results and Q4 outlook",
+            "document_sha256": "b0d0ca1a0adb59be5ea16a3fb14f3a317208d406eeed722471117ac03a561053",
+            "locator": "Normalized paragraph 11; lines 33-45",
+            "quote": "We look forward to a strong finish to this fiscal year and expect substantial momentum to continue in fiscal 2026."
+          },
+          {
+            "source_id": "MRVL-2025Q3",
+            "passage_id": "MRVL-2025Q3-P006",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000197/q325_8kx1122024ex-991.htm",
+            "filed_at": "2024-12-03",
+            "period": "Q3 FY2025 results and Q4 outlook",
+            "document_sha256": "b0d0ca1a0adb59be5ea16a3fb14f3a317208d406eeed722471117ac03a561053",
+            "locator": "Normalized paragraph 6; lines 13-13",
+            "quote": "•Q3 Net Revenue: $1.516 billion, grew by 7% year-on-year"
+          },
+          {
+            "source_id": "MRVL-2025Q3",
+            "passage_id": "MRVL-2025Q3-P013",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000197/q325_8kx1122024ex-991.htm",
+            "filed_at": "2024-12-03",
+            "period": "Q3 FY2025 results and Q4 outlook",
+            "document_sha256": "b0d0ca1a0adb59be5ea16a3fb14f3a317208d406eeed722471117ac03a561053",
+            "locator": "Normalized paragraph 13; lines 49-49",
+            "quote": "•Net revenue is expected to be $1.800 billion +/- 5%."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [
+          "evidence that all future revenue growth is caused exclusively by generative AI",
+          "evidence that future revenue growth is guaranteed"
+        ],
+        "next_action": "fetch_more_evidence",
+        "guard_downgraded": false,
+        "claim": "MRVL management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+      }
+    ],
+    "coverage": {
+      "supported": 0,
+      "conflicted": 0,
+      "insufficient": 1
+    },
+    "verified_summary": [],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 1327,
+      "output_tokens": 918,
+      "estimated_usd": 0.005897,
+      "provider_request_id": "202609050959518d2717a7c85d4577",
+      "model": "glm-5.2",
+      "elapsed_ms": 10046
+    }
+  },
+  "error": null,
+  "elapsed_ms": 10046
+}

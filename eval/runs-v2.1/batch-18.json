@@ -1,0 +1,127 @@
+{
+  "input": {
+    "request_id": "eval-18",
+    "entity": "MRVL",
+    "as_of": "2024-08-29",
+    "language": "en",
+    "source_ids": [
+      "MRVL-2025Q2"
+    ],
+    "claims": [
+      {
+        "claim_id": "MRVL-2025Q2-U",
+        "text": "MRVL management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-18",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "MRVL",
+    "as_of": "2024-08-29",
+    "source_cutoff": "2024-08-29",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "MRVL-2025Q2-P011",
+      "MRVL-2025Q2-P013",
+      "MRVL-2025Q2-P014",
+      "MRVL-2025Q2-P015",
+      "MRVL-2025Q2-P006",
+      "MRVL-2025Q2-P030"
+    ],
+    "results": [
+      {
+        "claim_id": "MRVL-2025Q2-U",
+        "status": "insufficient",
+        "reason": "The evidence shows management attributed Q2 sequential growth to AI demand and forecast Q3 growth across all end markets, but it does not state that all future revenue growth will be caused exclusively by generative AI or that growth is guaranteed. The claim also asserts future causation and certainty not supported by the supplied passages.",
+        "facts": [
+          {
+            "metric": "Q2 net revenue",
+            "value": 1.273,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q2 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "Q2 net revenue year-on-year change",
+            "value": -5,
+            "currency": "USD",
+            "unit": "percent",
+            "period": "Q2 FY2025 vs Q2 FY2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "Q3 net revenue guidance",
+            "value": 1.45,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q3 FY2025",
+            "basis": "unknown",
+            "origin": "management_guidance"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q2",
+            "passage_id": "MRVL-2025Q2-P011",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000140/q225_8kx832024ex-991.htm",
+            "filed_at": "2024-08-29",
+            "period": "Q2 FY2025 results and Q3 outlook",
+            "document_sha256": "ddec39e83e02580c3bb1f1f6a027d1e00f25a9c44bcf928db50c97e32472eaba",
+            "locator": "Normalized paragraph 11; lines 33-42",
+            "quote": "“Marvell’s second quarter revenue grew 10% sequentially, above the mid-point of guidance driven by strong demand from AI. We saw strong growth from our electro-optics products and our custom AI programs began to ramp,” said Matt Murphy, Marvell’s Chairman and CEO. “Next quarter, we expect our combined enterprise networking and carrier end markets to return to growth, while our data center end market growth accelerates. As a result, for the third quarter of fiscal 2025, we expect all our end markets to grow sequentially, with consolidated revenue forecasted to grow 14% sequentially at the mid-point, accompanied by a significant increase in operating leverage.”"
+          },
+          {
+            "source_id": "MRVL-2025Q2",
+            "passage_id": "MRVL-2025Q2-P013",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000140/q225_8kx832024ex-991.htm",
+            "filed_at": "2024-08-29",
+            "period": "Q2 FY2025 results and Q3 outlook",
+            "document_sha256": "ddec39e83e02580c3bb1f1f6a027d1e00f25a9c44bcf928db50c97e32472eaba",
+            "locator": "Normalized paragraph 13; lines 46-46",
+            "quote": "•Net revenue is expected to be $1.450 billion +/- 5%."
+          },
+          {
+            "source_id": "MRVL-2025Q2",
+            "passage_id": "MRVL-2025Q2-P006",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000140/q225_8kx832024ex-991.htm",
+            "filed_at": "2024-08-29",
+            "period": "Q2 FY2025 results and Q3 outlook",
+            "document_sha256": "ddec39e83e02580c3bb1f1f6a027d1e00f25a9c44bcf928db50c97e32472eaba",
+            "locator": "Normalized paragraph 6; lines 13-13",
+            "quote": "•Q2 Net Revenue: $1.273 billion, declined by (5)% year-on-year"
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [
+          "evidence that all future revenue growth is caused exclusively by generative AI",
+          "evidence that future revenue growth is guaranteed"
+        ],
+        "next_action": "fetch_more_evidence",
+        "guard_downgraded": false,
+        "claim": "MRVL management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+      }
+    ],
+    "coverage": {
+      "supported": 0,
+      "conflicted": 0,
+      "insufficient": 1
+    },
+    "verified_summary": [],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 1248,
+      "output_tokens": 624,
+      "estimated_usd": 0.0044928,
+      "provider_request_id": "20260905100358b49a0b52ddc54e5a",
+      "model": "glm-5.2",
+      "elapsed_ms": 7649
+    }
+  },
+  "error": null,
+  "elapsed_ms": 7650
+}

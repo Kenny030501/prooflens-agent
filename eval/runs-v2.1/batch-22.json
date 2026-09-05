@@ -1,0 +1,108 @@
+{
+  "input": {
+    "request_id": "eval-22",
+    "entity": "NVDA",
+    "as_of": "2024-05-29",
+    "language": "en",
+    "source_ids": [
+      "NVDA-2025Q1"
+    ],
+    "claims": [
+      {
+        "claim_id": "NVDA-2025Q1-U",
+        "text": "NVDA management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-22",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "NVDA",
+    "as_of": "2024-05-29",
+    "source_cutoff": "2024-05-29",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "NVDA-2025Q1-P444",
+      "NVDA-2025Q1-P451",
+      "NVDA-2025Q1-P679",
+      "NVDA-2025Q1-P685",
+      "NVDA-2025Q1-P419",
+      "NVDA-2025Q1-P443"
+    ],
+    "results": [
+      {
+        "claim_id": "NVDA-2025Q1-U",
+        "status": "insufficient",
+        "reason": "The claim asserts that management proved all future revenue growth will be caused exclusively by generative AI and is guaranteed. The evidence shows generative AI as one driver of current Data Center growth, but also cites other drivers (large language models, recommendation engines, inference, networking, InfiniBand) and contains no statement that all future revenue growth will be exclusively from generative AI or that any future growth is guaranteed. Forward-looking statements about Blackwell demand and supply are expectations, not guarantees.",
+        "facts": [
+          {
+            "metric": "Data Center revenue growth drivers",
+            "value": null,
+            "currency": null,
+            "unit": null,
+            "period": "Q1 FY2025",
+            "basis": "not_applicable",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "Blackwell demand vs supply outlook",
+            "value": null,
+            "currency": null,
+            "unit": null,
+            "period": "FY2025",
+            "basis": "not_applicable",
+            "origin": "management_guidance"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2025Q1",
+            "passage_id": "NVDA-2025Q1-P444",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000124/nvda-20240428.htm",
+            "filed_at": "2024-05-29",
+            "period": "Q1 FY2025",
+            "document_sha256": "0d5b058779ec2cbbc24b67ea9bbc8b5c455177b86ce972f3c203329b99fadde8",
+            "locator": "Normalized paragraph 444; lines 2195-2206",
+            "quote": "These increases reflect higher shipments of the NVIDIA Hopper GPU computing platform used for training and inferencing with large language models, recommendation engines, and generative AI applications."
+          },
+          {
+            "source_id": "NVDA-2025Q1",
+            "passage_id": "NVDA-2025Q1-P419",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000124/nvda-20240428.htm",
+            "filed_at": "2024-05-29",
+            "period": "Q1 FY2025",
+            "document_sha256": "0d5b058779ec2cbbc24b67ea9bbc8b5c455177b86ce972f3c203329b99fadde8",
+            "locator": "Normalized paragraph 419; lines 2014-2037",
+            "quote": "We believe the initial demand for Blackwell is well ahead of the projected supply for this fiscal year. We expect supply constraints for our Blackwell offerings will continue into next year."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [
+          "evidence that all future revenue growth is caused exclusively by generative AI",
+          "evidence that future revenue growth is guaranteed"
+        ],
+        "next_action": "fetch_more_evidence",
+        "guard_downgraded": false,
+        "claim": "NVDA management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+      }
+    ],
+    "coverage": {
+      "supported": 0,
+      "conflicted": 0,
+      "insufficient": 1
+    },
+    "verified_summary": [],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 1807,
+      "output_tokens": 445,
+      "estimated_usd": 0.0044878,
+      "provider_request_id": "20260905100423405ba77edcac4ce0",
+      "model": "glm-5.2",
+      "elapsed_ms": 10086
+    }
+  },
+  "error": null,
+  "elapsed_ms": 10087
+}

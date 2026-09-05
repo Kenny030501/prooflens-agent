@@ -1,5 +1,7 @@
 # Agent API contract
 
+> 历史 v0.1 文档：已由 [v0.3 实施说明](PRD_V0.3_IMPLEMENTED.md) 与 [v2 实测报告](EVALUATION_V2_REPORT.md) 取代。下文保留原始设计，不代表当前功能或已验证成果。
+
 ## POST `/api/audit`
 
 ### Request

@@ -1,0 +1,145 @@
+{
+  "input": {
+    "request_id": "eval-38",
+    "entity": "NVDA",
+    "as_of": "2024-02-21",
+    "language": "en",
+    "source_ids": [
+      "NVDA-2024FY"
+    ],
+    "claims": [
+      {
+        "claim_id": "NVDA-2024FY-U",
+        "text": "NVDA management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-38",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "NVDA",
+    "as_of": "2024-02-21",
+    "source_cutoff": "2024-02-21",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "NVDA-2024FY-P1219",
+      "NVDA-2024FY-P1226",
+      "NVDA-2024FY-P585",
+      "NVDA-2024FY-P582",
+      "NVDA-2024FY-P939",
+      "NVDA-2024FY-P645"
+    ],
+    "results": [
+      {
+        "claim_id": "NVDA-2024FY-U",
+        "status": "insufficient",
+        "reason": "The claim asserts management proved all future revenue growth will be caused exclusively by generative AI and is guaranteed. The evidence mentions generative AI as a driver of Data Center and Compute growth and provides remaining performance obligation recognition expectations, but it does not state that all future revenue growth will be exclusively caused by generative AI, nor does it guarantee future growth.",
+        "facts": [
+          {
+            "metric": "remaining performance obligations revenue",
+            "value": 1.1,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "as of January 28, 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "expected recognition of remaining performance obligations over next twelve months",
+            "value": 40,
+            "currency": null,
+            "unit": "percent",
+            "period": "next twelve months from January 28, 2024",
+            "basis": "GAAP",
+            "origin": "management_guidance"
+          },
+          {
+            "metric": "Data Center revenue",
+            "value": 47.5,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "FY2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "Data Center revenue year-over-year growth",
+            "value": 217,
+            "currency": null,
+            "unit": "percent",
+            "period": "FY2024 vs FY2023",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "Compute revenue year-over-year growth",
+            "value": 266,
+            "currency": null,
+            "unit": "percent",
+            "period": "FY2024 vs FY2023",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2024FY",
+            "passage_id": "NVDA-2024FY-P1226",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
+            "filed_at": "2024-02-21",
+            "period": "FY2024 ended January 28 2024",
+            "document_sha256": "3ee6c75beb947d9e815464e5c0b6392db4f8ca20aa2f99666bc17c92b82d7759",
+            "locator": "Normalized paragraph 1226; lines 6625-6631",
+            "quote": "Revenue allocated to remaining performance obligations, which includes deferred revenue and amounts that will be invoiced and recognized as revenue in future periods, was $1.1 billion as of January 28, 2024. We expect to recognize approximately 40% of this revenue over the next twelve months and the remainder thereafter."
+          },
+          {
+            "source_id": "NVDA-2024FY",
+            "passage_id": "NVDA-2024FY-P585",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
+            "filed_at": "2024-02-21",
+            "period": "FY2024 ended January 28 2024",
+            "document_sha256": "3ee6c75beb947d9e815464e5c0b6392db4f8ca20aa2f99666bc17c92b82d7759",
+            "locator": "Normalized paragraph 585; lines 3952-3965",
+            "quote": "Data Center revenue for fiscal year 2024 was $47.5 billion, up 217% from fiscal year 2023. In Data Center, we launched AI inference platforms that combine our full-stack inference software with NVIDIA Ada, NVIDIA Hopper and NVIDIA Grace Hopper processors optimized for generative AI, LLMs and other AI workloads."
+          },
+          {
+            "source_id": "NVDA-2024FY",
+            "passage_id": "NVDA-2024FY-P645",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
+            "filed_at": "2024-02-21",
+            "period": "FY2024 ended January 28 2024",
+            "document_sha256": "3ee6c75beb947d9e815464e5c0b6392db4f8ca20aa2f99666bc17c92b82d7759",
+            "locator": "Normalized paragraph 645; lines 4255-4259",
+            "quote": "Compute grew 266% due to higher shipments of the NVIDIA Hopper GPU computing platform for the training and inference of LLMs, recommendation engines and generative AI applications."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [
+          "evidence that all future revenue growth is caused exclusively by generative AI",
+          "evidence that future revenue growth is guaranteed"
+        ],
+        "next_action": "fetch_more_evidence",
+        "guard_downgraded": false,
+        "claim": "NVDA management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+      }
+    ],
+    "coverage": {
+      "supported": 0,
+      "conflicted": 0,
+      "insufficient": 1
+    },
+    "verified_summary": [],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 1499,
+      "output_tokens": 571,
+      "estimated_usd": 0.004611,
+      "provider_request_id": "202609051006231dd351984e94466a",
+      "model": "glm-5.2",
+      "elapsed_ms": 7404
+    }
+  },
+  "error": null,
+  "elapsed_ms": 7406
+}

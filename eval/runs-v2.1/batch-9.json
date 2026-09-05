@@ -1,0 +1,341 @@
+{
+  "input": {
+    "request_id": "eval-9",
+    "entity": "NVDA",
+    "as_of": "2024-08-28",
+    "language": "en",
+    "source_ids": [
+      "NVDA-2025Q2"
+    ],
+    "claims": [
+      {
+        "claim_id": "legacy-N2",
+        "text": "NVIDIA reported Q2 FY2025 revenue of about $30.0 billion, up 15% sequentially."
+      },
+      {
+        "claim_id": "legacy-N4",
+        "text": "NVIDIA's Q2 FY2025 filing scheduled the Blackwell production ramp to begin in Q4 FY2025 and continue into FY2026."
+      },
+      {
+        "claim_id": "legacy-N5",
+        "text": "NVIDIA disclosed that inference was exactly 40% of Data Center revenue in Q2 FY2025 alone."
+      },
+      {
+        "claim_id": "legacy-N6",
+        "text": "NVIDIA disclosed that the Blackwell commercial production ramp was already completed in Q2 FY2025."
+      },
+      {
+        "claim_id": "legacy-N7",
+        "text": "NVIDIA Data Center revenue increased 427% year over year in Q2 FY2025."
+      },
+      {
+        "claim_id": "NVDA-2025Q2-S0",
+        "text": "NVIDIA Q2 FY2025 revenue was $30.0 billion."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-9",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "NVDA",
+    "as_of": "2024-08-28",
+    "source_cutoff": "2024-08-28",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "NVDA-2025Q2-P444",
+      "NVDA-2025Q2-P446",
+      "NVDA-2025Q2-P455",
+      "NVDA-2025Q2-P695",
+      "NVDA-2025Q2-P418",
+      "NVDA-2025Q2-P445",
+      "NVDA-2025Q2-P457",
+      "NVDA-2025Q2-P687",
+      "NVDA-2025Q2-P456",
+      "NVDA-2025Q2-P419",
+      "NVDA-2025Q2-P420"
+    ],
+    "results": [
+      {
+        "claim_id": "legacy-N2",
+        "status": "supported",
+        "reason": "Evidence states Q2 FY2025 revenue was $30.0 billion, up 15% sequentially, matching the claim.",
+        "facts": [
+          {
+            "metric": "revenue",
+            "value": 30,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q2 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "revenue sequential growth",
+            "value": 15,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q2 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2025Q2",
+            "passage_id": "NVDA-2025Q2-P444",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000264/nvda-20240728.htm",
+            "filed_at": "2024-08-28",
+            "period": "Q2 FY2025",
+            "document_sha256": "af5d2297eea965341271a23a0d8cb5c52ff9213d654d8f0489da34cec739ead1",
+            "locator": "Normalized paragraph 444; lines 2241-2242",
+            "quote": "Revenue was $30.0 billion, up 122% from a year ago and up 15% sequentially."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "NVIDIA reported Q2 FY2025 revenue of about $30.0 billion, up 15% sequentially."
+      },
+      {
+        "claim_id": "legacy-N4",
+        "status": "insufficient",
+        "reason": "Evidence states Blackwell production ramp is scheduled to begin in the fourth quarter and continue into fiscal year 2026.",
+        "facts": [
+          {
+            "metric": "Blackwell production ramp start",
+            "value": null,
+            "currency": null,
+            "unit": null,
+            "period": "Q4 FY2025",
+            "basis": "not_applicable",
+            "origin": "management_guidance"
+          },
+          {
+            "metric": "Blackwell production ramp continuation",
+            "value": null,
+            "currency": null,
+            "unit": null,
+            "period": "FY2026",
+            "basis": "not_applicable",
+            "origin": "management_guidance"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2025Q2",
+            "passage_id": "NVDA-2025Q2-P446",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000264/nvda-20240728.htm",
+            "filed_at": "2024-08-28",
+            "period": "Q2 FY2025",
+            "document_sha256": "af5d2297eea965341271a23a0d8cb5c52ff9213d654d8f0489da34cec739ead1",
+            "locator": "Normalized paragraph 446; lines 2261-2267",
+            "quote": "Blackwell production ramp is scheduled to begin in the fourth quarter and continue into fiscal year 2026."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [
+          "invalid_or_nonverbatim_citation"
+        ],
+        "next_action": "fetch_more_evidence",
+        "guard_downgraded": true,
+        "claim": "NVIDIA's Q2 FY2025 filing scheduled the Blackwell production ramp to begin in Q4 FY2025 and continue into FY2026."
+      },
+      {
+        "claim_id": "legacy-N5",
+        "status": "conflicted",
+        "reason": "Evidence states inference drove over 40% of Data Center revenue over the trailing four quarters, not exactly 40% in Q2 FY2025 alone.",
+        "facts": [
+          {
+            "metric": "inference share of Data Center revenue",
+            "value": 40,
+            "currency": null,
+            "unit": "percent (over, trailing four quarters)",
+            "period": "trailing four quarters ending Q2 FY2025",
+            "basis": "non-GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2025Q2",
+            "passage_id": "NVDA-2025Q2-P455",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000264/nvda-20240728.htm",
+            "filed_at": "2024-08-28",
+            "period": "Q2 FY2025",
+            "document_sha256": "af5d2297eea965341271a23a0d8cb5c52ff9213d654d8f0489da34cec739ead1",
+            "locator": "Normalized paragraph 455; lines 2298-2316",
+            "quote": "Over the trailing four quarters, we estimate that inference drove over 40% of our Data Center revenue."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [
+          "inference share of Data Center revenue for Q2 FY2025 alone"
+        ],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "NVIDIA disclosed that inference was exactly 40% of Data Center revenue in Q2 FY2025 alone."
+      },
+      {
+        "claim_id": "legacy-N6",
+        "status": "conflicted",
+        "reason": "Evidence states Blackwell production ramp is scheduled to begin in Q4 FY2025, not completed in Q2 FY2025; only customer samples were shipped in Q2.",
+        "facts": [
+          {
+            "metric": "Blackwell customer samples shipped",
+            "value": null,
+            "currency": null,
+            "unit": null,
+            "period": "Q2 FY2025",
+            "basis": "not_applicable",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "Blackwell production ramp start",
+            "value": null,
+            "currency": null,
+            "unit": null,
+            "period": "Q4 FY2025",
+            "basis": "not_applicable",
+            "origin": "management_guidance"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2025Q2",
+            "passage_id": "NVDA-2025Q2-P446",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000264/nvda-20240728.htm",
+            "filed_at": "2024-08-28",
+            "period": "Q2 FY2025",
+            "document_sha256": "af5d2297eea965341271a23a0d8cb5c52ff9213d654d8f0489da34cec739ead1",
+            "locator": "Normalized paragraph 446; lines 2261-2267",
+            "quote": "We shipped customer samples of our Blackwell architecture in the second quarter. We executed a change to the Blackwell GPU mask to improve production yield. Blackwell production ramp is scheduled to begin in the fourth quarter and continue into fiscal year 2026."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "NVIDIA disclosed that the Blackwell commercial production ramp was already completed in Q2 FY2025."
+      },
+      {
+        "claim_id": "legacy-N7",
+        "status": "conflicted",
+        "reason": "Evidence states Data Center revenue was up 154% year over year in Q2 FY2025, not 427%.",
+        "facts": [
+          {
+            "metric": "Data Center revenue year-over-year growth",
+            "value": 154,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q2 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "Data Center revenue",
+            "value": 26.3,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q2 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2025Q2",
+            "passage_id": "NVDA-2025Q2-P455",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000264/nvda-20240728.htm",
+            "filed_at": "2024-08-28",
+            "period": "Q2 FY2025",
+            "document_sha256": "af5d2297eea965341271a23a0d8cb5c52ff9213d654d8f0489da34cec739ead1",
+            "locator": "Normalized paragraph 455; lines 2298-2316",
+            "quote": "Data Center revenue for the second quarter of fiscal year 2025 was $26.3 billion, up 16% from the previous quarter and up 154% from a year ago."
+          },
+          {
+            "source_id": "NVDA-2025Q2",
+            "passage_id": "NVDA-2025Q2-P445",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000264/nvda-20240728.htm",
+            "filed_at": "2024-08-28",
+            "period": "Q2 FY2025",
+            "document_sha256": "af5d2297eea965341271a23a0d8cb5c52ff9213d654d8f0489da34cec739ead1",
+            "locator": "Normalized paragraph 445; lines 2244-2259",
+            "quote": "Data Center revenue was up 154% from a year ago and up 16% sequentially."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "NVIDIA Data Center revenue increased 427% year over year in Q2 FY2025."
+      },
+      {
+        "claim_id": "NVDA-2025Q2-S0",
+        "status": "supported",
+        "reason": "Evidence states Q2 FY2025 revenue was $30.0 billion.",
+        "facts": [
+          {
+            "metric": "revenue",
+            "value": 30,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q2 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2025Q2",
+            "passage_id": "NVDA-2025Q2-P444",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000264/nvda-20240728.htm",
+            "filed_at": "2024-08-28",
+            "period": "Q2 FY2025",
+            "document_sha256": "af5d2297eea965341271a23a0d8cb5c52ff9213d654d8f0489da34cec739ead1",
+            "locator": "Normalized paragraph 444; lines 2241-2242",
+            "quote": "Revenue was $30.0 billion, up 122% from a year ago and up 15% sequentially."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "NVIDIA Q2 FY2025 revenue was $30.0 billion."
+      }
+    ],
+    "coverage": {
+      "supported": 2,
+      "conflicted": 3,
+      "insufficient": 1
+    },
+    "verified_summary": [
+      {
+        "claim_id": "legacy-N2",
+        "text": "NVIDIA reported Q2 FY2025 revenue of about $30.0 billion, up 15% sequentially.",
+        "citations": [
+          "NVDA-2025Q2-P444"
+        ]
+      },
+      {
+        "claim_id": "NVDA-2025Q2-S0",
+        "text": "NVIDIA Q2 FY2025 revenue was $30.0 billion.",
+        "citations": [
+          "NVDA-2025Q2-P444"
+        ]
+      }
+    ],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 2520,
+      "output_tokens": 1587,
+      "estimated_usd": 0.010510799999999999,
+      "provider_request_id": "20260905100240aec31aa63b4c43d0",
+      "model": "glm-5.2",
+      "elapsed_ms": 17738
+    }
+  },
+  "error": null,
+  "elapsed_ms": 17748
+}

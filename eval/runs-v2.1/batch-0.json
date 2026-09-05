@@ -1,0 +1,272 @@
+{
+  "input": {
+    "request_id": "eval-0",
+    "entity": "AMZN",
+    "as_of": "2024-08-02",
+    "language": "en",
+    "source_ids": [
+      "AMZN-2024Q1",
+      "AMZN-2024Q2"
+    ],
+    "claims": [
+      {
+        "claim_id": "legacy-A1",
+        "text": "Amazon operating income fell from about $15.3 billion in Q1 2024 to about $14.7 billion in Q2 2024."
+      },
+      {
+        "claim_id": "legacy-A2",
+        "text": "AWS sales growth was 17% year over year in Q1 2024 and 19% in Q2 2024."
+      },
+      {
+        "claim_id": "legacy-A7",
+        "text": "Amazon operating income rose sequentially from Q1 2024 to Q2 2024."
+      },
+      {
+        "claim_id": "legacy-A8",
+        "text": "Trainium held 70% of global inference market share as of June 2024."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-0",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "AMZN",
+    "as_of": "2024-08-02",
+    "source_cutoff": "2024-08-02",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "AMZN-2024Q1-P482",
+      "AMZN-2024Q1-P471",
+      "AMZN-2024Q2-P483",
+      "AMZN-2024Q2-P481",
+      "AMZN-2024Q2-P470",
+      "AMZN-2024Q2-P472",
+      "AMZN-2024Q2-P482",
+      "AMZN-2024Q1-P484",
+      "AMZN-2024Q2-P797",
+      "AMZN-2024Q1-P483",
+      "AMZN-2024Q1-P473",
+      "AMZN-2024Q1-P798",
+      "AMZN-2024Q2-P834",
+      "AMZN-2024Q2-P469",
+      "AMZN-2024Q1-P835"
+    ],
+    "results": [
+      {
+        "claim_id": "legacy-A1",
+        "status": "supported",
+        "reason": "Evidence states Q1 2024 operating income was $15.3 billion and Q2 2024 operating income was $14.7 billion, confirming the claimed decline.",
+        "facts": [
+          {
+            "metric": "operating income",
+            "value": 15.3,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q1 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "operating income",
+            "value": 14.7,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q2 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2024Q1",
+            "passage_id": "AMZN-2024Q1-P482",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000083/amzn-20240331.htm",
+            "filed_at": "2024-05-01",
+            "period": "Q1 2024",
+            "document_sha256": "66bc009ff6f816f73a134dc21f52a2cb3439fe1abffe1e7467ddfd9b693d2f85",
+            "locator": "Normalized paragraph 482; lines 2210-2213",
+            "quote": "Operating income increased from $4.8 billion in Q1 2023 to $15.3 billion in Q1 2024."
+          },
+          {
+            "source_id": "AMZN-2024Q2",
+            "passage_id": "AMZN-2024Q2-P481",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000130/amzn-20240630.htm",
+            "filed_at": "2024-08-02",
+            "period": "Q2 2024 and first half 2024",
+            "document_sha256": "38369a0019a6ccb2323ccb22ee46457664ec77b90821425ccf8ca75662b69b75",
+            "locator": "Normalized paragraph 481; lines 2258-2263",
+            "quote": "Operating income increased from $7.7 billion in Q2 2023 to $14.7 billion in Q2 2024"
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "Amazon operating income fell from about $15.3 billion in Q1 2024 to about $14.7 billion in Q2 2024."
+      },
+      {
+        "claim_id": "legacy-A2",
+        "status": "supported",
+        "reason": "Evidence states AWS sales increased 17% in Q1 2024 and 19% in Q2 2024 compared to the comparable prior year periods.",
+        "facts": [
+          {
+            "metric": "AWS sales growth year over year",
+            "value": 17,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q1 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "AWS sales growth year over year",
+            "value": 19,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q2 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2024Q1",
+            "passage_id": "AMZN-2024Q1-P471",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000083/amzn-20240331.htm",
+            "filed_at": "2024-05-01",
+            "period": "Q1 2024",
+            "document_sha256": "66bc009ff6f816f73a134dc21f52a2cb3439fe1abffe1e7467ddfd9b693d2f85",
+            "locator": "Normalized paragraph 471; lines 2178-2181",
+            "quote": "AWS sales increased 17% in Q1 2024 compared to the comparable prior year period."
+          },
+          {
+            "source_id": "AMZN-2024Q2",
+            "passage_id": "AMZN-2024Q2-P470",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000130/amzn-20240630.htm",
+            "filed_at": "2024-08-02",
+            "period": "Q2 2024 and first half 2024",
+            "document_sha256": "38369a0019a6ccb2323ccb22ee46457664ec77b90821425ccf8ca75662b69b75",
+            "locator": "Normalized paragraph 470; lines 2227-2230",
+            "quote": "AWS sales increased 19% in Q2 2024, and 18% for the six months ended June 30, 2024 compared to the comparable prior year periods."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "AWS sales growth was 17% year over year in Q1 2024 and 19% in Q2 2024."
+      },
+      {
+        "claim_id": "legacy-A7",
+        "status": "conflicted",
+        "reason": "The claim states operating income rose sequentially from Q1 2024 to Q2 2024, but evidence shows it fell from $15.3 billion in Q1 2024 to $14.7 billion in Q2 2024.",
+        "facts": [
+          {
+            "metric": "operating income",
+            "value": 15.3,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q1 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "operating income",
+            "value": 14.7,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q2 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2024Q1",
+            "passage_id": "AMZN-2024Q1-P482",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000083/amzn-20240331.htm",
+            "filed_at": "2024-05-01",
+            "period": "Q1 2024",
+            "document_sha256": "66bc009ff6f816f73a134dc21f52a2cb3439fe1abffe1e7467ddfd9b693d2f85",
+            "locator": "Normalized paragraph 482; lines 2210-2213",
+            "quote": "Operating income increased from $4.8 billion in Q1 2023 to $15.3 billion in Q1 2024."
+          },
+          {
+            "source_id": "AMZN-2024Q2",
+            "passage_id": "AMZN-2024Q2-P481",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000130/amzn-20240630.htm",
+            "filed_at": "2024-08-02",
+            "period": "Q2 2024 and first half 2024",
+            "document_sha256": "38369a0019a6ccb2323ccb22ee46457664ec77b90821425ccf8ca75662b69b75",
+            "locator": "Normalized paragraph 481; lines 2258-2263",
+            "quote": "Operating income increased from $7.7 billion in Q2 2023 to $14.7 billion in Q2 2024"
+          }
+        ],
+        "derivation": {
+          "operation": "difference",
+          "inputs": [
+            14.7,
+            15.3
+          ],
+          "result": -0.6,
+          "assumptions": [
+            "Sequential change calculated as Q2 2024 operating income minus Q1 2024 operating income, in billions USD"
+          ]
+        },
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "Amazon operating income rose sequentially from Q1 2024 to Q2 2024."
+      },
+      {
+        "claim_id": "legacy-A8",
+        "status": "insufficient",
+        "reason": "No supplied evidence mentions Trainium or its global inference market share as of June 2024.",
+        "facts": [],
+        "evidence": [],
+        "derivation": null,
+        "missing_fields": [
+          "Trainium global inference market share as of June 2024"
+        ],
+        "next_action": "fetch_more_evidence",
+        "guard_downgraded": false,
+        "claim": "Trainium held 70% of global inference market share as of June 2024."
+      }
+    ],
+    "coverage": {
+      "supported": 2,
+      "conflicted": 1,
+      "insufficient": 1
+    },
+    "verified_summary": [
+      {
+        "claim_id": "legacy-A1",
+        "text": "Amazon operating income fell from about $15.3 billion in Q1 2024 to about $14.7 billion in Q2 2024.",
+        "citations": [
+          "AMZN-2024Q1-P482",
+          "AMZN-2024Q2-P481"
+        ]
+      },
+      {
+        "claim_id": "legacy-A2",
+        "text": "AWS sales growth was 17% year over year in Q1 2024 and 19% in Q2 2024.",
+        "citations": [
+          "AMZN-2024Q1-P471",
+          "AMZN-2024Q2-P470"
+        ]
+      }
+    ],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 2232,
+      "output_tokens": 1164,
+      "estimated_usd": 0.0082464,
+      "provider_request_id": "202609051000558bde16eacc2f41ed",
+      "model": "glm-5.2",
+      "elapsed_ms": 13136
+    }
+  },
+  "error": null,
+  "elapsed_ms": 13149
+}

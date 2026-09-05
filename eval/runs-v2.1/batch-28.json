@@ -1,0 +1,325 @@
+{
+  "input": {
+    "request_id": "eval-28",
+    "entity": "AMZN",
+    "as_of": "2024-11-01",
+    "language": "en",
+    "source_ids": [
+      "AMZN-2024Q3"
+    ],
+    "claims": [
+      {
+        "claim_id": "AMZN-2024Q3-S0",
+        "text": "AWS sales increased 19% in Q3 2024 year over year."
+      },
+      {
+        "claim_id": "AMZN-2024Q3-C0",
+        "text": "AWS sales increased 18% in Q3 2024 year over year."
+      },
+      {
+        "claim_id": "AMZN-2024Q3-S1",
+        "text": "Amazon Q3 2024 operating income was $17.4 billion."
+      },
+      {
+        "claim_id": "AMZN-2024Q3-C1",
+        "text": "Amazon Q3 2024 operating income was $11.2 billion."
+      },
+      {
+        "claim_id": "AMZN-2024Q3-S2",
+        "text": "Amazon operating income was $47.4 billion for the nine months ended September 30, 2024."
+      },
+      {
+        "claim_id": "AMZN-2024Q3-C2",
+        "text": "Amazon operating income was $47.4 billion for the three months ended September 30, 2024."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-28",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "AMZN",
+    "as_of": "2024-11-01",
+    "source_cutoff": "2024-11-01",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "AMZN-2024Q3-P479",
+      "AMZN-2024Q3-P490",
+      "AMZN-2024Q3-P491",
+      "AMZN-2024Q3-P627",
+      "AMZN-2024Q3-P492",
+      "AMZN-2024Q3-P185",
+      "AMZN-2024Q3-P493",
+      "AMZN-2024Q3-P526",
+      "AMZN-2024Q3-P395",
+      "AMZN-2024Q3-P450",
+      "AMZN-2024Q3-P478"
+    ],
+    "results": [
+      {
+        "claim_id": "AMZN-2024Q3-S0",
+        "status": "supported",
+        "reason": "The evidence explicitly states AWS sales increased 19% in Q3 2024.",
+        "facts": [
+          {
+            "metric": "AWS sales growth",
+            "value": 19,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q3 2024",
+            "basis": "not_applicable",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2024Q3",
+            "passage_id": "AMZN-2024Q3-P479",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000161/amzn-20240930.htm",
+            "filed_at": "2024-11-01",
+            "period": "Q3 2024 and nine months 2024",
+            "document_sha256": "07260ab0297fd274a4b1fa2101dacf4e3b2c27829c3fa1a3a598536b4c0d47bc",
+            "locator": "Normalized paragraph 479; lines 2324-2328",
+            "quote": "AWS sales increased 19% in Q3 2024, and 18% for the nine months ended September 30, 2024 compared to the comparable prior year periods."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "AWS sales increased 19% in Q3 2024 year over year."
+      },
+      {
+        "claim_id": "AMZN-2024Q3-C0",
+        "status": "conflicted",
+        "reason": "The evidence states AWS sales increased 19% in Q3 2024, not 18%. The 18% figure applies to the nine months ended September 30, 2024.",
+        "facts": [
+          {
+            "metric": "AWS sales growth",
+            "value": 19,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q3 2024",
+            "basis": "not_applicable",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "AWS sales growth",
+            "value": 18,
+            "currency": null,
+            "unit": "percent",
+            "period": "nine months ended September 30, 2024",
+            "basis": "not_applicable",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2024Q3",
+            "passage_id": "AMZN-2024Q3-P479",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000161/amzn-20240930.htm",
+            "filed_at": "2024-11-01",
+            "period": "Q3 2024 and nine months 2024",
+            "document_sha256": "07260ab0297fd274a4b1fa2101dacf4e3b2c27829c3fa1a3a598536b4c0d47bc",
+            "locator": "Normalized paragraph 479; lines 2324-2328",
+            "quote": "AWS sales increased 19% in Q3 2024, and 18% for the nine months ended September 30, 2024 compared to the comparable prior year periods."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "AWS sales increased 18% in Q3 2024 year over year."
+      },
+      {
+        "claim_id": "AMZN-2024Q3-S1",
+        "status": "supported",
+        "reason": "The evidence explicitly states operating income was $17.4 billion in Q3 2024.",
+        "facts": [
+          {
+            "metric": "operating income",
+            "value": 17.4,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q3 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2024Q3",
+            "passage_id": "AMZN-2024Q3-P490",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000161/amzn-20240930.htm",
+            "filed_at": "2024-11-01",
+            "period": "Q3 2024 and nine months 2024",
+            "document_sha256": "07260ab0297fd274a4b1fa2101dacf4e3b2c27829c3fa1a3a598536b4c0d47bc",
+            "locator": "Normalized paragraph 490; lines 2357-2362",
+            "quote": "Operating income increased from $11.2 billion in Q3 2023 to $17.4 billion in Q3 2024, and increased from $23.6 billion for the nine months ended September 30, 2023 to $47.4 billion for the nine months ended September 30, 2024."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "Amazon Q3 2024 operating income was $17.4 billion."
+      },
+      {
+        "claim_id": "AMZN-2024Q3-C1",
+        "status": "conflicted",
+        "reason": "The evidence states operating income was $17.4 billion in Q3 2024, not $11.2 billion. The $11.2 billion figure applies to Q3 2023.",
+        "facts": [
+          {
+            "metric": "operating income",
+            "value": 17.4,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q3 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "operating income",
+            "value": 11.2,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q3 2023",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2024Q3",
+            "passage_id": "AMZN-2024Q3-P490",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000161/amzn-20240930.htm",
+            "filed_at": "2024-11-01",
+            "period": "Q3 2024 and nine months 2024",
+            "document_sha256": "07260ab0297fd274a4b1fa2101dacf4e3b2c27829c3fa1a3a598536b4c0d47bc",
+            "locator": "Normalized paragraph 490; lines 2357-2362",
+            "quote": "Operating income increased from $11.2 billion in Q3 2023 to $17.4 billion in Q3 2024, and increased from $23.6 billion for the nine months ended September 30, 2023 to $47.4 billion for the nine months ended September 30, 2024."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "Amazon Q3 2024 operating income was $11.2 billion."
+      },
+      {
+        "claim_id": "AMZN-2024Q3-S2",
+        "status": "supported",
+        "reason": "The evidence explicitly states operating income was $47.4 billion for the nine months ended September 30, 2024.",
+        "facts": [
+          {
+            "metric": "operating income",
+            "value": 47.4,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "nine months ended September 30, 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2024Q3",
+            "passage_id": "AMZN-2024Q3-P490",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000161/amzn-20240930.htm",
+            "filed_at": "2024-11-01",
+            "period": "Q3 2024 and nine months 2024",
+            "document_sha256": "07260ab0297fd274a4b1fa2101dacf4e3b2c27829c3fa1a3a598536b4c0d47bc",
+            "locator": "Normalized paragraph 490; lines 2357-2362",
+            "quote": "Operating income increased from $11.2 billion in Q3 2023 to $17.4 billion in Q3 2024, and increased from $23.6 billion for the nine months ended September 30, 2023 to $47.4 billion for the nine months ended September 30, 2024."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "Amazon operating income was $47.4 billion for the nine months ended September 30, 2024."
+      },
+      {
+        "claim_id": "AMZN-2024Q3-C2",
+        "status": "conflicted",
+        "reason": "The evidence states $47.4 billion was for the nine months ended September 30, 2024, not the three months. The three-month Q3 2024 figure was $17.4 billion.",
+        "facts": [
+          {
+            "metric": "operating income",
+            "value": 47.4,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "nine months ended September 30, 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "operating income",
+            "value": 17.4,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q3 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2024Q3",
+            "passage_id": "AMZN-2024Q3-P490",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000161/amzn-20240930.htm",
+            "filed_at": "2024-11-01",
+            "period": "Q3 2024 and nine months 2024",
+            "document_sha256": "07260ab0297fd274a4b1fa2101dacf4e3b2c27829c3fa1a3a598536b4c0d47bc",
+            "locator": "Normalized paragraph 490; lines 2357-2362",
+            "quote": "Operating income increased from $11.2 billion in Q3 2023 to $17.4 billion in Q3 2024, and increased from $23.6 billion for the nine months ended September 30, 2023 to $47.4 billion for the nine months ended September 30, 2024."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "Amazon operating income was $47.4 billion for the three months ended September 30, 2024."
+      }
+    ],
+    "coverage": {
+      "supported": 3,
+      "conflicted": 3,
+      "insufficient": 0
+    },
+    "verified_summary": [
+      {
+        "claim_id": "AMZN-2024Q3-S0",
+        "text": "AWS sales increased 19% in Q3 2024 year over year.",
+        "citations": [
+          "AMZN-2024Q3-P479"
+        ]
+      },
+      {
+        "claim_id": "AMZN-2024Q3-S1",
+        "text": "Amazon Q3 2024 operating income was $17.4 billion.",
+        "citations": [
+          "AMZN-2024Q3-P490"
+        ]
+      },
+      {
+        "claim_id": "AMZN-2024Q3-S2",
+        "text": "Amazon operating income was $47.4 billion for the nine months ended September 30, 2024.",
+        "citations": [
+          "AMZN-2024Q3-P490"
+        ]
+      }
+    ],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 2480,
+      "output_tokens": 1645,
+      "estimated_usd": 0.01071,
+      "provider_request_id": "202609051004528920354a7a2b4f7b",
+      "model": "glm-5.2",
+      "elapsed_ms": 20866
+    }
+  },
+  "error": null,
+  "elapsed_ms": 20879
+}

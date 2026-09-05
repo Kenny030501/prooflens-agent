@@ -1,0 +1,86 @@
+{
+  "input": {
+    "request_id": "eval-29",
+    "entity": "AMZN",
+    "as_of": "2024-11-01",
+    "language": "en",
+    "source_ids": [
+      "AMZN-2024Q3"
+    ],
+    "claims": [
+      {
+        "claim_id": "AMZN-2024Q3-U",
+        "text": "AMZN management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-29",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "AMZN",
+    "as_of": "2024-11-01",
+    "source_cutoff": "2024-11-01",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "AMZN-2024Q3-P718",
+      "AMZN-2024Q3-P827",
+      "AMZN-2024Q3-P186",
+      "AMZN-2024Q3-P859",
+      "AMZN-2024Q3-P588",
+      "AMZN-2024Q3-P493"
+    ],
+    "results": [
+      {
+        "claim_id": "AMZN-2024Q3-U",
+        "status": "conflicted",
+        "reason": "The claim asserts management proved all future revenue growth will be caused exclusively by generative AI and is guaranteed. The supplied evidence explicitly states revenue growth may not be sustainable and depends on multiple factors beyond generative AI, directly contradicting both the exclusivity and guarantee assertions.",
+        "facts": [
+          {
+            "metric": "revenue growth sustainability",
+            "value": null,
+            "currency": null,
+            "unit": null,
+            "period": "Q3 2024 and nine months 2024",
+            "basis": "not_applicable",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2024Q3",
+            "passage_id": "AMZN-2024Q3-P718",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000161/amzn-20240930.htm",
+            "filed_at": "2024-11-01",
+            "period": "Q3 2024 and nine months 2024",
+            "document_sha256": "07260ab0297fd274a4b1fa2101dacf4e3b2c27829c3fa1a3a598536b4c0d47bc",
+            "locator": "Normalized paragraph 718; lines 3554-3561",
+            "quote": "Our revenue growth may not be sustainable, and our percentage growth rates may decrease. Our revenue and operating profit growth depends on the continued growth of demand for the products and services offered by us or our sellers, and our business is affected by, among other things, general economic, business, and geopolitical conditions worldwide."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "AMZN management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+      }
+    ],
+    "coverage": {
+      "supported": 0,
+      "conflicted": 1,
+      "insufficient": 0
+    },
+    "verified_summary": [],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 1849,
+      "output_tokens": 281,
+      "estimated_usd": 0.003825,
+      "provider_request_id": "20260905100513ae6dc2f50a3749d9",
+      "model": "glm-5.2",
+      "elapsed_ms": 5508
+    }
+  },
+  "error": null,
+  "elapsed_ms": 5509
+}

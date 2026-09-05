@@ -1,0 +1,145 @@
+{
+  "input": {
+    "request_id": "eval-5",
+    "entity": "MRVL",
+    "as_of": "2024-12-03",
+    "language": "en",
+    "source_ids": [
+      "MRVL-2025Q3"
+    ],
+    "claims": [
+      {
+        "claim_id": "MRVL-2025Q3-U",
+        "text": "MRVL management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-5",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "MRVL",
+    "as_of": "2024-12-03",
+    "source_cutoff": "2024-12-03",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "MRVL-2025Q3-P013",
+      "MRVL-2025Q3-P011",
+      "MRVL-2025Q3-P014",
+      "MRVL-2025Q3-P015",
+      "MRVL-2025Q3-P006",
+      "MRVL-2025Q3-P041"
+    ],
+    "results": [
+      {
+        "claim_id": "MRVL-2025Q3-U",
+        "status": "insufficient",
+        "reason": "The claim asserts that management proved all future revenue growth will be caused exclusively by generative AI and is guaranteed. The evidence shows management attributes recent and forecast growth primarily to AI/custom AI silicon, but does not prove exclusivity for all future growth nor guarantee it; forecasts are not guarantees and the text also mentions interconnect products and other markets.",
+        "facts": [
+          {
+            "metric": "Q3 FY2025 net revenue",
+            "value": 1.516,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q3 FY2025",
+            "basis": "unknown",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "Q3 FY2025 revenue sequential growth",
+            "value": 19,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q3 FY2025",
+            "basis": "unknown",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "Q4 FY2025 sequential revenue growth forecast midpoint",
+            "value": 19,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q4 FY2025",
+            "basis": "unknown",
+            "origin": "management_guidance"
+          },
+          {
+            "metric": "Q4 FY2025 year-over-year revenue growth forecast",
+            "value": 26,
+            "currency": null,
+            "unit": "percent",
+            "period": "Q4 FY2025",
+            "basis": "unknown",
+            "origin": "management_guidance"
+          },
+          {
+            "metric": "Q4 FY2025 net revenue guidance",
+            "value": 1.8,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q4 FY2025",
+            "basis": "unknown",
+            "origin": "management_guidance"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q3",
+            "passage_id": "MRVL-2025Q3-P011",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000197/q325_8kx1122024ex-991.htm",
+            "filed_at": "2024-12-03",
+            "period": "Q3 FY2025 results and Q4 outlook",
+            "document_sha256": "b0d0ca1a0adb59be5ea16a3fb14f3a317208d406eeed722471117ac03a561053",
+            "locator": "Normalized paragraph 11; lines 33-45",
+            "quote": "“Marvell’s fiscal third quarter 2025 revenue grew 19% sequentially, well above the mid-point of our guidance, driven by strong demand from AI. For the fourth quarter, we are forecasting another 19% sequential revenue growth at the midpoint of guidance, while year-over-year, we expect revenue growth to accelerate significantly to 26%, marking the beginning of a new era of growth for Marvell,” said Matt Murphy, Marvell’s Chairman and CEO."
+          },
+          {
+            "source_id": "MRVL-2025Q3",
+            "passage_id": "MRVL-2025Q3-P011",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000197/q325_8kx1122024ex-991.htm",
+            "filed_at": "2024-12-03",
+            "period": "Q3 FY2025 results and Q4 outlook",
+            "document_sha256": "b0d0ca1a0adb59be5ea16a3fb14f3a317208d406eeed722471117ac03a561053",
+            "locator": "Normalized paragraph 11; lines 33-45",
+            "quote": "The exceptional performance in the third quarter, and our strong forecast for the fourth quarter, are primarily driven by our custom AI silicon programs, which are now in volume production, further augmented by robust ongoing demand from cloud customers for our market-leading interconnect products."
+          },
+          {
+            "source_id": "MRVL-2025Q3",
+            "passage_id": "MRVL-2025Q3-P013",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000197/q325_8kx1122024ex-991.htm",
+            "filed_at": "2024-12-03",
+            "period": "Q3 FY2025 results and Q4 outlook",
+            "document_sha256": "b0d0ca1a0adb59be5ea16a3fb14f3a317208d406eeed722471117ac03a561053",
+            "locator": "Normalized paragraph 13; lines 49-49",
+            "quote": "•Net revenue is expected to be $1.800 billion +/- 5%."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [
+          "proof of exclusivity of generative AI for all future revenue growth",
+          "guarantee of future revenue growth"
+        ],
+        "next_action": "fetch_more_evidence",
+        "guard_downgraded": false,
+        "claim": "MRVL management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+      }
+    ],
+    "coverage": {
+      "supported": 0,
+      "conflicted": 0,
+      "insufficient": 1
+    },
+    "verified_summary": [],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 1327,
+      "output_tokens": 562,
+      "estimated_usd": 0.0043306,
+      "provider_request_id": "2026090510021720c5c0d106e446a5",
+      "model": "glm-5.2",
+      "elapsed_ms": 8302
+    }
+  },
+  "error": null,
+  "elapsed_ms": 8303
+}

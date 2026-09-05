@@ -1,0 +1,248 @@
+{
+  "cost": 0.27536900000000003,
+  "ledger": [
+    {
+      "provider": "glm",
+      "model": "glm-5.2",
+      "status": 200,
+      "input_tokens": 817,
+      "output_tokens": 38,
+      "estimated_usd": 0.001311,
+      "elapsed_ms": 1296
+    },
+    {
+      "provider": "glm",
+      "model": "glm-5.2",
+      "status": 200,
+      "input_tokens": 2591,
+      "output_tokens": 282,
+      "estimated_usd": 0.0048682,
+      "elapsed_ms": 4009
+    },
+    {
+      "provider": "glm",
+      "model": "glm-5.2",
+      "status": 200,
+      "input_tokens": 5197,
+      "output_tokens": 791,
+      "estimated_usd": 0.010756199999999999,
+      "elapsed_ms": 10774
+    },
+    {
+      "provider": "glm",
+      "model": "glm-5.2",
+      "status": 200,
+      "input_tokens": 816,
+      "output_tokens": 61,
+      "estimated_usd": 0.0014108,
+      "elapsed_ms": 1962
+    },
+    {
+      "provider": "glm",
+      "model": "glm-5.2",
+      "status": 200,
+      "input_tokens": 2613,
+      "output_tokens": 767,
+      "estimated_usd": 0.007033,
+      "elapsed_ms": 11036
+    },
+    {
+      "provider": "glm",
+      "model": "glm-5.2",
+      "status": 200,
+      "input_tokens": 5712,
+      "output_tokens": 1343,
+      "estimated_usd": 0.013906,
+      "elapsed_ms": 19122
+    },
+    {
+      "provider": "glm",
+      "model": "glm-5.2",
+      "status": 200,
+      "input_tokens": 810,
+      "output_tokens": 41,
+      "estimated_usd": 0.0013144,
+      "elapsed_ms": 1409
+    },
+    {
+      "provider": "glm",
+      "model": "glm-5.2",
+      "status": 200,
+      "input_tokens": 2587,
+      "output_tokens": 279,
+      "estimated_usd": 0.004849399999999999,
+      "elapsed_ms": 4130
+    },
+    {
+      "provider": "glm",
+      "model": "glm-5.2",
+      "status": 200,
+      "input_tokens": 5200,
+      "output_tokens": 1280,
+      "estimated_usd": 0.012912,
+      "elapsed_ms": 16419
+    },
+    {
+      "provider": "glm",
+      "model": "glm-5.2",
+      "status": 200,
+      "input_tokens": 810,
+      "output_tokens": 36,
+      "estimated_usd": 0.0012924000000000002,
+      "elapsed_ms": 1527
+    },
+    {
+      "provider": "glm",
+      "model": "glm-5.2",
+      "status": 200,
+      "input_tokens": 2582,
+      "output_tokens": 385,
+      "estimated_usd": 0.0053088,
+      "elapsed_ms": 7354
+    },
+    {
+      "provider": "glm",
+      "model": "glm-5.2",
+      "status": 200,
+      "input_tokens": 5018,
+      "output_tokens": 1039,
+      "estimated_usd": 0.011596799999999999,
+      "elapsed_ms": 16639
+    },
+    {
+      "provider": "glm",
+      "model": "glm-5.2",
+      "status": 200,
+      "input_tokens": 813,
+      "output_tokens": 34,
+      "estimated_usd": 0.0012877999999999998,
+      "elapsed_ms": 1354
+    },
+    {
+      "provider": "glm",
+      "model": "glm-5.2",
+      "status": 200,
+      "input_tokens": 2583,
+      "output_tokens": 275,
+      "estimated_usd": 0.0048262,
+      "elapsed_ms": 6591
+    },
+    {
+      "provider": "glm",
+      "model": "glm-5.2",
+      "status": 200,
+      "input_tokens": 5216,
+      "output_tokens": 879,
+      "estimated_usd": 0.01117,
+      "elapsed_ms": 13562
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "status": 200,
+      "input_tokens": 1460,
+      "output_tokens": 335,
+      "estimated_usd": 0.00627,
+      "elapsed_ms": 3307
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "status": 200,
+      "input_tokens": 8169,
+      "output_tokens": 714,
+      "estimated_usd": 0.023478,
+      "elapsed_ms": 8407
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "status": 200,
+      "input_tokens": 1458,
+      "output_tokens": 539,
+      "estimated_usd": 0.008306,
+      "elapsed_ms": 5001
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "status": 200,
+      "input_tokens": 8364,
+      "output_tokens": 1109,
+      "estimated_usd": 0.027818,
+      "elapsed_ms": 11765
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "status": 200,
+      "input_tokens": 1445,
+      "output_tokens": 99,
+      "estimated_usd": 0.00388,
+      "elapsed_ms": 1853
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "status": 200,
+      "input_tokens": 4113,
+      "output_tokens": 485,
+      "estimated_usd": 0.013076,
+      "elapsed_ms": 5229
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "status": 200,
+      "input_tokens": 8205,
+      "output_tokens": 808,
+      "estimated_usd": 0.02449,
+      "elapsed_ms": 9088
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "status": 200,
+      "input_tokens": 1453,
+      "output_tokens": 472,
+      "estimated_usd": 0.007626,
+      "elapsed_ms": 4331
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "status": 200,
+      "input_tokens": 8309,
+      "output_tokens": 780,
+      "estimated_usd": 0.024418,
+      "elapsed_ms": 8289
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "status": 200,
+      "input_tokens": 1451,
+      "output_tokens": 90,
+      "estimated_usd": 0.003802,
+      "elapsed_ms": 1545
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "status": 200,
+      "input_tokens": 4110,
+      "output_tokens": 494,
+      "estimated_usd": 0.01316,
+      "elapsed_ms": 5094
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "status": 200,
+      "input_tokens": 8231,
+      "output_tokens": 874,
+      "estimated_usd": 0.025202,
+      "elapsed_ms": 9022
+    }
+  ]
+}

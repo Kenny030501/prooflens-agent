@@ -1,5 +1,7 @@
 # ProofLens for Agents — PRD v0.1
 
+> 历史 v0.1 文档：已由 [v0.3 实施说明](PRD_V0.3_IMPLEMENTED.md) 与 [v2 实测报告](EVALUATION_V2_REPORT.md) 取代。下文保留原始设计，不代表当前功能或已验证成果。
+
 ## 1. Problem
 
 Research agents can produce fluent company analysis while collapsing reported facts, management estimates, forward-looking guidance, and the agent's own inference into one answer. A downstream user or agent has no consistent gate for deciding which claims may be published.

@@ -1,0 +1,69 @@
+{
+  "input": {
+    "request_id": "eval-14",
+    "entity": "AMZN",
+    "as_of": "2024-05-01",
+    "language": "en",
+    "source_ids": [
+      "AMZN-2024Q1"
+    ],
+    "claims": [
+      {
+        "claim_id": "AMZN-2024Q1-U",
+        "text": "AMZN management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-14",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "AMZN",
+    "as_of": "2024-05-01",
+    "source_cutoff": "2024-05-01",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "AMZN-2024Q1-P787",
+      "AMZN-2024Q1-P858",
+      "AMZN-2024Q1-P473",
+      "AMZN-2024Q1-P482",
+      "AMZN-2024Q1-P471",
+      "AMZN-2024Q1-P483"
+    ],
+    "results": [
+      {
+        "claim_id": "AMZN-2024Q1-U",
+        "status": "insufficient",
+        "reason": "The supplied evidence does not support the claim that AMZN management proved all future revenue growth will be caused exclusively by generative AI and is guaranteed. The passages discuss acquisitions/mergers risk, operating income, AWS sales growth drivers, and North America operating income drivers; none mention generative AI as the exclusive cause of all future revenue growth or guarantee future growth.",
+        "facts": [],
+        "evidence": [],
+        "derivation": null,
+        "missing_fields": [
+          "generative AI revenue contribution",
+          "future revenue growth attribution",
+          "management guarantee of future growth"
+        ],
+        "next_action": "fetch_more_evidence",
+        "guard_downgraded": false,
+        "claim": "AMZN management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+      }
+    ],
+    "coverage": {
+      "supported": 0,
+      "conflicted": 0,
+      "insufficient": 1
+    },
+    "verified_summary": [],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 1270,
+      "output_tokens": 163,
+      "estimated_usd": 0.0024952,
+      "provider_request_id": "20260905100341022cfabbc2cd44be",
+      "model": "glm-5.2",
+      "elapsed_ms": 2992
+    }
+  },
+  "error": null,
+  "elapsed_ms": 2994
+}

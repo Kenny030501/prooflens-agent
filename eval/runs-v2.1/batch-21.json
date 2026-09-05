@@ -1,0 +1,305 @@
+{
+  "input": {
+    "request_id": "eval-21",
+    "entity": "NVDA",
+    "as_of": "2024-05-29",
+    "language": "en",
+    "source_ids": [
+      "NVDA-2025Q1"
+    ],
+    "claims": [
+      {
+        "claim_id": "NVDA-2025Q1-S0",
+        "text": "NVIDIA Q1 FY2025 revenue was $26.0 billion."
+      },
+      {
+        "claim_id": "NVDA-2025Q1-C0",
+        "text": "NVIDIA Q1 FY2025 revenue was $30.0 billion."
+      },
+      {
+        "claim_id": "NVDA-2025Q1-S1",
+        "text": "NVIDIA Q1 FY2025 Data Center revenue was $22.6 billion."
+      },
+      {
+        "claim_id": "NVDA-2025Q1-C1",
+        "text": "NVIDIA Q1 FY2025 Data Center revenue was $22.6 million."
+      },
+      {
+        "claim_id": "NVDA-2025Q1-S2",
+        "text": "NVIDIA Q1 FY2025 revenue was up 262% from a year ago."
+      },
+      {
+        "claim_id": "NVDA-2025Q1-C2",
+        "text": "NVIDIA Q1 FY2025 revenue was down 262% from a year ago."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-21",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "NVDA",
+    "as_of": "2024-05-29",
+    "source_cutoff": "2024-05-29",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "NVDA-2025Q1-P443",
+      "NVDA-2025Q1-P444",
+      "NVDA-2025Q1-P453",
+      "NVDA-2025Q1-P687",
+      "NVDA-2025Q1-P445",
+      "NVDA-2025Q1-P451"
+    ],
+    "results": [
+      {
+        "claim_id": "NVDA-2025Q1-S0",
+        "status": "supported",
+        "reason": "The evidence explicitly states Q1 FY2025 revenue was $26.0 billion.",
+        "facts": [
+          {
+            "metric": "revenue",
+            "value": 26,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q1 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2025Q1",
+            "passage_id": "NVDA-2025Q1-P443",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000124/nvda-20240428.htm",
+            "filed_at": "2024-05-29",
+            "period": "Q1 FY2025",
+            "document_sha256": "0d5b058779ec2cbbc24b67ea9bbc8b5c455177b86ce972f3c203329b99fadde8",
+            "locator": "Normalized paragraph 443; lines 2192-2193",
+            "quote": "Revenue was $26.0 billion, up 262% from a year ago and up 18% sequentially."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [
+          "basis"
+        ],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "NVIDIA Q1 FY2025 revenue was $26.0 billion."
+      },
+      {
+        "claim_id": "NVDA-2025Q1-C0",
+        "status": "conflicted",
+        "reason": "The claim states revenue was $30.0 billion, but the evidence reports $26.0 billion.",
+        "facts": [
+          {
+            "metric": "revenue",
+            "value": 26,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q1 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2025Q1",
+            "passage_id": "NVDA-2025Q1-P443",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000124/nvda-20240428.htm",
+            "filed_at": "2024-05-29",
+            "period": "Q1 FY2025",
+            "document_sha256": "0d5b058779ec2cbbc24b67ea9bbc8b5c455177b86ce972f3c203329b99fadde8",
+            "locator": "Normalized paragraph 443; lines 2192-2193",
+            "quote": "Revenue was $26.0 billion, up 262% from a year ago and up 18% sequentially."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [
+          "basis"
+        ],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "NVIDIA Q1 FY2025 revenue was $30.0 billion."
+      },
+      {
+        "claim_id": "NVDA-2025Q1-S1",
+        "status": "supported",
+        "reason": "The evidence explicitly states Data Center revenue for Q1 FY2025 was $22.6 billion.",
+        "facts": [
+          {
+            "metric": "Data Center revenue",
+            "value": 22.6,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q1 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2025Q1",
+            "passage_id": "NVDA-2025Q1-P451",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000124/nvda-20240428.htm",
+            "filed_at": "2024-05-29",
+            "period": "Q1 FY2025",
+            "document_sha256": "0d5b058779ec2cbbc24b67ea9bbc8b5c455177b86ce972f3c203329b99fadde8",
+            "locator": "Normalized paragraph 451; lines 2234-2245",
+            "quote": "Data Center revenue for the first quarter of fiscal year 2025 was $22.6 billion, up 427% from a year ago and up 23% from the previous quarter."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [
+          "basis"
+        ],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "NVIDIA Q1 FY2025 Data Center revenue was $22.6 billion."
+      },
+      {
+        "claim_id": "NVDA-2025Q1-C1",
+        "status": "conflicted",
+        "reason": "The claim states Data Center revenue was $22.6 million, but the evidence reports $22.6 billion.",
+        "facts": [
+          {
+            "metric": "Data Center revenue",
+            "value": 22.6,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "Q1 FY2025",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2025Q1",
+            "passage_id": "NVDA-2025Q1-P451",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000124/nvda-20240428.htm",
+            "filed_at": "2024-05-29",
+            "period": "Q1 FY2025",
+            "document_sha256": "0d5b058779ec2cbbc24b67ea9bbc8b5c455177b86ce972f3c203329b99fadde8",
+            "locator": "Normalized paragraph 451; lines 2234-2245",
+            "quote": "Data Center revenue for the first quarter of fiscal year 2025 was $22.6 billion, up 427% from a year ago and up 23% from the previous quarter."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [
+          "basis"
+        ],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "NVIDIA Q1 FY2025 Data Center revenue was $22.6 million."
+      },
+      {
+        "claim_id": "NVDA-2025Q1-S2",
+        "status": "supported",
+        "reason": "The evidence explicitly states revenue was up 262% from a year ago.",
+        "facts": [
+          {
+            "metric": "revenue year-over-year change",
+            "value": 262,
+            "currency": "USD",
+            "unit": "percent",
+            "period": "Q1 FY2025 vs Q1 FY2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2025Q1",
+            "passage_id": "NVDA-2025Q1-P443",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000124/nvda-20240428.htm",
+            "filed_at": "2024-05-29",
+            "period": "Q1 FY2025",
+            "document_sha256": "0d5b058779ec2cbbc24b67ea9bbc8b5c455177b86ce972f3c203329b99fadde8",
+            "locator": "Normalized paragraph 443; lines 2192-2193",
+            "quote": "Revenue was $26.0 billion, up 262% from a year ago and up 18% sequentially."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [
+          "basis"
+        ],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "NVIDIA Q1 FY2025 revenue was up 262% from a year ago."
+      },
+      {
+        "claim_id": "NVDA-2025Q1-C2",
+        "status": "conflicted",
+        "reason": "The claim states revenue was down 262%, but the evidence states revenue was up 262% from a year ago.",
+        "facts": [
+          {
+            "metric": "revenue year-over-year change",
+            "value": 262,
+            "currency": "USD",
+            "unit": "percent",
+            "period": "Q1 FY2025 vs Q1 FY2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2025Q1",
+            "passage_id": "NVDA-2025Q1-P443",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000124/nvda-20240428.htm",
+            "filed_at": "2024-05-29",
+            "period": "Q1 FY2025",
+            "document_sha256": "0d5b058779ec2cbbc24b67ea9bbc8b5c455177b86ce972f3c203329b99fadde8",
+            "locator": "Normalized paragraph 443; lines 2192-2193",
+            "quote": "Revenue was $26.0 billion, up 262% from a year ago and up 18% sequentially."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [
+          "basis"
+        ],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "NVIDIA Q1 FY2025 revenue was down 262% from a year ago."
+      }
+    ],
+    "coverage": {
+      "supported": 3,
+      "conflicted": 3,
+      "insufficient": 0
+    },
+    "verified_summary": [
+      {
+        "claim_id": "NVDA-2025Q1-S0",
+        "text": "NVIDIA Q1 FY2025 revenue was $26.0 billion.",
+        "citations": [
+          "NVDA-2025Q1-P443"
+        ]
+      },
+      {
+        "claim_id": "NVDA-2025Q1-S1",
+        "text": "NVIDIA Q1 FY2025 Data Center revenue was $22.6 billion.",
+        "citations": [
+          "NVDA-2025Q1-P451"
+        ]
+      },
+      {
+        "claim_id": "NVDA-2025Q1-S2",
+        "text": "NVIDIA Q1 FY2025 revenue was up 262% from a year ago.",
+        "citations": [
+          "NVDA-2025Q1-P443"
+        ]
+      }
+    ],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 1554,
+      "output_tokens": 1243,
+      "estimated_usd": 0.007644800000000001,
+      "provider_request_id": "20260905100406083a542a80344088",
+      "model": "glm-5.2",
+      "elapsed_ms": 16610
+    }
+  },
+  "error": null,
+  "elapsed_ms": 16616
+}

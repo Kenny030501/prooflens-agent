@@ -1,0 +1,321 @@
+{
+  "input": {
+    "request_id": "eval-37",
+    "entity": "NVDA",
+    "as_of": "2024-02-21",
+    "language": "en",
+    "source_ids": [
+      "NVDA-2024FY"
+    ],
+    "claims": [
+      {
+        "claim_id": "NVDA-2024FY-S0",
+        "text": "NVIDIA fiscal 2024 Data Center revenue was $47.5 billion."
+      },
+      {
+        "claim_id": "NVDA-2024FY-C0",
+        "text": "NVIDIA fiscal 2024 Data Center revenue was $60.9 billion."
+      },
+      {
+        "claim_id": "NVDA-2024FY-S1",
+        "text": "NVIDIA fiscal 2024 Gaming revenue was $10.4 billion."
+      },
+      {
+        "claim_id": "NVDA-2024FY-C1",
+        "text": "NVIDIA fiscal 2024 Gaming revenue was $10.4 million."
+      },
+      {
+        "claim_id": "NVDA-2024FY-S2",
+        "text": "NVIDIA fiscal 2024 Data Center revenue was up 217% from fiscal 2023."
+      },
+      {
+        "claim_id": "NVDA-2024FY-C2",
+        "text": "NVIDIA fiscal 2024 Data Center revenue was down 217% from fiscal 2023."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-37",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "NVDA",
+    "as_of": "2024-02-21",
+    "source_cutoff": "2024-02-21",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "NVDA-2024FY-P585",
+      "NVDA-2024FY-P586",
+      "NVDA-2024FY-P578",
+      "NVDA-2024FY-P661",
+      "NVDA-2024FY-P579",
+      "NVDA-2024FY-P1218",
+      "NVDA-2024FY-P582",
+      "NVDA-2024FY-P587",
+      "NVDA-2024FY-P646",
+      "NVDA-2024FY-P645",
+      "NVDA-2024FY-P1175",
+      "NVDA-2024FY-P588",
+      "NVDA-2024FY-P1205"
+    ],
+    "results": [
+      {
+        "claim_id": "NVDA-2024FY-S0",
+        "status": "supported",
+        "reason": "The evidence explicitly states Data Center revenue for fiscal year 2024 was $47.5 billion.",
+        "facts": [
+          {
+            "metric": "Data Center revenue",
+            "value": 47.5,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "fiscal year 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2024FY",
+            "passage_id": "NVDA-2024FY-P585",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
+            "filed_at": "2024-02-21",
+            "period": "FY2024 ended January 28 2024",
+            "document_sha256": "3ee6c75beb947d9e815464e5c0b6392db4f8ca20aa2f99666bc17c92b82d7759",
+            "locator": "Normalized paragraph 585; lines 3952-3965",
+            "quote": "Data Center revenue for fiscal year 2024 was $47.5 billion, up 217% from fiscal year 2023."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "NVIDIA fiscal 2024 Data Center revenue was $47.5 billion."
+      },
+      {
+        "claim_id": "NVDA-2024FY-C0",
+        "status": "conflicted",
+        "reason": "The claim states Data Center revenue was $60.9 billion, but the evidence reports $47.5 billion for fiscal year 2024.",
+        "facts": [
+          {
+            "metric": "Data Center revenue",
+            "value": 47.5,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "fiscal year 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2024FY",
+            "passage_id": "NVDA-2024FY-P585",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
+            "filed_at": "2024-02-21",
+            "period": "FY2024 ended January 28 2024",
+            "document_sha256": "3ee6c75beb947d9e815464e5c0b6392db4f8ca20aa2f99666bc17c92b82d7759",
+            "locator": "Normalized paragraph 585; lines 3952-3965",
+            "quote": "Data Center revenue for fiscal year 2024 was $47.5 billion, up 217% from fiscal year 2023."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "NVIDIA fiscal 2024 Data Center revenue was $60.9 billion."
+      },
+      {
+        "claim_id": "NVDA-2024FY-S1",
+        "status": "supported",
+        "reason": "The evidence explicitly states Gaming revenue for fiscal year 2024 was $10.4 billion.",
+        "facts": [
+          {
+            "metric": "Gaming revenue",
+            "value": 10.4,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "fiscal year 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2024FY",
+            "passage_id": "NVDA-2024FY-P586",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
+            "filed_at": "2024-02-21",
+            "period": "FY2024 ended January 28 2024",
+            "document_sha256": "3ee6c75beb947d9e815464e5c0b6392db4f8ca20aa2f99666bc17c92b82d7759",
+            "locator": "Normalized paragraph 586; lines 3967-3975",
+            "quote": "Gaming revenue for fiscal year 2024 was $10.4 billion, up 15% from fiscal year 2023."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "NVIDIA fiscal 2024 Gaming revenue was $10.4 billion."
+      },
+      {
+        "claim_id": "NVDA-2024FY-C1",
+        "status": "conflicted",
+        "reason": "The claim states Gaming revenue was $10.4 million, but the evidence reports $10.4 billion for fiscal year 2024.",
+        "facts": [
+          {
+            "metric": "Gaming revenue",
+            "value": 10.4,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "fiscal year 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2024FY",
+            "passage_id": "NVDA-2024FY-P586",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
+            "filed_at": "2024-02-21",
+            "period": "FY2024 ended January 28 2024",
+            "document_sha256": "3ee6c75beb947d9e815464e5c0b6392db4f8ca20aa2f99666bc17c92b82d7759",
+            "locator": "Normalized paragraph 586; lines 3967-3975",
+            "quote": "Gaming revenue for fiscal year 2024 was $10.4 billion, up 15% from fiscal year 2023."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "NVIDIA fiscal 2024 Gaming revenue was $10.4 million."
+      },
+      {
+        "claim_id": "NVDA-2024FY-S2",
+        "status": "supported",
+        "reason": "The evidence explicitly states Data Center revenue for fiscal year 2024 was up 217% from fiscal year 2023.",
+        "facts": [
+          {
+            "metric": "Data Center revenue year-over-year growth",
+            "value": 217,
+            "currency": null,
+            "unit": "percent",
+            "period": "fiscal year 2024 vs fiscal year 2023",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2024FY",
+            "passage_id": "NVDA-2024FY-P585",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
+            "filed_at": "2024-02-21",
+            "period": "FY2024 ended January 28 2024",
+            "document_sha256": "3ee6c75beb947d9e815464e5c0b6392db4f8ca20aa2f99666bc17c92b82d7759",
+            "locator": "Normalized paragraph 585; lines 3952-3965",
+            "quote": "Data Center revenue for fiscal year 2024 was $47.5 billion, up 217% from fiscal year 2023."
+          },
+          {
+            "source_id": "NVDA-2024FY",
+            "passage_id": "NVDA-2024FY-P578",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
+            "filed_at": "2024-02-21",
+            "period": "FY2024 ended January 28 2024",
+            "document_sha256": "3ee6c75beb947d9e815464e5c0b6392db4f8ca20aa2f99666bc17c92b82d7759",
+            "locator": "Normalized paragraph 578; lines 3924-3930",
+            "quote": "Data Center revenue for fiscal year 2024 was up 217%."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "NVIDIA fiscal 2024 Data Center revenue was up 217% from fiscal 2023."
+      },
+      {
+        "claim_id": "NVDA-2024FY-C2",
+        "status": "conflicted",
+        "reason": "The claim states Data Center revenue was down 217%, but the evidence reports it was up 217% from fiscal year 2023.",
+        "facts": [
+          {
+            "metric": "Data Center revenue year-over-year growth",
+            "value": 217,
+            "currency": null,
+            "unit": "percent",
+            "period": "fiscal year 2024 vs fiscal year 2023",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "NVDA-2024FY",
+            "passage_id": "NVDA-2024FY-P585",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
+            "filed_at": "2024-02-21",
+            "period": "FY2024 ended January 28 2024",
+            "document_sha256": "3ee6c75beb947d9e815464e5c0b6392db4f8ca20aa2f99666bc17c92b82d7759",
+            "locator": "Normalized paragraph 585; lines 3952-3965",
+            "quote": "Data Center revenue for fiscal year 2024 was $47.5 billion, up 217% from fiscal year 2023."
+          },
+          {
+            "source_id": "NVDA-2024FY",
+            "passage_id": "NVDA-2024FY-P578",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
+            "filed_at": "2024-02-21",
+            "period": "FY2024 ended January 28 2024",
+            "document_sha256": "3ee6c75beb947d9e815464e5c0b6392db4f8ca20aa2f99666bc17c92b82d7759",
+            "locator": "Normalized paragraph 578; lines 3924-3930",
+            "quote": "Data Center revenue for fiscal year 2024 was up 217%."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "NVIDIA fiscal 2024 Data Center revenue was down 217% from fiscal 2023."
+      }
+    ],
+    "coverage": {
+      "supported": 3,
+      "conflicted": 3,
+      "insufficient": 0
+    },
+    "verified_summary": [
+      {
+        "claim_id": "NVDA-2024FY-S0",
+        "text": "NVIDIA fiscal 2024 Data Center revenue was $47.5 billion.",
+        "citations": [
+          "NVDA-2024FY-P585"
+        ]
+      },
+      {
+        "claim_id": "NVDA-2024FY-S1",
+        "text": "NVIDIA fiscal 2024 Gaming revenue was $10.4 billion.",
+        "citations": [
+          "NVDA-2024FY-P586"
+        ]
+      },
+      {
+        "claim_id": "NVDA-2024FY-S2",
+        "text": "NVIDIA fiscal 2024 Data Center revenue was up 217% from fiscal 2023.",
+        "citations": [
+          "NVDA-2024FY-P585",
+          "NVDA-2024FY-P578"
+        ]
+      }
+    ],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 2376,
+      "output_tokens": 1321,
+      "estimated_usd": 0.009138799999999999,
+      "provider_request_id": "20260905100607131902e31f874395",
+      "model": "glm-5.2",
+      "elapsed_ms": 15830
+    }
+  },
+  "error": null,
+  "elapsed_ms": 15852
+}

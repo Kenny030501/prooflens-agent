@@ -1,0 +1,296 @@
+{
+  "input": {
+    "request_id": "eval-34",
+    "entity": "MRVL",
+    "as_of": "2024-05-31",
+    "language": "en",
+    "source_ids": [
+      "MRVL-2025Q1"
+    ],
+    "claims": [
+      {
+        "claim_id": "MRVL-2025Q1-S0",
+        "text": "Marvell net revenue for the three months ended May 4, 2024 decreased by $160.8 million year over year."
+      },
+      {
+        "claim_id": "MRVL-2025Q1-C0",
+        "text": "Marvell net revenue for the three months ended May 4, 2024 decreased by $260.8 million year over year."
+      },
+      {
+        "claim_id": "MRVL-2025Q1-S1",
+        "text": "Marvell data center sales increased 87% year over year in the three months ended May 4, 2024."
+      },
+      {
+        "claim_id": "MRVL-2025Q1-C1",
+        "text": "Marvell data center sales decreased 87% year over year in the three months ended May 4, 2024."
+      },
+      {
+        "claim_id": "MRVL-2025Q1-S2",
+        "text": "Marvell gross margin increased by 3.3 percentage points year over year for the three months ended May 4, 2024."
+      },
+      {
+        "claim_id": "MRVL-2025Q1-C2",
+        "text": "Marvell gross margin increased by 13.3 percentage points year over year for the three months ended May 4, 2024."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-34",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "MRVL",
+    "as_of": "2024-05-31",
+    "source_cutoff": "2024-05-31",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "MRVL-2025Q1-P544",
+      "MRVL-2025Q1-P558",
+      "MRVL-2025Q1-P497",
+      "MRVL-2025Q1-P999",
+      "MRVL-2025Q1-P616",
+      "MRVL-2025Q1-P545",
+      "MRVL-2025Q1-P1001",
+      "MRVL-2025Q1-P724",
+      "MRVL-2025Q1-P507"
+    ],
+    "results": [
+      {
+        "claim_id": "MRVL-2025Q1-S0",
+        "status": "supported",
+        "reason": "The evidence explicitly states net revenue for the three months ended May 4, 2024 decreased by $160.8 million compared to the three months ended April 29, 2023.",
+        "facts": [
+          {
+            "metric": "net_revenue_decrease_year_over_year",
+            "value": 160.8,
+            "currency": "USD",
+            "unit": "million",
+            "period": "three months ended May 4, 2024 vs three months ended April 29, 2023",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q1",
+            "passage_id": "MRVL-2025Q1-P544",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000063/mrvl-20240504.htm",
+            "filed_at": "2024-05-31",
+            "period": "Q1 FY2025 ended May 4 2024",
+            "document_sha256": "dcba6705b9d586f839fc7e6a5c03c9958267c77302781dc0a4848690b266e408",
+            "locator": "Normalized paragraph 544; lines 2548-2556",
+            "quote": "Our net revenue for the three months ended May 4, 2024 decreased by $160.8 million compared to net revenue for the three months ended April 29, 2023."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "Marvell net revenue for the three months ended May 4, 2024 decreased by $160.8 million year over year."
+      },
+      {
+        "claim_id": "MRVL-2025Q1-C0",
+        "status": "conflicted",
+        "reason": "The claim states a decrease of $260.8 million, but the evidence explicitly states the decrease was $160.8 million.",
+        "facts": [
+          {
+            "metric": "net_revenue_decrease_year_over_year",
+            "value": 160.8,
+            "currency": "USD",
+            "unit": "million",
+            "period": "three months ended May 4, 2024 vs three months ended April 29, 2023",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q1",
+            "passage_id": "MRVL-2025Q1-P544",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000063/mrvl-20240504.htm",
+            "filed_at": "2024-05-31",
+            "period": "Q1 FY2025 ended May 4 2024",
+            "document_sha256": "dcba6705b9d586f839fc7e6a5c03c9958267c77302781dc0a4848690b266e408",
+            "locator": "Normalized paragraph 544; lines 2548-2556",
+            "quote": "Our net revenue for the three months ended May 4, 2024 decreased by $160.8 million compared to net revenue for the three months ended April 29, 2023."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "Marvell net revenue for the three months ended May 4, 2024 decreased by $260.8 million year over year."
+      },
+      {
+        "claim_id": "MRVL-2025Q1-S1",
+        "status": "supported",
+        "reason": "The evidence explicitly states data center end market sales increased by 87% compared to the three months ended April 29, 2023.",
+        "facts": [
+          {
+            "metric": "data_center_sales_change_year_over_year",
+            "value": 87,
+            "currency": null,
+            "unit": "percent",
+            "period": "three months ended May 4, 2024 vs three months ended April 29, 2023",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q1",
+            "passage_id": "MRVL-2025Q1-P544",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000063/mrvl-20240504.htm",
+            "filed_at": "2024-05-31",
+            "period": "Q1 FY2025 ended May 4 2024",
+            "document_sha256": "dcba6705b9d586f839fc7e6a5c03c9958267c77302781dc0a4848690b266e408",
+            "locator": "Normalized paragraph 544; lines 2548-2556",
+            "quote": "The decreases were partially offset by an increase in sales from the data center end market by 87% compared to the three months ended April 29, 2023."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "Marvell data center sales increased 87% year over year in the three months ended May 4, 2024."
+      },
+      {
+        "claim_id": "MRVL-2025Q1-C1",
+        "status": "conflicted",
+        "reason": "The claim states data center sales decreased 87%, but the evidence explicitly states data center sales increased by 87%.",
+        "facts": [
+          {
+            "metric": "data_center_sales_change_year_over_year",
+            "value": 87,
+            "currency": null,
+            "unit": "percent",
+            "period": "three months ended May 4, 2024 vs three months ended April 29, 2023",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q1",
+            "passage_id": "MRVL-2025Q1-P544",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000063/mrvl-20240504.htm",
+            "filed_at": "2024-05-31",
+            "period": "Q1 FY2025 ended May 4 2024",
+            "document_sha256": "dcba6705b9d586f839fc7e6a5c03c9958267c77302781dc0a4848690b266e408",
+            "locator": "Normalized paragraph 544; lines 2548-2556",
+            "quote": "The decreases were partially offset by an increase in sales from the data center end market by 87% compared to the three months ended April 29, 2023."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "Marvell data center sales decreased 87% year over year in the three months ended May 4, 2024."
+      },
+      {
+        "claim_id": "MRVL-2025Q1-S2",
+        "status": "supported",
+        "reason": "The evidence explicitly states gross margin for the three months ended May 4, 2024 increased by 3.3 percentage points compared to the three months ended April 29, 2023.",
+        "facts": [
+          {
+            "metric": "gross_margin_change_year_over_year",
+            "value": 3.3,
+            "currency": null,
+            "unit": "percentage_points",
+            "period": "three months ended May 4, 2024 vs three months ended April 29, 2023",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q1",
+            "passage_id": "MRVL-2025Q1-P558",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000063/mrvl-20240504.htm",
+            "filed_at": "2024-05-31",
+            "period": "Q1 FY2025 ended May 4 2024",
+            "document_sha256": "dcba6705b9d586f839fc7e6a5c03c9958267c77302781dc0a4848690b266e408",
+            "locator": "Normalized paragraph 558; lines 2602-2606",
+            "quote": "As a result, gross margin for the three months ended May 4, 2024 increased by 3.3 percentage points compared to the three months ended April 29, 2023."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "Marvell gross margin increased by 3.3 percentage points year over year for the three months ended May 4, 2024."
+      },
+      {
+        "claim_id": "MRVL-2025Q1-C2",
+        "status": "conflicted",
+        "reason": "The claim states gross margin increased by 13.3 percentage points, but the evidence explicitly states the increase was 3.3 percentage points.",
+        "facts": [
+          {
+            "metric": "gross_margin_change_year_over_year",
+            "value": 3.3,
+            "currency": null,
+            "unit": "percentage_points",
+            "period": "three months ended May 4, 2024 vs three months ended April 29, 2023",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2025Q1",
+            "passage_id": "MRVL-2025Q1-P558",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000063/mrvl-20240504.htm",
+            "filed_at": "2024-05-31",
+            "period": "Q1 FY2025 ended May 4 2024",
+            "document_sha256": "dcba6705b9d586f839fc7e6a5c03c9958267c77302781dc0a4848690b266e408",
+            "locator": "Normalized paragraph 558; lines 2602-2606",
+            "quote": "As a result, gross margin for the three months ended May 4, 2024 increased by 3.3 percentage points compared to the three months ended April 29, 2023."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "Marvell gross margin increased by 13.3 percentage points year over year for the three months ended May 4, 2024."
+      }
+    ],
+    "coverage": {
+      "supported": 3,
+      "conflicted": 3,
+      "insufficient": 0
+    },
+    "verified_summary": [
+      {
+        "claim_id": "MRVL-2025Q1-S0",
+        "text": "Marvell net revenue for the three months ended May 4, 2024 decreased by $160.8 million year over year.",
+        "citations": [
+          "MRVL-2025Q1-P544"
+        ]
+      },
+      {
+        "claim_id": "MRVL-2025Q1-S1",
+        "text": "Marvell data center sales increased 87% year over year in the three months ended May 4, 2024.",
+        "citations": [
+          "MRVL-2025Q1-P544"
+        ]
+      },
+      {
+        "claim_id": "MRVL-2025Q1-S2",
+        "text": "Marvell gross margin increased by 3.3 percentage points year over year for the three months ended May 4, 2024.",
+        "citations": [
+          "MRVL-2025Q1-P558"
+        ]
+      }
+    ],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 2548,
+      "output_tokens": 1442,
+      "estimated_usd": 0.009912,
+      "provider_request_id": "20260905100541744296b2890f463d",
+      "model": "glm-5.2",
+      "elapsed_ms": 17156
+    }
+  },
+  "error": null,
+  "elapsed_ms": 17186
+}

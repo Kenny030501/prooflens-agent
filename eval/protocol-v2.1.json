@@ -1,0 +1,8 @@
+{
+  "prompt_version": "prooflens-v2.0.0",
+  "corpus_hash": "efc0414a2030387aa60b7f99f65ac082f4225b6dff61a0ac9dcaf58223127ea3",
+  "cases_hash": "b634054240c8eb52a43c34fc15b59c1276fc74e98f1c5c553a65e56ee663b809",
+  "model": "glm-5.2",
+  "started_at": "2026-09-05T02:00:55.393Z",
+  "scope": "synthetic diagnostic, no real-user results"
+}

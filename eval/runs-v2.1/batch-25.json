@@ -1,0 +1,308 @@
+{
+  "input": {
+    "request_id": "eval-25",
+    "entity": "AMZN",
+    "as_of": "2024-02-02",
+    "language": "en",
+    "source_ids": [
+      "AMZN-2023FY"
+    ],
+    "claims": [
+      {
+        "claim_id": "AMZN-2023FY-S0",
+        "text": "AWS sales increased 13% in 2023 compared to the prior year."
+      },
+      {
+        "claim_id": "AMZN-2023FY-C0",
+        "text": "AWS sales increased 31% in 2023 compared to the prior year."
+      },
+      {
+        "claim_id": "AMZN-2023FY-S1",
+        "text": "Amazon operating income was $36.9 billion in 2023."
+      },
+      {
+        "claim_id": "AMZN-2023FY-C1",
+        "text": "Amazon operating income was $12.2 billion in 2023."
+      },
+      {
+        "claim_id": "AMZN-2023FY-S2",
+        "text": "Amazon operating income was $12.2 billion in 2022."
+      },
+      {
+        "claim_id": "AMZN-2023FY-C2",
+        "text": "Amazon operating income was $12.2 million in 2022."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-25",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "AMZN",
+    "as_of": "2024-02-02",
+    "source_cutoff": "2024-02-02",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "AMZN-2023FY-P421",
+      "AMZN-2023FY-P427",
+      "AMZN-2023FY-P426",
+      "AMZN-2023FY-P787",
+      "AMZN-2023FY-P455",
+      "AMZN-2023FY-P519",
+      "AMZN-2023FY-P392",
+      "AMZN-2023FY-P429",
+      "AMZN-2023FY-P428",
+      "AMZN-2023FY-P397",
+      "AMZN-2023FY-P448",
+      "AMZN-2023FY-P700"
+    ],
+    "results": [
+      {
+        "claim_id": "AMZN-2023FY-S0",
+        "status": "supported",
+        "reason": "The evidence explicitly states AWS sales increased 13% in 2023 compared to the prior year.",
+        "facts": [
+          {
+            "metric": "AWS sales growth",
+            "value": 13,
+            "currency": null,
+            "unit": "percent",
+            "period": "FY2023",
+            "basis": "not_applicable",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2023FY",
+            "passage_id": "AMZN-2023FY-P421",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000008/amzn-20231231.htm",
+            "filed_at": "2024-02-02",
+            "period": "FY2023",
+            "document_sha256": "a469a0feca6dd5728b10c73076c2c120db58116938614c5b1b864fe13674266d",
+            "locator": "Normalized paragraph 421; lines 2566-2568",
+            "quote": "AWS sales increased 13% in 2023, compared to the prior year."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "AWS sales increased 13% in 2023 compared to the prior year."
+      },
+      {
+        "claim_id": "AMZN-2023FY-C0",
+        "status": "conflicted",
+        "reason": "The claim states AWS sales increased 31% in 2023, but the evidence explicitly states AWS sales increased 13% in 2023 compared to the prior year.",
+        "facts": [
+          {
+            "metric": "AWS sales growth",
+            "value": 13,
+            "currency": null,
+            "unit": "percent",
+            "period": "FY2023",
+            "basis": "not_applicable",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2023FY",
+            "passage_id": "AMZN-2023FY-P421",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000008/amzn-20231231.htm",
+            "filed_at": "2024-02-02",
+            "period": "FY2023",
+            "document_sha256": "a469a0feca6dd5728b10c73076c2c120db58116938614c5b1b864fe13674266d",
+            "locator": "Normalized paragraph 421; lines 2566-2568",
+            "quote": "AWS sales increased 13% in 2023, compared to the prior year."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "AWS sales increased 31% in 2023 compared to the prior year."
+      },
+      {
+        "claim_id": "AMZN-2023FY-S1",
+        "status": "supported",
+        "reason": "The evidence explicitly states operating income was $36.9 billion for 2023.",
+        "facts": [
+          {
+            "metric": "Amazon operating income",
+            "value": 36.9,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "FY2023",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2023FY",
+            "passage_id": "AMZN-2023FY-P426",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000008/amzn-20231231.htm",
+            "filed_at": "2024-02-02",
+            "period": "FY2023",
+            "document_sha256": "a469a0feca6dd5728b10c73076c2c120db58116938614c5b1b864fe13674266d",
+            "locator": "Normalized paragraph 426; lines 2585-2588",
+            "quote": "Operating income was $12.2 billion and $36.9 billion for 2022 and 2023."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "Amazon operating income was $36.9 billion in 2023."
+      },
+      {
+        "claim_id": "AMZN-2023FY-C1",
+        "status": "conflicted",
+        "reason": "The claim states Amazon operating income was $12.2 billion in 2023, but the evidence states $12.2 billion was for 2022 and $36.9 billion was for 2023.",
+        "facts": [
+          {
+            "metric": "Amazon operating income",
+            "value": 36.9,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "FY2023",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          },
+          {
+            "metric": "Amazon operating income",
+            "value": 12.2,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "FY2022",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2023FY",
+            "passage_id": "AMZN-2023FY-P426",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000008/amzn-20231231.htm",
+            "filed_at": "2024-02-02",
+            "period": "FY2023",
+            "document_sha256": "a469a0feca6dd5728b10c73076c2c120db58116938614c5b1b864fe13674266d",
+            "locator": "Normalized paragraph 426; lines 2585-2588",
+            "quote": "Operating income was $12.2 billion and $36.9 billion for 2022 and 2023."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "Amazon operating income was $12.2 billion in 2023."
+      },
+      {
+        "claim_id": "AMZN-2023FY-S2",
+        "status": "supported",
+        "reason": "The evidence explicitly states operating income was $12.2 billion for 2022.",
+        "facts": [
+          {
+            "metric": "Amazon operating income",
+            "value": 12.2,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "FY2022",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2023FY",
+            "passage_id": "AMZN-2023FY-P426",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000008/amzn-20231231.htm",
+            "filed_at": "2024-02-02",
+            "period": "FY2023",
+            "document_sha256": "a469a0feca6dd5728b10c73076c2c120db58116938614c5b1b864fe13674266d",
+            "locator": "Normalized paragraph 426; lines 2585-2588",
+            "quote": "Operating income was $12.2 billion and $36.9 billion for 2022 and 2023."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "Amazon operating income was $12.2 billion in 2022."
+      },
+      {
+        "claim_id": "AMZN-2023FY-C2",
+        "status": "conflicted",
+        "reason": "The claim states Amazon operating income was $12.2 million in 2022, but the evidence states it was $12.2 billion for 2022, a unit mismatch (million vs billion).",
+        "facts": [
+          {
+            "metric": "Amazon operating income",
+            "value": 12.2,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "FY2022",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "AMZN-2023FY",
+            "passage_id": "AMZN-2023FY-P426",
+            "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000008/amzn-20231231.htm",
+            "filed_at": "2024-02-02",
+            "period": "FY2023",
+            "document_sha256": "a469a0feca6dd5728b10c73076c2c120db58116938614c5b1b864fe13674266d",
+            "locator": "Normalized paragraph 426; lines 2585-2588",
+            "quote": "Operating income was $12.2 billion and $36.9 billion for 2022 and 2023."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "Amazon operating income was $12.2 million in 2022."
+      }
+    ],
+    "coverage": {
+      "supported": 3,
+      "conflicted": 3,
+      "insufficient": 0
+    },
+    "verified_summary": [
+      {
+        "claim_id": "AMZN-2023FY-S0",
+        "text": "AWS sales increased 13% in 2023 compared to the prior year.",
+        "citations": [
+          "AMZN-2023FY-P421"
+        ]
+      },
+      {
+        "claim_id": "AMZN-2023FY-S1",
+        "text": "Amazon operating income was $36.9 billion in 2023.",
+        "citations": [
+          "AMZN-2023FY-P426"
+        ]
+      },
+      {
+        "claim_id": "AMZN-2023FY-S2",
+        "text": "Amazon operating income was $12.2 billion in 2022.",
+        "citations": [
+          "AMZN-2023FY-P426"
+        ]
+      }
+    ],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 2647,
+      "output_tokens": 1254,
+      "estimated_usd": 0.0092234,
+      "provider_request_id": "20260905100433343f129490e94390",
+      "model": "glm-5.2",
+      "elapsed_ms": 16368
+    }
+  },
+  "error": null,
+  "elapsed_ms": 16385
+}

@@ -1,0 +1,109 @@
+{
+  "input": {
+    "request_id": "eval-32",
+    "entity": "MRVL",
+    "as_of": "2024-03-13",
+    "language": "en",
+    "source_ids": [
+      "MRVL-2024FY"
+    ],
+    "claims": [
+      {
+        "claim_id": "MRVL-2024FY-U",
+        "text": "MRVL management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-32",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "MRVL",
+    "as_of": "2024-03-13",
+    "source_cutoff": "2024-03-13",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "MRVL-2024FY-P682",
+      "MRVL-2024FY-P783",
+      "MRVL-2024FY-P661",
+      "MRVL-2024FY-P1009",
+      "MRVL-2024FY-P450",
+      "MRVL-2024FY-P372"
+    ],
+    "results": [
+      {
+        "claim_id": "MRVL-2024FY-U",
+        "status": "insufficient",
+        "reason": "The claim asserts that management proved all future revenue growth will be caused exclusively by generative AI and is guaranteed. The supplied evidence does not support this. One passage attributes part of the FY2024 revenue decrease offset to AI-driven optical demand, but also cites other factors (storage, ASPs). Other passages explicitly state capital requirements and forecasts are subject to uncertainty, and that future revenue cannot be accurately forecasted or guaranteed. No evidence states all future growth will come exclusively from generative AI or that any growth is guaranteed.",
+        "facts": [
+          {
+            "metric": "net revenue change",
+            "value": -7,
+            "currency": null,
+            "unit": "percent",
+            "period": "FY2024 ended February 3 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2024FY",
+            "passage_id": "MRVL-2024FY-P682",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000009/mrvl-20240203.htm",
+            "filed_at": "2024-03-13",
+            "period": "FY2024 ended February 3 2024",
+            "document_sha256": "d769c7845f49cbe348bfba2dcdd178a0573cf071e76a287c2d25555eece36add",
+            "locator": "Normalized paragraph 682; lines 4897-4901",
+            "quote": "The overall decrease in net revenue of 7% for fiscal 2024 was primarily driven by lower unit shipments related to storage products, partially offset by higher average selling prices for certain products as well as an increase in demand for our optical products, driven by AI applications."
+          },
+          {
+            "source_id": "MRVL-2024FY",
+            "passage_id": "MRVL-2024FY-P783",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000009/mrvl-20240203.htm",
+            "filed_at": "2024-03-13",
+            "period": "FY2024 ended February 3 2024",
+            "document_sha256": "d769c7845f49cbe348bfba2dcdd178a0573cf071e76a287c2d25555eece36add",
+            "locator": "Normalized paragraph 783; lines 5326-5337",
+            "quote": "Our capital requirements will depend on many factors, including our rate of sales growth, market acceptance of our products, costs of securing access to adequate manufacturing capacity, the timing and extent of research and development projects and increases in operating expenses, all of which are subject to uncertainty."
+          },
+          {
+            "source_id": "MRVL-2024FY",
+            "passage_id": "MRVL-2024FY-P372",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000009/mrvl-20240203.htm",
+            "filed_at": "2024-03-13",
+            "period": "FY2024 ended February 3 2024",
+            "document_sha256": "d769c7845f49cbe348bfba2dcdd178a0573cf071e76a287c2d25555eece36add",
+            "locator": "Normalized paragraph 372; lines 2637-2642",
+            "quote": "As a result, we may be unable to accurately forecast the volume and timing of our orders and revenues associated with any new product introductions."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [
+          "future revenue growth attribution to generative AI",
+          "management guarantee of future revenue growth"
+        ],
+        "next_action": "fetch_more_evidence",
+        "guard_downgraded": false,
+        "claim": "MRVL management proved that all future revenue growth will be caused exclusively by generative AI and is guaranteed."
+      }
+    ],
+    "coverage": {
+      "supported": 0,
+      "conflicted": 0,
+      "insufficient": 1
+    },
+    "verified_summary": [],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 1797,
+      "output_tokens": 477,
+      "estimated_usd": 0.0046146,
+      "provider_request_id": "202609051005345fe9c0065154433b",
+      "model": "glm-5.2",
+      "elapsed_ms": 7601
+    }
+  },
+  "error": null,
+  "elapsed_ms": 7603
+}

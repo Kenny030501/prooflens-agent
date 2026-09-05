@@ -1,0 +1,300 @@
+{
+  "input": {
+    "request_id": "eval-31",
+    "entity": "MRVL",
+    "as_of": "2024-03-13",
+    "language": "en",
+    "source_ids": [
+      "MRVL-2024FY"
+    ],
+    "claims": [
+      {
+        "claim_id": "MRVL-2024FY-S0",
+        "text": "Marvell fiscal 2024 net revenue was about $5.5 billion."
+      },
+      {
+        "claim_id": "MRVL-2024FY-C0",
+        "text": "Marvell fiscal 2024 net revenue was about $9.5 billion."
+      },
+      {
+        "claim_id": "MRVL-2024FY-S1",
+        "text": "Marvell fiscal 2024 net revenue was 7.0% lower than fiscal 2023."
+      },
+      {
+        "claim_id": "MRVL-2024FY-C1",
+        "text": "Marvell fiscal 2024 net revenue was 7.0% higher than fiscal 2023."
+      },
+      {
+        "claim_id": "MRVL-2024FY-S2",
+        "text": "Marvell fiscal 2024 data center sales decreased 8% compared to fiscal 2023."
+      },
+      {
+        "claim_id": "MRVL-2024FY-C2",
+        "text": "Marvell fiscal 2024 data center sales increased 8% compared to fiscal 2023."
+      }
+    ]
+  },
+  "response": {
+    "request_id": "eval-31",
+    "engine_mode": "llm_tfidf_v2",
+    "prompt_version": "prooflens-v2.0.0",
+    "entity": "MRVL",
+    "as_of": "2024-03-13",
+    "source_cutoff": "2024-03-13",
+    "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+    "retrieved_passage_ids": [
+      "MRVL-2024FY-P623",
+      "MRVL-2024FY-P681",
+      "MRVL-2024FY-P982",
+      "MRVL-2024FY-P787",
+      "MRVL-2024FY-P694",
+      "MRVL-2024FY-P727",
+      "MRVL-2024FY-P682",
+      "MRVL-2024FY-P1024",
+      "MRVL-2024FY-P768",
+      "MRVL-2024FY-P634",
+      "MRVL-2024FY-P836",
+      "MRVL-2024FY-P1434",
+      "MRVL-2024FY-P1338"
+    ],
+    "results": [
+      {
+        "claim_id": "MRVL-2024FY-S0",
+        "status": "supported",
+        "reason": "The evidence explicitly states net revenue in fiscal 2024 was $5.5 billion.",
+        "facts": [
+          {
+            "metric": "net revenue",
+            "value": 5.5,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "FY2024 ended February 3 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2024FY",
+            "passage_id": "MRVL-2024FY-P623",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000009/mrvl-20240203.htm",
+            "filed_at": "2024-03-13",
+            "period": "FY2024 ended February 3 2024",
+            "document_sha256": "d769c7845f49cbe348bfba2dcdd178a0573cf071e76a287c2d25555eece36add",
+            "locator": "Normalized paragraph 623; lines 4430-4437",
+            "quote": "Net revenue in fiscal 2024 was $5.5 billion and was 7.0% lower than net revenue of $5.9 billion in fiscal 2023."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "Marvell fiscal 2024 net revenue was about $5.5 billion."
+      },
+      {
+        "claim_id": "MRVL-2024FY-C0",
+        "status": "conflicted",
+        "reason": "The claim states fiscal 2024 net revenue was about $9.5 billion, but the evidence states it was $5.5 billion.",
+        "facts": [
+          {
+            "metric": "net revenue",
+            "value": 5.5,
+            "currency": "USD",
+            "unit": "billion",
+            "period": "FY2024 ended February 3 2024",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2024FY",
+            "passage_id": "MRVL-2024FY-P623",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000009/mrvl-20240203.htm",
+            "filed_at": "2024-03-13",
+            "period": "FY2024 ended February 3 2024",
+            "document_sha256": "d769c7845f49cbe348bfba2dcdd178a0573cf071e76a287c2d25555eece36add",
+            "locator": "Normalized paragraph 623; lines 4430-4437",
+            "quote": "Net revenue in fiscal 2024 was $5.5 billion and was 7.0% lower than net revenue of $5.9 billion in fiscal 2023."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "Marvell fiscal 2024 net revenue was about $9.5 billion."
+      },
+      {
+        "claim_id": "MRVL-2024FY-S1",
+        "status": "supported",
+        "reason": "The evidence explicitly states net revenue in fiscal 2024 was 7.0% lower than fiscal 2023.",
+        "facts": [
+          {
+            "metric": "net revenue percent change",
+            "value": -7,
+            "currency": "USD",
+            "unit": "percent",
+            "period": "FY2024 vs FY2023",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2024FY",
+            "passage_id": "MRVL-2024FY-P623",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000009/mrvl-20240203.htm",
+            "filed_at": "2024-03-13",
+            "period": "FY2024 ended February 3 2024",
+            "document_sha256": "d769c7845f49cbe348bfba2dcdd178a0573cf071e76a287c2d25555eece36add",
+            "locator": "Normalized paragraph 623; lines 4430-4437",
+            "quote": "Net revenue in fiscal 2024 was $5.5 billion and was 7.0% lower than net revenue of $5.9 billion in fiscal 2023."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "Marvell fiscal 2024 net revenue was 7.0% lower than fiscal 2023."
+      },
+      {
+        "claim_id": "MRVL-2024FY-C1",
+        "status": "conflicted",
+        "reason": "The claim states fiscal 2024 net revenue was 7.0% higher than fiscal 2023, but the evidence states it was 7.0% lower.",
+        "facts": [
+          {
+            "metric": "net revenue percent change",
+            "value": -7,
+            "currency": "USD",
+            "unit": "percent",
+            "period": "FY2024 vs FY2023",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2024FY",
+            "passage_id": "MRVL-2024FY-P623",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000009/mrvl-20240203.htm",
+            "filed_at": "2024-03-13",
+            "period": "FY2024 ended February 3 2024",
+            "document_sha256": "d769c7845f49cbe348bfba2dcdd178a0573cf071e76a287c2d25555eece36add",
+            "locator": "Normalized paragraph 623; lines 4430-4437",
+            "quote": "Net revenue in fiscal 2024 was $5.5 billion and was 7.0% lower than net revenue of $5.9 billion in fiscal 2023."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "Marvell fiscal 2024 net revenue was 7.0% higher than fiscal 2023."
+      },
+      {
+        "claim_id": "MRVL-2024FY-S2",
+        "status": "supported",
+        "reason": "The evidence explicitly states sales decreased from the data center end market by 8% compared to fiscal 2023.",
+        "facts": [
+          {
+            "metric": "data center end market sales percent change",
+            "value": -8,
+            "currency": "USD",
+            "unit": "percent",
+            "period": "FY2024 vs FY2023",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2024FY",
+            "passage_id": "MRVL-2024FY-P623",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000009/mrvl-20240203.htm",
+            "filed_at": "2024-03-13",
+            "period": "FY2024 ended February 3 2024",
+            "document_sha256": "d769c7845f49cbe348bfba2dcdd178a0573cf071e76a287c2d25555eece36add",
+            "locator": "Normalized paragraph 623; lines 4430-4437",
+            "quote": "Sales decreased from the data center end market by 8%, from the enterprise networking end market by 10%, from the consumer end market by 11%, and from the carrier infrastructure end market by 3%."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "use_with_citation",
+        "guard_downgraded": false,
+        "claim": "Marvell fiscal 2024 data center sales decreased 8% compared to fiscal 2023."
+      },
+      {
+        "claim_id": "MRVL-2024FY-C2",
+        "status": "conflicted",
+        "reason": "The claim states data center sales increased 8%, but the evidence states sales decreased from the data center end market by 8%.",
+        "facts": [
+          {
+            "metric": "data center end market sales percent change",
+            "value": -8,
+            "currency": "USD",
+            "unit": "percent",
+            "period": "FY2024 vs FY2023",
+            "basis": "GAAP",
+            "origin": "reported_actual"
+          }
+        ],
+        "evidence": [
+          {
+            "source_id": "MRVL-2024FY",
+            "passage_id": "MRVL-2024FY-P623",
+            "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563224000009/mrvl-20240203.htm",
+            "filed_at": "2024-03-13",
+            "period": "FY2024 ended February 3 2024",
+            "document_sha256": "d769c7845f49cbe348bfba2dcdd178a0573cf071e76a287c2d25555eece36add",
+            "locator": "Normalized paragraph 623; lines 4430-4437",
+            "quote": "Sales decreased from the data center end market by 8%, from the enterprise networking end market by 10%, from the consumer end market by 11%, and from the carrier infrastructure end market by 3%."
+          }
+        ],
+        "derivation": null,
+        "missing_fields": [],
+        "next_action": "revise_claim",
+        "guard_downgraded": false,
+        "claim": "Marvell fiscal 2024 data center sales increased 8% compared to fiscal 2023."
+      }
+    ],
+    "coverage": {
+      "supported": 3,
+      "conflicted": 3,
+      "insufficient": 0
+    },
+    "verified_summary": [
+      {
+        "claim_id": "MRVL-2024FY-S0",
+        "text": "Marvell fiscal 2024 net revenue was about $5.5 billion.",
+        "citations": [
+          "MRVL-2024FY-P623"
+        ]
+      },
+      {
+        "claim_id": "MRVL-2024FY-S1",
+        "text": "Marvell fiscal 2024 net revenue was 7.0% lower than fiscal 2023.",
+        "citations": [
+          "MRVL-2024FY-P623"
+        ]
+      },
+      {
+        "claim_id": "MRVL-2024FY-S2",
+        "text": "Marvell fiscal 2024 data center sales decreased 8% compared to fiscal 2023.",
+        "citations": [
+          "MRVL-2024FY-P623"
+        ]
+      }
+    ],
+    "gate": "hold",
+    "usage": {
+      "input_tokens": 3139,
+      "output_tokens": 1318,
+      "estimated_usd": 0.0101938,
+      "provider_request_id": "2026090510051923481d065bb34f98",
+      "model": "glm-5.2",
+      "elapsed_ms": 14892
+    }
+  },
+  "error": null,
+  "elapsed_ms": 14915
+}
