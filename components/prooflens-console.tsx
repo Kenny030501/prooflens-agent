@@ -516,7 +516,7 @@ export function ProofLensConsole() {
                 REST: <code>POST /api/v2/evidence-audits</code>
               </p>
               <p>
-                MCP: <code>POST /mcp</code> · Streamable HTTP ·{' '}
+                MCP: <code>POST /api/mcp</code> · Streamable HTTP ·{' '}
                 <code>verify_financial_claims</code>
               </p>
               <p>

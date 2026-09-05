@@ -10,7 +10,7 @@ curl http://localhost:3000/api/v2/evidence-audits \
 
 `GET /api/evidence?ticker=AMZN`: current document catalog. `GET /api/health`: configured engine and anonymous estimated budget. Status does not imply provider availability until a real call succeeds.
 
-`POST /mcp`: stateless Streamable HTTP, tested with the official MCP SDK. Tools: `list_evidence_sources` and `verify_financial_claims`. The latter is non-destructive but can incur cost and record anonymous metadata. It does not publish or trade.
+`POST /api/mcp`: stateless Streamable HTTP, tested with the official MCP SDK. Tools: `list_evidence_sources` and `verify_financial_claims`. The latter is non-destructive but can incur cost and record anonymous metadata. It does not publish or trade.
 
 Local stdio configuration:
 

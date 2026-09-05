@@ -67,7 +67,7 @@ for (const mode of ['http', 'stdio']) {
   const client = new Client({ name: 'prooflens-integration', version: '1.0' });
   const transport =
     mode === 'http'
-      ? new StreamableHTTPClientTransport(new URL(origin + '/mcp'))
+      ? new StreamableHTTPClientTransport(new URL(origin + '/api/mcp'))
       : new StdioClientTransport({
           command: 'node',
           args: ['--import', 'tsx', 'mcp/server.ts'],

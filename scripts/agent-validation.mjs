@@ -29,7 +29,7 @@ const save = (name, value) =>
   writeFileSync(new URL(name, root), JSON.stringify(value, null, 2));
 const client = new Client({ name: 'simulation-harness', version: '1.0' });
 await client.connect(
-  new StreamableHTTPClientTransport(new URL('http://localhost:3000/mcp')),
+  new StreamableHTTPClientTransport(new URL('http://localhost:3000/api/mcp')),
 );
 const tools = (await client.listTools()).tools;
 const profiles = [
