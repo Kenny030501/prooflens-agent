@@ -9,6 +9,8 @@ const event = z
       'audit_completed',
       'evidence_opened',
       'result_exported',
+      'judgment_reviewed',
+      'audit_failed',
     ]),
     duration_ms: z.number().int().min(0).max(3600000).optional(),
     entity: z.enum(['AMZN', 'MRVL', 'NVDA']),

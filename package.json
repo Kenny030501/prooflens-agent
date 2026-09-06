@@ -1,6 +1,6 @@
 {
   "name": "prooflens-agent",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "engines": {
     "node": ">=22.13.0"
@@ -18,7 +18,7 @@
     "test:sources": "tsx tests/source-links.test.ts",
     "eval:template": "tsx scripts/create-annotation-template.ts",
     "typecheck": "tsc --noEmit",
-    "test": "tsx tests/v2.test.ts",
+    "test": "tsx tests/v2.test.ts && tsx tests/iteration.test.ts",
     "test:integration": "tsx tests/integration-v2.test.mjs",
     "db:local": "wrangler d1 migrations apply DB --local --config wrangler.local.json",
     "eval:run": "tsx scripts/run-eval.mjs",

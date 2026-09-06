@@ -1,12 +1,14 @@
 # ProofLens for Agents
 
-面向研究 Agent 的历史财务主张证据服务。当前为可运行的研究型 MVP：真实 GLM 推理、TF-IDF、12 份 SEC 文件 / 585 个选定片段、REST 与两种 MCP 接口。
+面向研究 Agent 的历史财务主张证据服务。v0.3 为可运行的研究型 MVP：真实 GLM 推理、双通道 TF-IDF、18 份一手文件 / 690 个选定片段、命名操作数计算、REST 与两种 MCP 接口。
 
 [私有在线演示](https://prooflens-agent.yaowenhu1215.chatgpt.site) · [项目 Notion](https://app.notion.com/p/3d2c4b789bd681a9bad0c88a14a8b3fa)
 
 ## 当前完成范围
 
-产品流程推进至第六步“开发 MVP”。岗位矩阵、真实历史任务证据、产品定义、模拟原型测试、评测设计与代码已交付。真实市场采用、严格外部对照、长期效果和公开作品集发布属于后续工作。
+九步流程在 to-agent 研究范围内已形成交付：从岗位与问题研究、产品定义、MVP，到同条件配对实验、一轮代码迭代及双语作品集。发布访问范围及 GitHub 状态须以实际发布回执为准。真实市场采用、真人效果和生产 SLA 不包含在研究型结项声明中。
+
+本轮迭代回归 8/8，新增同来源家族主张 10/12；此前配对实验双方均 5/6 合格，额外核验更慢、更贵，未证明核心质量增益。负面结果没有被删除。
 
 原型升级后不再提供旧规则引擎的默认 pass，不保存草稿正文，不输出可信度总分，不生成交易建议。
 
@@ -32,6 +34,11 @@ npm run build
 
 ## 交付导航
 
+- [最终结项报告与路线图](docs/FINAL_REPORT.md)
+- [最终中英文案例、面试稿与简历表述](docs/FINAL_PORTFOLIO.md)
+- [网页案例](https://prooflens-agent.yaowenhu1215.chatgpt.site/case)
+- [v0.3 逐题回执与冻结协议](eval/release-v0.3/)
+
 - [10 份 JD 与竞品矩阵](docs/ROLE_AND_COMPETITOR_MATRIX.md)
 - [实施 PRD 与设计差异](docs/PRD_V0.3_IMPLEMENTED.md)
 - [任务旅程与原型验证](docs/JOURNEY_AND_PROTOTYPE.md)
@@ -43,7 +50,7 @@ npm run build
 
 旧 v0.1 文档、规则引擎与早期测试作为历史记录保留，不代表当前服务。
 
-## 实测结果与边界
+## 历史实测结果与边界
 
 120 条合成诊断题：115/120 标签一致；32 条文档留出题：30/32。未观察到错误放行，但这不证明真实错误率为零。第二模型复核24条，23条与预设标签一致，存在1条边界分歧。
 

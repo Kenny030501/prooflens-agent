@@ -1,0 +1,22 @@
+{
+  "created_at": "2026-09-06T13:40:12.007Z",
+  "hashes": {
+    "../eval/release-cases.json": "fc8554821f946e7c216381304f5d376d01998e0bce4df1af11ca3d15034553fb",
+    "../data/corpus.json": "bae900a8e84346f131f8deb5dd9dd40e3117e1a5849e6d034e05831362dd746f",
+    "../lib/v2/engine.ts": "a56f5e5301c86009684626ceb09b956ebc2f77d431b8146d0b8be98c03c881f1",
+    "../lib/v2/provider.ts": "28809ef131fce4b9238dca064e42ced71fe302580bd5d468ce02c8820e5a529b",
+    "../lib/v2/contracts.ts": "324afb5eba583a2283a5784228cc8d9fcea039fea368d8991e87db62d404eba4",
+    "../lib/v2/retrieval.ts": "57cd81c27bdc4af2001b799d3c47f941cb43ed8cd65b8581d7ec7dfa3e5bdcb7",
+    "../lib/v2/calculation.ts": "9e80d9c373d5cfb087c17bb414876cd653f4c57445d9d50a090f3ebeb9e0a121",
+    "./run-release-eval.mjs": "5cfa8664ff2ab41089e1560a1a388507ed2a764ce0199a64995e0111263daec5"
+  },
+  "prompt": "prooflens-v2.2.0",
+  "model": "glm-5.2",
+  "budget_usd": 0.16,
+  "tasks": 5,
+  "claims": 20,
+  "regression_claims": 8,
+  "fresh_claims": 12,
+  "distinction": "New claim wording, same primary-source families; not unseen documents or independent human gold. No tuning after reading fresh outputs.",
+  "metrics": "All failures remain in denominator. Label agreement and verbatim citations are reported separately from semantic support. Fixed source checks are not general entailment proof."
+}

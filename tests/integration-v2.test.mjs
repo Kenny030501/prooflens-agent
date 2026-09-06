@@ -80,7 +80,7 @@ for (const mode of ['http', 'stdio']) {
     name: 'list_evidence_sources',
     arguments: { ticker: 'AMZN' },
   });
-  assert.equal(source.structuredContent.documents.length, 4);
+  assert.equal(source.structuredContent.documents.length, 6);
   const result = await client.callTool({
     name: 'verify_financial_claims',
     arguments: { ...input, request_id: 'mcp-' + mode + '-' + Date.now() },

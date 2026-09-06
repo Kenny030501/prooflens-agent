@@ -1,0 +1,62 @@
+[
+  {
+    "task": "regression-A2",
+    "id": 1,
+    "started_at": "2026-09-06T13:40:12.434Z",
+    "accounted_usd": 0.0094896,
+    "status": "usage_returned",
+    "input_tokens": 2856,
+    "output_tokens": 1248,
+    "estimated_usd": 0.0094896,
+    "provider_request_id": "20260906214012653f5c12211e40b8",
+    "elapsed_ms": 13420.293208
+  },
+  {
+    "task": "regression-M1",
+    "id": 2,
+    "started_at": "2026-09-06T13:40:25.882Z",
+    "accounted_usd": 0.0092138,
+    "status": "usage_returned",
+    "input_tokens": 2351,
+    "output_tokens": 1346,
+    "estimated_usd": 0.0092138,
+    "provider_request_id": "20260906214026626b54402c514a51",
+    "elapsed_ms": 19825.650832999996
+  },
+  {
+    "task": "fresh-AMZN",
+    "id": 3,
+    "started_at": "2026-09-06T13:40:45.803Z",
+    "accounted_usd": 0.007421800000000001,
+    "status": "usage_returned",
+    "input_tokens": 2259,
+    "output_tokens": 968,
+    "estimated_usd": 0.007421800000000001,
+    "provider_request_id": "20260906214045e7649479c3354f79",
+    "elapsed_ms": 10764.276207999996
+  },
+  {
+    "task": "fresh-MRVL",
+    "id": 4,
+    "started_at": "2026-09-06T13:40:56.706Z",
+    "accounted_usd": 0.0092398,
+    "status": "usage_returned",
+    "input_tokens": 2885,
+    "output_tokens": 1182,
+    "estimated_usd": 0.0092398,
+    "provider_request_id": "20260906214056c74bbc2eb6b34e09",
+    "elapsed_ms": 17629.959917
+  },
+  {
+    "task": "fresh-NVDA",
+    "id": 5,
+    "started_at": "2026-09-06T13:41:14.445Z",
+    "accounted_usd": 0.0122066,
+    "status": "usage_returned",
+    "input_tokens": 3219,
+    "output_tokens": 1750,
+    "estimated_usd": 0.0122066,
+    "provider_request_id": "202609062141141ec80f5a18a44ea4",
+    "elapsed_ms": 29046.116458000004
+  }
+]

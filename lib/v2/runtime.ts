@@ -61,7 +61,7 @@ export async function runtimeStatus() {
   return {
     status: configured ? 'ready' : 'model_not_configured',
     model: models[provider],
-    version: '0.2.0',
+    version: '0.3.0',
     engine: 'llm_tfidf_v2',
     source_documents: corpus.documents.length,
     source_passages: corpus.passages.length,

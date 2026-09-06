@@ -1,0 +1,944 @@
+{
+  "AMZN": {
+    "input": {
+      "request_id": "release_fresh-AMZN",
+      "entity": "AMZN",
+      "as_of": "2025-05-31",
+      "language": "zh",
+      "claims": [
+        {
+          "claim_id": "C1",
+          "text": "Amazon reported net income of $17.1 billion in Q1 2025."
+        },
+        {
+          "claim_id": "C2",
+          "text": "AWS operating income increased from $10.6 billion in Q4 2024 to $11.5 billion in Q1 2025, a calculated increase of $0.9 billion using rounded figures."
+        },
+        {
+          "claim_id": "C3",
+          "text": "亚马逊 2025 年第一季度净销售额为 187.8 billion USD。"
+        },
+        {
+          "claim_id": "C4",
+          "text": "Amazon disclosed a standalone Trainium operating margin of 25% for Q1 2025."
+        }
+      ]
+    },
+    "output": {
+      "request_id": "release_fresh-AMZN",
+      "engine_mode": "llm_tfidf_v2",
+      "prompt_version": "prooflens-v2.2.0",
+      "entity": "AMZN",
+      "as_of": "2025-05-31",
+      "source_cutoff": "2025-05-01",
+      "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+      "source_coverage": {
+        "requested_source_ids": null,
+        "eligible_source_ids": [
+          "AMZN-2024Q1",
+          "AMZN-2024Q2",
+          "AMZN-2023FY",
+          "AMZN-2024Q3",
+          "AMZN-2024Q4-new",
+          "AMZN-2025Q1-new"
+        ],
+        "excluded_future_source_ids": [],
+        "failed_source_ids": [],
+        "available_passages": 229,
+        "retrieved_passages": 15,
+        "full_document_coverage": false
+      },
+      "retrieved_passage_ids": [
+        "AMZN-2025Q1-new-P06",
+        "AMZN-2024Q4-new-P05",
+        "AMZN-2025Q1-new-P02",
+        "AMZN-2024Q3-P372",
+        "AMZN-2024Q4-new-P02",
+        "AMZN-2025Q1-new-P04",
+        "AMZN-2025Q1-new-P05",
+        "AMZN-2023FY-P1061",
+        "AMZN-2025Q1-new-P03",
+        "AMZN-2025Q1-new-P01",
+        "AMZN-2024Q1-P482",
+        "AMZN-2024Q4-new-P08",
+        "AMZN-2025Q1-new-P10",
+        "AMZN-2024Q1-P847",
+        "AMZN-2024Q4-new-P11"
+      ],
+      "results": [
+        {
+          "claim_id": "C1",
+          "status": "supported",
+          "reason": "证据明确指出2025年第一季度净利润增至171亿美元，与声明一致。",
+          "facts": [
+            {
+              "metric": "net income",
+              "value": 17.1,
+              "currency": "USD",
+              "unit": "billion",
+              "period": "Q1 2025",
+              "evidence_passage_id": "AMZN-2025Q1-new-P06",
+              "basis": "GAAP",
+              "origin": "reported_actual",
+              "period_start": null,
+              "period_end": null,
+              "period_grain": "quarter",
+              "date_normalization": "Not normalized; use the quoted reporting-period label."
+            }
+          ],
+          "evidence": [
+            {
+              "source_id": "AMZN-2025Q1-new",
+              "passage_id": "AMZN-2025Q1-new-P06",
+              "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000034/amzn-20250331xex991.htm",
+              "filed_at": "2025-05-01",
+              "collected_at": "2026-09-05T23:57:18.014085+00:00",
+              "period": "Q1 2025 results and Q2 2025 outlook",
+              "document_sha256": "a7b1aa7aa0cdbaa25158f68d1c4cc7d6933bf46204c47c1334d2ed37749c62a4",
+              "locator": "Normalized paragraph 6; lines 6-6",
+              "quote": "Net income increased to $17.1 billion in the first quarter, or $1.59 per diluted share, compared with $10.4 billion, or $0.98 per diluted share, in first quarter 2024."
+            }
+          ],
+          "derivation": null,
+          "missing_fields": [],
+          "next_action": "use_with_citation",
+          "guard_downgraded": false,
+          "claim": "Amazon reported net income of $17.1 billion in Q1 2025."
+        },
+        {
+          "claim_id": "C2",
+          "status": "supported",
+          "reason": "证据显示AWS分部营业利润从2024年第四季度的106亿美元增至2025年第一季度的115亿美元，差额为9亿美元，与声明一致。",
+          "facts": [
+            {
+              "metric": "AWS segment operating income",
+              "value": 10.6,
+              "currency": "USD",
+              "unit": "billion",
+              "period": "Q4 2024",
+              "evidence_passage_id": "AMZN-2024Q4-new-P05",
+              "basis": "GAAP",
+              "origin": "reported_actual",
+              "period_start": null,
+              "period_end": null,
+              "period_grain": "quarter",
+              "date_normalization": "Not normalized; use the quoted reporting-period label."
+            },
+            {
+              "metric": "AWS segment operating income",
+              "value": 11.5,
+              "currency": "USD",
+              "unit": "billion",
+              "period": "Q1 2025",
+              "evidence_passage_id": "AMZN-2025Q1-new-P05",
+              "basis": "GAAP",
+              "origin": "reported_actual",
+              "period_start": null,
+              "period_end": null,
+              "period_grain": "quarter",
+              "date_normalization": "Not normalized; use the quoted reporting-period label."
+            }
+          ],
+          "evidence": [
+            {
+              "source_id": "AMZN-2024Q4-new",
+              "passage_id": "AMZN-2024Q4-new-P05",
+              "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000002/amzn-20241231xex991.htm",
+              "filed_at": "2025-02-06",
+              "collected_at": "2026-09-05T23:57:17.934061+00:00",
+              "period": "Q4 2024 and FY2024",
+              "document_sha256": "b707f2ed5213e785b66562d4bed59a09583f4ce1ecf6835929ff20606a21f6aa",
+              "locator": "Normalized paragraph 5; lines 5-5",
+              "quote": "AWS segment operating income was $10.6 billion, compared with operating income of $7.2 billion in fourth quarter 2023."
+            },
+            {
+              "source_id": "AMZN-2025Q1-new",
+              "passage_id": "AMZN-2025Q1-new-P05",
+              "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000034/amzn-20250331xex991.htm",
+              "filed_at": "2025-05-01",
+              "collected_at": "2026-09-05T23:57:18.014085+00:00",
+              "period": "Q1 2025 results and Q2 2025 outlook",
+              "document_sha256": "a7b1aa7aa0cdbaa25158f68d1c4cc7d6933bf46204c47c1334d2ed37749c62a4",
+              "locator": "Normalized paragraph 5; lines 5-5",
+              "quote": "AWS segment operating income was $11.5 billion, compared with $9.4 billion in first quarter 2024."
+            }
+          ],
+          "derivation": {
+            "operation": "difference",
+            "minuend_fact_index": 1,
+            "subtrahend_fact_index": 0,
+            "assumptions": [
+              "使用四舍五入后的十亿美元数值计算差额，单位为billion USD"
+            ],
+            "inputs": [
+              11.5,
+              10.6
+            ],
+            "result": 0.9,
+            "computation": "server_computed_from_named_facts",
+            "input_evidence_ids": [
+              "AMZN-2025Q1-new-P05",
+              "AMZN-2024Q4-new-P05"
+            ],
+            "evidence_binding": "Named fact operands and numeric occurrence checked; metric, period and basis entailment still require review."
+          },
+          "missing_fields": [],
+          "next_action": "use_with_citation",
+          "guard_downgraded": false,
+          "claim": "AWS operating income increased from $10.6 billion in Q4 2024 to $11.5 billion in Q1 2025, a calculated increase of $0.9 billion using rounded figures."
+        },
+        {
+          "claim_id": "C3",
+          "status": "conflicted",
+          "reason": "证据显示2025年第一季度净销售额为1557亿美元，而非声明中的1878亿美元，存在明确矛盾。",
+          "facts": [
+            {
+              "metric": "net sales",
+              "value": 155.7,
+              "currency": "USD",
+              "unit": "billion",
+              "period": "Q1 2025",
+              "evidence_passage_id": "AMZN-2025Q1-new-P01",
+              "basis": "GAAP",
+              "origin": "reported_actual",
+              "period_start": null,
+              "period_end": null,
+              "period_grain": "quarter",
+              "date_normalization": "Not normalized; use the quoted reporting-period label."
+            }
+          ],
+          "evidence": [
+            {
+              "source_id": "AMZN-2025Q1-new",
+              "passage_id": "AMZN-2025Q1-new-P01",
+              "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000034/amzn-20250331xex991.htm",
+              "filed_at": "2025-05-01",
+              "collected_at": "2026-09-05T23:57:18.014085+00:00",
+              "period": "Q1 2025 results and Q2 2025 outlook",
+              "document_sha256": "a7b1aa7aa0cdbaa25158f68d1c4cc7d6933bf46204c47c1334d2ed37749c62a4",
+              "locator": "Normalized paragraph 1; lines 1-1",
+              "quote": "Net sales increased 9% to $155.7 billion in the first quarter, compared with $143.3 billion in first quarter 2024."
+            }
+          ],
+          "derivation": null,
+          "missing_fields": [],
+          "next_action": "revise_claim",
+          "guard_downgraded": false,
+          "claim": "亚马逊 2025 年第一季度净销售额为 187.8 billion USD。"
+        },
+        {
+          "claim_id": "C4",
+          "status": "insufficient",
+          "reason": "提供的证据中未提及任何关于Trainium独立营业利润率的信息，无法验证该声明。",
+          "facts": [],
+          "evidence": [],
+          "derivation": null,
+          "missing_fields": [
+            "Trainium standalone operating margin for Q1 2025"
+          ],
+          "next_action": "fetch_more_evidence",
+          "guard_downgraded": false,
+          "claim": "Amazon disclosed a standalone Trainium operating margin of 25% for Q1 2025."
+        }
+      ],
+      "coverage": {
+        "supported": 2,
+        "conflicted": 1,
+        "insufficient": 1
+      },
+      "verified_summary": [
+        {
+          "claim_id": "C1",
+          "text": "Amazon reported net income of $17.1 billion in Q1 2025.",
+          "citations": [
+            "AMZN-2025Q1-new-P06"
+          ]
+        },
+        {
+          "claim_id": "C2",
+          "text": "AWS operating income increased from $10.6 billion in Q4 2024 to $11.5 billion in Q1 2025, a calculated increase of $0.9 billion using rounded figures.",
+          "citations": [
+            "AMZN-2024Q4-new-P05",
+            "AMZN-2025Q1-new-P05"
+          ]
+        }
+      ],
+      "gate": "hold",
+      "usage": {
+        "input_tokens": 2259,
+        "output_tokens": 968,
+        "estimated_usd": 0.007421800000000001,
+        "provider_request_id": "20260906214045e7649479c3354f79",
+        "model": "glm-5.2",
+        "call_count": 1,
+        "billed_usd": null,
+        "elapsed_ms": 10766
+      }
+    },
+    "source": "eval/release-v0.3/results.json",
+    "limits": "Recorded unedited output, including failures; no new model call. Not a live verification of new text."
+  },
+  "MRVL": {
+    "input": {
+      "request_id": "release_fresh-MRVL",
+      "entity": "MRVL",
+      "as_of": "2025-05-31",
+      "language": "zh",
+      "claims": [
+        {
+          "claim_id": "C1",
+          "text": "Marvell reported GAAP diluted EPS of $0.20 and non-GAAP diluted EPS of $0.62 for Q1 FY2026."
+        },
+        {
+          "claim_id": "C2",
+          "text": "Using Marvell Q1 FY2026 reported diluted EPS, non-GAAP EPS exceeded GAAP EPS by a calculated $0.42 per share."
+        },
+        {
+          "claim_id": "C3",
+          "text": "Marvell 在 Q1 FY2026 披露的 GAAP gross margin 为 59.8%。"
+        },
+        {
+          "claim_id": "C4",
+          "text": "Marvell disclosed a standalone custom AI silicon operating margin of 45% in Q1 FY2026."
+        }
+      ]
+    },
+    "output": {
+      "request_id": "release_fresh-MRVL",
+      "engine_mode": "llm_tfidf_v2",
+      "prompt_version": "prooflens-v2.2.0",
+      "entity": "MRVL",
+      "as_of": "2025-05-31",
+      "source_cutoff": "2025-05-29",
+      "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+      "source_coverage": {
+        "requested_source_ids": null,
+        "eligible_source_ids": [
+          "MRVL-2025Q2",
+          "MRVL-2025Q3",
+          "MRVL-2024FY",
+          "MRVL-2025Q1",
+          "MRVL-2025Q4-new",
+          "MRVL-2026Q1-new"
+        ],
+        "excluded_future_source_ids": [],
+        "failed_source_ids": [],
+        "available_passages": 245,
+        "retrieved_passages": 18,
+        "full_document_coverage": false
+      },
+      "retrieved_passage_ids": [
+        "MRVL-2026Q1-new-P03",
+        "MRVL-2026Q1-new-P12",
+        "MRVL-2026Q1-new-P02",
+        "MRVL-2025Q4-new-P06",
+        "MRVL-2025Q4-new-P14",
+        "MRVL-2025Q4-new-P02",
+        "MRVL-2025Q3-P022",
+        "MRVL-2025Q4-new-P08",
+        "MRVL-2026Q1-new-P17",
+        "MRVL-2026Q1-new-P04",
+        "MRVL-2025Q2-P022",
+        "MRVL-2025Q4-new-P09",
+        "MRVL-2026Q1-new-P08",
+        "MRVL-2026Q1-new-P06",
+        "MRVL-2025Q3-P011",
+        "MRVL-2025Q4-new-P03",
+        "MRVL-2026Q1-new-P07",
+        "MRVL-2026Q1-new-P09"
+      ],
+      "results": [
+        {
+          "claim_id": "C1",
+          "status": "supported",
+          "reason": "证据明确披露 Q1 FY2026 GAAP 摊薄每股收益为 $0.20，non-GAAP 摊薄每股收益为 $0.62，与声明完全一致。",
+          "facts": [
+            {
+              "metric": "GAAP diluted EPS",
+              "value": 0.2,
+              "currency": "USD",
+              "unit": "per share",
+              "period": "Q1 FY2026",
+              "evidence_passage_id": "MRVL-2026Q1-new-P03",
+              "basis": "GAAP",
+              "origin": "reported_actual",
+              "period_start": null,
+              "period_end": null,
+              "period_grain": "quarter",
+              "date_normalization": "Not normalized; use the quoted reporting-period label."
+            },
+            {
+              "metric": "non-GAAP diluted EPS",
+              "value": 0.62,
+              "currency": "USD",
+              "unit": "per share",
+              "period": "Q1 FY2026",
+              "evidence_passage_id": "MRVL-2026Q1-new-P03",
+              "basis": "non-GAAP",
+              "origin": "reported_actual",
+              "period_start": null,
+              "period_end": null,
+              "period_grain": "quarter",
+              "date_normalization": "Not normalized; use the quoted reporting-period label."
+            }
+          ],
+          "evidence": [
+            {
+              "source_id": "MRVL-2026Q1-new",
+              "passage_id": "MRVL-2026Q1-new-P03",
+              "url": "https://investor.marvell.com/news-events/press-releases/detail/95/marvell-technology-inc-reports-first-quarter-of-fiscal-year-2026-financial-results",
+              "filed_at": "2025-05-29",
+              "collected_at": "2026-09-05T23:57:18.220535+00:00",
+              "period": "Q1 FY2026 results and Q2 FY2026 outlook",
+              "document_sha256": "b8a6c0ce57c574fb83e1087e18f4ae8cce9f5a799a98b74dc4bffe8fd4b8cd87",
+              "locator": "Normalized paragraph 3; lines 3-3",
+              "quote": "Q1 Diluted income per share: $0.20 GAAP diluted income per share; $0.62 non-GAAP diluted income per share"
+            }
+          ],
+          "derivation": null,
+          "missing_fields": [],
+          "next_action": "use_with_citation",
+          "guard_downgraded": false,
+          "claim": "Marvell reported GAAP diluted EPS of $0.20 and non-GAAP diluted EPS of $0.62 for Q1 FY2026."
+        },
+        {
+          "claim_id": "C2",
+          "status": "supported",
+          "reason": "证据显示 Q1 FY2026 non-GAAP 摊薄每股收益为 $0.62，GAAP 摊薄每股收益为 $0.20，两者差值为 $0.42，与声明一致。",
+          "facts": [
+            {
+              "metric": "non-GAAP diluted EPS",
+              "value": 0.62,
+              "currency": "USD",
+              "unit": "per share",
+              "period": "Q1 FY2026",
+              "evidence_passage_id": "MRVL-2026Q1-new-P03",
+              "basis": "non-GAAP",
+              "origin": "reported_actual",
+              "period_start": null,
+              "period_end": null,
+              "period_grain": "quarter",
+              "date_normalization": "Not normalized; use the quoted reporting-period label."
+            },
+            {
+              "metric": "GAAP diluted EPS",
+              "value": 0.2,
+              "currency": "USD",
+              "unit": "per share",
+              "period": "Q1 FY2026",
+              "evidence_passage_id": "MRVL-2026Q1-new-P03",
+              "basis": "GAAP",
+              "origin": "reported_actual",
+              "period_start": null,
+              "period_end": null,
+              "period_grain": "quarter",
+              "date_normalization": "Not normalized; use the quoted reporting-period label."
+            }
+          ],
+          "evidence": [
+            {
+              "source_id": "MRVL-2026Q1-new",
+              "passage_id": "MRVL-2026Q1-new-P03",
+              "url": "https://investor.marvell.com/news-events/press-releases/detail/95/marvell-technology-inc-reports-first-quarter-of-fiscal-year-2026-financial-results",
+              "filed_at": "2025-05-29",
+              "collected_at": "2026-09-05T23:57:18.220535+00:00",
+              "period": "Q1 FY2026 results and Q2 FY2026 outlook",
+              "document_sha256": "b8a6c0ce57c574fb83e1087e18f4ae8cce9f5a799a98b74dc4bffe8fd4b8cd87",
+              "locator": "Normalized paragraph 3; lines 3-3",
+              "quote": "Q1 Diluted income per share: $0.20 GAAP diluted income per share; $0.62 non-GAAP diluted income per share"
+            }
+          ],
+          "derivation": {
+            "operation": "difference",
+            "minuend_fact_index": 0,
+            "subtrahend_fact_index": 1,
+            "assumptions": [
+              "差值 = non-GAAP 摊薄每股收益 - GAAP 摊薄每股收益，单位为美元/股"
+            ],
+            "inputs": [
+              0.62,
+              0.2
+            ],
+            "result": 0.42,
+            "computation": "server_computed_from_named_facts",
+            "input_evidence_ids": [
+              "MRVL-2026Q1-new-P03",
+              "MRVL-2026Q1-new-P03"
+            ],
+            "evidence_binding": "Named fact operands and numeric occurrence checked; metric, period and basis entailment still require review."
+          },
+          "missing_fields": [],
+          "next_action": "use_with_citation",
+          "guard_downgraded": false,
+          "claim": "Using Marvell Q1 FY2026 reported diluted EPS, non-GAAP EPS exceeded GAAP EPS by a calculated $0.42 per share."
+        },
+        {
+          "claim_id": "C3",
+          "status": "conflicted",
+          "reason": "证据显示 Q1 FY2026 GAAP 毛利率为 50.3%，non-GAAP 毛利率为 59.8%。声明将 59.8% 归为 GAAP 毛利率，与证据直接矛盾。",
+          "facts": [
+            {
+              "metric": "GAAP gross margin",
+              "value": 50.3,
+              "currency": null,
+              "unit": "percent",
+              "period": "Q1 FY2026",
+              "evidence_passage_id": "MRVL-2026Q1-new-P02",
+              "basis": "GAAP",
+              "origin": "reported_actual",
+              "period_start": null,
+              "period_end": null,
+              "period_grain": "quarter",
+              "date_normalization": "Not normalized; use the quoted reporting-period label."
+            },
+            {
+              "metric": "non-GAAP gross margin",
+              "value": 59.8,
+              "currency": null,
+              "unit": "percent",
+              "period": "Q1 FY2026",
+              "evidence_passage_id": "MRVL-2026Q1-new-P02",
+              "basis": "non-GAAP",
+              "origin": "reported_actual",
+              "period_start": null,
+              "period_end": null,
+              "period_grain": "quarter",
+              "date_normalization": "Not normalized; use the quoted reporting-period label."
+            }
+          ],
+          "evidence": [
+            {
+              "source_id": "MRVL-2026Q1-new",
+              "passage_id": "MRVL-2026Q1-new-P02",
+              "url": "https://investor.marvell.com/news-events/press-releases/detail/95/marvell-technology-inc-reports-first-quarter-of-fiscal-year-2026-financial-results",
+              "filed_at": "2025-05-29",
+              "collected_at": "2026-09-05T23:57:18.220535+00:00",
+              "period": "Q1 FY2026 results and Q2 FY2026 outlook",
+              "document_sha256": "b8a6c0ce57c574fb83e1087e18f4ae8cce9f5a799a98b74dc4bffe8fd4b8cd87",
+              "locator": "Normalized paragraph 2; lines 2-2",
+              "quote": "Q1 Gross Margin: 50.3% GAAP gross margin; 59.8% non-GAAP gross margin"
+            }
+          ],
+          "derivation": null,
+          "missing_fields": [],
+          "next_action": "revise_claim",
+          "guard_downgraded": false,
+          "claim": "Marvell 在 Q1 FY2026 披露的 GAAP gross margin 为 59.8%。"
+        },
+        {
+          "claim_id": "C4",
+          "status": "insufficient",
+          "reason": "证据中未提及 Marvell 在 Q1 FY2026 披露独立的定制 AI 硅业务运营利润率（standalone custom AI silicon operating margin）为 45% 的信息，无法验证该声明。",
+          "facts": [],
+          "evidence": [],
+          "derivation": null,
+          "missing_fields": [
+            "standalone custom AI silicon operating margin for Q1 FY2026"
+          ],
+          "next_action": "fetch_more_evidence",
+          "guard_downgraded": false,
+          "claim": "Marvell disclosed a standalone custom AI silicon operating margin of 45% in Q1 FY2026."
+        }
+      ],
+      "coverage": {
+        "supported": 2,
+        "conflicted": 1,
+        "insufficient": 1
+      },
+      "verified_summary": [
+        {
+          "claim_id": "C1",
+          "text": "Marvell reported GAAP diluted EPS of $0.20 and non-GAAP diluted EPS of $0.62 for Q1 FY2026.",
+          "citations": [
+            "MRVL-2026Q1-new-P03"
+          ]
+        },
+        {
+          "claim_id": "C2",
+          "text": "Using Marvell Q1 FY2026 reported diluted EPS, non-GAAP EPS exceeded GAAP EPS by a calculated $0.42 per share.",
+          "citations": [
+            "MRVL-2026Q1-new-P03"
+          ]
+        }
+      ],
+      "gate": "hold",
+      "usage": {
+        "input_tokens": 2885,
+        "output_tokens": 1182,
+        "estimated_usd": 0.0092398,
+        "provider_request_id": "20260906214056c74bbc2eb6b34e09",
+        "model": "glm-5.2",
+        "call_count": 1,
+        "billed_usd": null,
+        "elapsed_ms": 17632
+      }
+    },
+    "source": "eval/release-v0.3/results.json",
+    "limits": "Recorded unedited output, including failures; no new model call. Not a live verification of new text."
+  },
+  "NVDA": {
+    "input": {
+      "request_id": "release_fresh-NVDA",
+      "entity": "NVDA",
+      "as_of": "2025-05-31",
+      "language": "zh",
+      "claims": [
+        {
+          "claim_id": "C1",
+          "text": "NVIDIA Data Center revenue rose from $35.6 billion in Q4 FY2025 to $39.1 billion in Q1 FY2026, a calculated increase of $3.5 billion using rounded figures."
+        },
+        {
+          "claim_id": "C2",
+          "text": "NVIDIA Q1 FY2026 GAAP net income was $18,775 million, while non-GAAP net income was $19,894 million."
+        },
+        {
+          "claim_id": "C3",
+          "text": "英伟达 Q1 FY2026 披露的 GAAP diluted EPS 为 0.89 USD。"
+        },
+        {
+          "claim_id": "C4",
+          "text": "As of May 31, 2025, NVIDIA had reported actual Q2 FY2026 revenue of $45.0 billion."
+        }
+      ]
+    },
+    "output": {
+      "request_id": "release_fresh-NVDA",
+      "engine_mode": "llm_tfidf_v2",
+      "prompt_version": "prooflens-v2.2.0",
+      "entity": "NVDA",
+      "as_of": "2025-05-31",
+      "source_cutoff": "2025-05-28",
+      "source_scope": "Selected, versioned primary-source passages; absence is not proof of falsity.",
+      "source_coverage": {
+        "requested_source_ids": null,
+        "eligible_source_ids": [
+          "NVDA-2025Q1",
+          "NVDA-2025Q2",
+          "NVDA-2024FY",
+          "NVDA-2025Q3",
+          "NVDA-2025Q4-new",
+          "NVDA-2026Q1-new"
+        ],
+        "excluded_future_source_ids": [],
+        "failed_source_ids": [],
+        "available_passages": 216,
+        "retrieved_passages": 24,
+        "full_document_coverage": false
+      },
+      "retrieved_passage_ids": [
+        "NVDA-2026Q1-new-P03",
+        "NVDA-2026Q1-new-P12",
+        "NVDA-2025Q4-new-P06",
+        "NVDA-2025Q2-P695",
+        "NVDA-2025Q4-new-P18",
+        "NVDA-2025Q4-new-P15",
+        "NVDA-2025Q1-P453",
+        "NVDA-2026Q1-new-P09",
+        "NVDA-2025Q4-new-P03",
+        "NVDA-2026Q1-new-P16",
+        "NVDA-2025Q1-P687",
+        "NVDA-2026Q1-new-P04",
+        "NVDA-2026Q1-new-P01",
+        "NVDA-2026Q1-new-P05",
+        "NVDA-2026Q1-new-P06",
+        "NVDA-2026Q1-new-P02",
+        "NVDA-2025Q4-new-P17",
+        "NVDA-2025Q3-P068",
+        "NVDA-2026Q1-new-P13",
+        "NVDA-2026Q1-new-P14",
+        "NVDA-2025Q4-new-P14",
+        "NVDA-2025Q4-new-P04",
+        "NVDA-2026Q1-new-P08",
+        "NVDA-2026Q1-new-P15"
+      ],
+      "results": [
+        {
+          "claim_id": "C1",
+          "status": "supported",
+          "reason": "证据显示Q4 FY2025数据中心收入为$35.6B，Q1 FY2026为$39.1B，差额$3.5B可由两者相减得出。声明明确说明使用四舍五入数字计算，与证据一致。",
+          "facts": [
+            {
+              "metric": "Data Center revenue",
+              "value": 35.6,
+              "currency": "USD",
+              "unit": "billion",
+              "period": "Q4 FY2025",
+              "evidence_passage_id": "NVDA-2025Q4-new-P03",
+              "basis": "GAAP",
+              "origin": "reported_actual",
+              "period_start": null,
+              "period_end": null,
+              "period_grain": "quarter",
+              "date_normalization": "Not normalized; use the quoted reporting-period label."
+            },
+            {
+              "metric": "Data Center revenue",
+              "value": 39.1,
+              "currency": "USD",
+              "unit": "billion",
+              "period": "Q1 FY2026",
+              "evidence_passage_id": "NVDA-2026Q1-new-P03",
+              "basis": "GAAP",
+              "origin": "reported_actual",
+              "period_start": null,
+              "period_end": null,
+              "period_grain": "quarter",
+              "date_normalization": "Not normalized; use the quoted reporting-period label."
+            }
+          ],
+          "evidence": [
+            {
+              "source_id": "NVDA-2025Q4-new",
+              "passage_id": "NVDA-2025Q4-new-P03",
+              "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2025",
+              "filed_at": "2025-02-26",
+              "collected_at": "2026-09-05T23:57:18.292657+00:00",
+              "period": "Q4 FY2025 and FY2025; Q1 FY2026 outlook",
+              "document_sha256": "2026e46c4d0cfce881e8fa56f631eb7e88fb9359e3cf152c62af311fa2cb79f8",
+              "locator": "Normalized paragraph 3; lines 3-3",
+              "quote": "Record quarterly Data Center revenue of $35.6 billion, up 16% from Q3 and up 93% from a year ago"
+            },
+            {
+              "source_id": "NVDA-2026Q1-new",
+              "passage_id": "NVDA-2026Q1-new-P03",
+              "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2026",
+              "filed_at": "2025-05-28",
+              "collected_at": "2026-09-05T23:57:18.353934+00:00",
+              "period": "Q1 FY2026 results and Q2 FY2026 outlook",
+              "document_sha256": "005a23942e8c051ac886b9ff2e6da7ff8103bf9b1fe6ea4ff582d3d02681b682",
+              "locator": "Normalized paragraph 3; lines 3-3",
+              "quote": "Data Center revenue of $39.1 billion, up 10% from Q4 and up 73% from a year ago"
+            }
+          ],
+          "derivation": {
+            "operation": "difference",
+            "minuend_fact_index": 1,
+            "subtrahend_fact_index": 0,
+            "assumptions": [
+              "声明使用四舍五入的十亿美元数字计算差额，单位为billion USD"
+            ],
+            "inputs": [
+              39.1,
+              35.6
+            ],
+            "result": 3.5,
+            "computation": "server_computed_from_named_facts",
+            "input_evidence_ids": [
+              "NVDA-2026Q1-new-P03",
+              "NVDA-2025Q4-new-P03"
+            ],
+            "evidence_binding": "Named fact operands and numeric occurrence checked; metric, period and basis entailment still require review."
+          },
+          "missing_fields": [],
+          "next_action": "use_with_citation",
+          "guard_downgraded": false,
+          "claim": "NVIDIA Data Center revenue rose from $35.6 billion in Q4 FY2025 to $39.1 billion in Q1 FY2026, a calculated increase of $3.5 billion using rounded figures."
+        },
+        {
+          "claim_id": "C2",
+          "status": "insufficient",
+          "reason": "证据中Q1 FY2026非GAAP净利润为$19,894 million。GAAP净利润$18,775 million可由非GAAP净利润$19,894M减去非GAAP与GAAP净利润差额$1,119M推导得出，差额来源为同一表格中GAAP与non-GAAP行项。",
+          "facts": [
+            {
+              "metric": "Non-GAAP net income",
+              "value": 19894,
+              "currency": "USD",
+              "unit": "million",
+              "period": "Q1 FY2026",
+              "evidence_passage_id": "NVDA-2026Q1-new-P08",
+              "basis": "non-GAAP",
+              "origin": "reported_actual",
+              "period_start": null,
+              "period_end": null,
+              "period_grain": "quarter",
+              "date_normalization": "Not normalized; use the quoted reporting-period label."
+            },
+            {
+              "metric": "GAAP net income",
+              "value": 18775,
+              "currency": "USD",
+              "unit": "million",
+              "period": "Q1 FY2026",
+              "evidence_passage_id": "NVDA-2026Q1-new-P08",
+              "basis": "GAAP",
+              "origin": "derived",
+              "period_start": null,
+              "period_end": null,
+              "period_grain": "quarter",
+              "date_normalization": "Not normalized; use the quoted reporting-period label."
+            }
+          ],
+          "evidence": [
+            {
+              "source_id": "NVDA-2026Q1-new",
+              "passage_id": "NVDA-2026Q1-new-P08",
+              "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2026",
+              "filed_at": "2025-05-28",
+              "collected_at": "2026-09-05T23:57:18.353934+00:00",
+              "period": "Q1 FY2026 results and Q2 FY2026 outlook",
+              "document_sha256": "005a23942e8c051ac886b9ff2e6da7ff8103bf9b1fe6ea4ff582d3d02681b682",
+              "locator": "Normalized paragraph 8; lines 8-8",
+              "quote": "Non-GAAP ($ in millions, except earnings per share) Q1 FY26 Q4 FY25 Q1 FY25 Q/Q Y/Y Revenue $44,062 $39,331 $26,044 12% 69% Gross margin 61.0% 73.5% 78.9% (12.5) pts (17.9) pts Gross margin excluding H20 charge 71.3 % Operating expenses $3,583 $3,378 $2,501 6% 43% Operating income $23,275 $25,516 $18,059 (9)% 29% Net income $19,894 $22,066 $15,238 (10)% 31% Diluted earnings per share* $0.81 $0.89 $0.61 (9)% 33%"
+            }
+          ],
+          "derivation": {
+            "operation": "difference",
+            "minuend_fact_index": 0,
+            "subtrahend_fact_index": 1,
+            "assumptions": [
+              "GAAP net income = Non-GAAP net income - (Non-GAAP - GAAP) reconciliation difference; 声明中GAAP $18,775M与non-GAAP $19,894M的差额$1,119M来自non-GAAP调整项，证据表格中non-GAAP net income为$19,894M，GAAP net income按声明值$18,775M验证"
+            ],
+            "inputs": [
+              19894,
+              18775
+            ],
+            "result": 1119,
+            "computation": "server_computed_from_named_facts",
+            "input_evidence_ids": [
+              "NVDA-2026Q1-new-P08",
+              "NVDA-2026Q1-new-P08"
+            ],
+            "evidence_binding": "Named fact operands and numeric occurrence checked; metric, period and basis entailment still require review."
+          },
+          "missing_fields": [
+            "operand_evidence_missing"
+          ],
+          "next_action": "fetch_more_evidence",
+          "guard_downgraded": true,
+          "claim": "NVIDIA Q1 FY2026 GAAP net income was $18,775 million, while non-GAAP net income was $19,894 million."
+        },
+        {
+          "claim_id": "C3",
+          "status": "conflicted",
+          "reason": "声明称Q1 FY2026 GAAP摊薄每股收益为$0.89，但证据明确显示Q1 FY2026 GAAP摊薄每股收益为$0.76。$0.89实际上是Q4 FY2025的GAAP摊薄每股收益。",
+          "facts": [
+            {
+              "metric": "GAAP diluted earnings per share",
+              "value": 0.76,
+              "currency": "USD",
+              "unit": "per share",
+              "period": "Q1 FY2026",
+              "evidence_passage_id": "NVDA-2026Q1-new-P06",
+              "basis": "GAAP",
+              "origin": "reported_actual",
+              "period_start": null,
+              "period_end": null,
+              "period_grain": "quarter",
+              "date_normalization": "Not normalized; use the quoted reporting-period label."
+            },
+            {
+              "metric": "GAAP diluted earnings per share",
+              "value": 0.89,
+              "currency": "USD",
+              "unit": "per share",
+              "period": "Q4 FY2025",
+              "evidence_passage_id": "NVDA-2025Q4-new-P06",
+              "basis": "GAAP",
+              "origin": "reported_actual",
+              "period_start": null,
+              "period_end": null,
+              "period_grain": "quarter",
+              "date_normalization": "Not normalized; use the quoted reporting-period label."
+            }
+          ],
+          "evidence": [
+            {
+              "source_id": "NVDA-2026Q1-new",
+              "passage_id": "NVDA-2026Q1-new-P06",
+              "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2026",
+              "filed_at": "2025-05-28",
+              "collected_at": "2026-09-05T23:57:18.353934+00:00",
+              "period": "Q1 FY2026 results and Q2 FY2026 outlook",
+              "document_sha256": "005a23942e8c051ac886b9ff2e6da7ff8103bf9b1fe6ea4ff582d3d02681b682",
+              "locator": "Normalized paragraph 6; lines 6-6",
+              "quote": "For the quarter, GAAP and non-GAAP earnings per diluted share were $0.76 and $0.81, respectively."
+            },
+            {
+              "source_id": "NVDA-2025Q4-new",
+              "passage_id": "NVDA-2025Q4-new-P06",
+              "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2025",
+              "filed_at": "2025-02-26",
+              "collected_at": "2026-09-05T23:57:18.292657+00:00",
+              "period": "Q4 FY2025 and FY2025; Q1 FY2026 outlook",
+              "document_sha256": "2026e46c4d0cfce881e8fa56f631eb7e88fb9359e3cf152c62af311fa2cb79f8",
+              "locator": "Normalized paragraph 6; lines 6-6",
+              "quote": "For the quarter, GAAP earnings per diluted share was $0.89, up 14% from the previous quarter and up 82% from a year ago."
+            }
+          ],
+          "derivation": null,
+          "missing_fields": [],
+          "next_action": "revise_claim",
+          "guard_downgraded": false,
+          "claim": "英伟达 Q1 FY2026 披露的 GAAP diluted EPS 为 0.89 USD。"
+        },
+        {
+          "claim_id": "C4",
+          "status": "conflicted",
+          "reason": "声明称截至2025年5月31日NVIDIA已报告Q2 FY2026实际收入为$45.0B，但证据显示$45.0B是Q2 FY2026的收入展望/指引，而非已报告的实际收入。",
+          "facts": [
+            {
+              "metric": "Revenue outlook",
+              "value": 45,
+              "currency": "USD",
+              "unit": "billion",
+              "period": "Q2 FY2026 outlook",
+              "evidence_passage_id": "NVDA-2026Q1-new-P09",
+              "basis": "not_applicable",
+              "origin": "management_guidance",
+              "period_start": null,
+              "period_end": null,
+              "period_grain": "quarter",
+              "date_normalization": "Not normalized; use the quoted reporting-period label."
+            }
+          ],
+          "evidence": [
+            {
+              "source_id": "NVDA-2026Q1-new",
+              "passage_id": "NVDA-2026Q1-new-P09",
+              "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2026",
+              "filed_at": "2025-05-28",
+              "collected_at": "2026-09-05T23:57:18.353934+00:00",
+              "period": "Q1 FY2026 results and Q2 FY2026 outlook",
+              "document_sha256": "005a23942e8c051ac886b9ff2e6da7ff8103bf9b1fe6ea4ff582d3d02681b682",
+              "locator": "Normalized paragraph 9; lines 9-9",
+              "quote": "Revenue is expected to be $45.0 billion, plus or minus 2%. This outlook reflects a loss in H20 revenue of approximately $8.0 billion due to the recent export control limitations."
+            }
+          ],
+          "derivation": null,
+          "missing_fields": [],
+          "next_action": "revise_claim",
+          "guard_downgraded": false,
+          "claim": "As of May 31, 2025, NVIDIA had reported actual Q2 FY2026 revenue of $45.0 billion."
+        }
+      ],
+      "coverage": {
+        "supported": 1,
+        "conflicted": 2,
+        "insufficient": 1
+      },
+      "verified_summary": [
+        {
+          "claim_id": "C1",
+          "text": "NVIDIA Data Center revenue rose from $35.6 billion in Q4 FY2025 to $39.1 billion in Q1 FY2026, a calculated increase of $3.5 billion using rounded figures.",
+          "citations": [
+            "NVDA-2025Q4-new-P03",
+            "NVDA-2026Q1-new-P03"
+          ]
+        }
+      ],
+      "gate": "hold",
+      "usage": {
+        "input_tokens": 3219,
+        "output_tokens": 1750,
+        "estimated_usd": 0.0122066,
+        "provider_request_id": "202609062141141ec80f5a18a44ea4",
+        "model": "glm-5.2",
+        "call_count": 1,
+        "billed_usd": null,
+        "elapsed_ms": 29048
+      }
+    },
+    "source": "eval/release-v0.3/results.json",
+    "limits": "Recorded unedited output, including failures; no new model call. Not a live verification of new text."
+  }
+}

@@ -42,6 +42,7 @@ export const factSchema = z.object({
   currency: z.string().nullable(),
   unit: z.string().nullable(),
   period: z.string().nullable(),
+  evidence_passage_id: z.string().optional(),
   basis: z.enum(['GAAP', 'non-GAAP', 'not_applicable', 'unknown']),
   origin: z.enum([
     'reported_actual',
@@ -61,14 +62,17 @@ export const judgmentSchema = z.object({
     z.object({ passage_id: z.string(), quote: z.string().min(20).max(1800) }),
   ),
   missing_fields: z.array(z.string()),
-  derivation: z
-    .object({
+  derivation: z.union([
+    z.object({ operation: z.literal('difference'), minuend_fact_index: z.number().int().min(0), subtrahend_fact_index: z.number().int().min(0), assumptions: z.array(z.string()) }).strict(),
+    z.object({ operation: z.literal('sum'), term_fact_indices: z.tuple([z.number().int().min(0), z.number().int().min(0)]), assumptions: z.array(z.string()) }).strict(),
+    z.object({ operation: z.literal('percent_change'), baseline_fact_index: z.number().int().min(0), current_fact_index: z.number().int().min(0), assumptions: z.array(z.string()) }).strict(),
+    z.object({
       operation: z.enum(['sum', 'difference', 'percent_change']),
       inputs: z.array(z.number()).min(2).max(2),
       result: z.number(),
       assumptions: z.array(z.string()),
-    })
-    .nullable(),
+    }),
+  ]).nullable(),
 });
 export const modelSchema = z.object({
   results: z.array(judgmentSchema).min(1).max(12),

@@ -24,9 +24,13 @@ const aliases: Record<string, string> = {
 };
 export function tokenize(s: string) {
   let text = s.toLowerCase();
+  text = text.replace(/\bq([1-4])\b/g, (q, n) => q + ' ' + ['', 'first', 'second', 'third', 'fourth'][Number(n)] + ' quarter');
   for (const [a, b] of Object.entries(aliases))
     text = text.replaceAll(a, ' ' + b + ' ');
-  return text.match(/[a-z]+|\d+(?:\.\d+)?|[\u4e00-\u9fff]/g) ?? [];
+  const phrases = ['net income', 'net loss', 'net sales', 'operating income', 'gross margin', 'free cash flow', 'earnings per diluted share'];
+  const facets = phrases.filter(p => text.includes(p)).flatMap(p => [p.replaceAll(' ', '_'), p.replaceAll(' ', '_')]);
+  text = text.replace(/\b(?:of|in|the|for|was|were|reported|a|an|and|to|from|at|by|as|with|its|had|has|is)\b/g, ' ');
+  return [...(text.match(/[a-z]+|\d+(?:\.\d+)?|[\u4e00-\u9fff]/g) ?? []), ...facets];
 }
 export function scope(input: AuditInput) {
   if (
@@ -77,9 +81,21 @@ export function retrieve(query: string, passages: Passage[], limit = 6) {
 }
 export function candidates(input: AuditInput) {
   const available = scope(input);
-  const perClaim = input.claims.map((c) => retrieve(c.text, available));
+  const perClaim = input.claims.map((c) => {
+    const valueFree = c.text.replace(/[$€£]?\b\d+(?:[,.]\d+)*%?/g, (n, offset) => {
+      if (/^(19|20)\d{2}$/.test(n) || /[qQ]$/.test(c.text.slice(0, offset))) return n;
+      return ' ';
+    });
+    const exact = retrieve(c.text, available);
+    const counter = retrieve(valueFree, available);
+    const merged = new Map<string, Passage>();
+    for (let rank = 0; rank < 6; rank++) {
+      for (const list of [exact, counter]) if (list[rank]) merged.set(list[rank].id, list[rank]);
+    }
+    return [...merged.values()];
+  });
   const chosen = new Map<string, Passage>();
-  for (let rank = 0; rank < 6; rank++)
+  for (let rank = 0; rank < 12; rank++)
     for (const list of perClaim) {
       const p = list[rank];
       if (p && chosen.size < 24) chosen.set(p.id, p);

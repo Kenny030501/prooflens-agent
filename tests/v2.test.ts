@@ -74,8 +74,8 @@ check('no future-source leakage', () =>
 check('reject cross-entity source', () =>
   assert.throws(() => scope({ ...request, source_ids: ['NVDA-2025Q1'] })),
 );
-check('12 unique documents with hashes', () => {
-  assert.equal(corpus.documents.length, 12);
+check('18 unique documents with hashes', () => {
+  assert.equal(corpus.documents.length, 18);
   for (const d of corpus.documents) assert.match(d.sha256, /^[a-f0-9]{64}$/);
 });
 check('TF-IDF finds exact supporting passage', () =>

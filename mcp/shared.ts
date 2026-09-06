@@ -3,7 +3,7 @@ import { z } from 'zod';
 import { requestSchema } from '../lib/v2/contracts';
 import { corpus } from '../lib/v2/retrieval';
 export function makeServer(run: (input: unknown) => Promise<unknown>) {
-  const server = new McpServer({ name: 'prooflens', version: '0.2.0' });
+  const server = new McpServer({ name: 'prooflens', version: '0.3.0' });
   server.registerTool(
     'verify_financial_claims',
     {

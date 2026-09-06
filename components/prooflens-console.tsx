@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import {
   ShieldCheck,
   ExternalLink,
@@ -41,6 +42,8 @@ export function ProofLensConsole() {
   const [health, setHealth] = useState<Health | null>(null);
   const [sources, setSources] = useState<Source[]>([]);
   const [telemetry, setTelemetry] = useState('');
+  const [reviews, setReviews] = useState<Record<string, string>>({});
+  const [replay, setReplay] = useState(false);
   const session = useRef('');
   const t = (cn: string, en: string) => (zh ? cn : en);
   const refresh = () =>
@@ -109,6 +112,8 @@ export function ProofLensConsole() {
     setBusy(true);
     setError('');
     setResult(null);
+    setReviews({});
+    setReplay(false);
     const start = Date.now();
     void event('audit_started');
     try {
@@ -127,6 +132,7 @@ export function ProofLensConsole() {
       void event('audit_completed', Date.now() - start);
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Audit unavailable');
+      void event('audit_failed', Date.now() - start);
     } finally {
       setBusy(false);
       void refresh();
@@ -137,18 +143,35 @@ export function ProofLensConsole() {
     setAsOf(dates[e]);
     setDraft(examples[e]);
     setResult(null);
+    setReviews({});
+    setReplay(false);
     setError('');
+  }
+  async function loadDemo() {
+    setError('');
+    try {
+      const response = await fetch('/api/demo?ticker=' + entity);
+      if (!response.ok) throw new Error('Recorded example unavailable');
+      const data = await response.json() as { input: { as_of: string; claims: { text: string }[] }; output: AuditOutput };
+      setAsOf(data.input.as_of);
+      setDraft(data.input.claims.map(c => c.text).join('\n'));
+      setResult(data.output);
+      setReviews({});
+      setReplay(true);
+    } catch { setError(t('历史调用记录暂不可用，请尝试实时核验。', 'Recorded example unavailable; try live verification.')); }
   }
   function download() {
     if (!result) return;
     const u = URL.createObjectURL(
-      new Blob([JSON.stringify(result, null, 2)], { type: 'application/json' }),
+      new Blob([JSON.stringify({ ...result, presentation_mode: replay ? 'recorded_real_call' : 'live', reviewer_labels: reviews, review_scope: 'Local review labels do not change the model verdict or add source evidence.' }, null, 2)], { type: 'application/json' }),
     );
     const a = document.createElement('a');
     a.href = u;
     a.download = 'prooflens-' + result.request_id + '.json';
+    document.body.appendChild(a);
     a.click();
-    URL.revokeObjectURL(u);
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(u), 60000);
     void event('result_exported');
   }
   const statusLabel = (s: string) =>
@@ -223,7 +246,8 @@ export function ProofLensConsole() {
           </div>
         </aside>
         <main className="pl2-main">
-          <p className="pl2-eyebrow">EVIDENCE BEFORE ANSWERS · V0.2</p>
+          <p className="pl2-eyebrow">EVIDENCE BEFORE ANSWERS · V0.3</p>
+          <p><Link href="/case">{t('阅读项目案例与实测边界', 'Read the case study and measured limits')}</Link></p>
           <h1>
             {t(
               '让每条主张，经得起追溯。',
@@ -238,8 +262,8 @@ export function ProofLensConsole() {
           </p>
           <div className="pl2-notice">
             {t(
-              '范围：12 份历史 SEC 文件的选定段落，不提供实时行情或买卖建议。未找到证据不代表主张一定错误。',
-              'Scope: selected passages from 12 historical SEC filings. No live market data or trading advice. Missing evidence is not proof of falsity.',
+              '范围：18 份历史 SEC / 公司公告的选定段落，不提供实时行情或买卖建议。未找到证据不代表主张一定错误。',
+              'Scope: selected passages from 18 historical SEC / company releases. No live market data or trading advice. Missing evidence is not proof of falsity.',
             )}
           </div>
           {tab === 'audit' && (
@@ -305,6 +329,7 @@ export function ProofLensConsole() {
                     ? t('正在检索与核验…', 'Retrieving and verifying…')
                     : t('开始核验', 'Run verification')}
                 </button>
+                <button onClick={loadDemo} disabled={busy}>{t('查看真实调用回放 · 本次零费用', 'View a recorded real call · Free replay')}</button>
                 <p className="pl2-muted">
                   {t(
                     '每次提交可能产生少量 API 费用；不会自动重试付费调用。',
@@ -352,6 +377,7 @@ export function ProofLensConsole() {
                 )}
                 {result && (
                   <>
+                    {replay && <div className="pl2-replay">{t('历史真实调用回放：本次未调用模型、费用为零。下方耗时和费用属于原始调用；修改输入后请点击“开始核验”。', 'Recorded real call: no model was called for this replay. The time and cost below belong to the original run. Edit the input and run verification for a fresh result.')}</div>}
                     <div className="pl2-panel">
                       <div className="pl2-resulthead">
                         <h2>{t('核验结果', 'Audit results')}</h2>
@@ -399,6 +425,17 @@ export function ProofLensConsole() {
                         </span>
                         <h3>{r.claim}</h3>
                         <p>{r.reason}</p>
+                        <label htmlFor={'review-' + r.claim_id}>{t('复核标注（不覆盖模型结论）', 'Review label (kept separate from the model)')}</label>
+                        <select id={'review-' + r.claim_id} value={reviews[r.claim_id] ?? ''} onChange={e => {
+                          setReviews(previous => ({ ...previous, [r.claim_id]: e.target.value }));
+                          void event('judgment_reviewed');
+                        }}>
+                          <option value="">{t('尚未复核', 'Not reviewed')}</option>
+                          <option value="agree">{t('同意判断', 'Agree')}</option>
+                          <option value="needs_evidence">{t('证据需补充', 'Needs evidence')}</option>
+                          <option value="disagree">{t('不同意，需重新核验', 'Disagree; recheck needed')}</option>
+                        </select>
+                        {r.derivation && <details><summary>{t('程序计算与来源绑定', 'Server calculation and source binding')}</summary><pre className="pl2-code">{JSON.stringify(r.derivation, null, 2)}</pre></details>}
                         <div className="pl2-action">
                           {t('下一步', 'Next action')}:{' '}
                           <code>{r.next_action}</code>
@@ -440,7 +477,7 @@ export function ProofLensConsole() {
                               {e.locator} · {e.filed_at}
                             </p>
                             <a href={e.url} target="_blank" rel="noreferrer">
-                              {t('打开 SEC 原文件', 'Open SEC filing')}{' '}
+                              {t('打开一手原文件', 'Open primary source')}{' '}
                               <ExternalLink size={14} />
                             </a>
                             <p className="pl2-hash">
@@ -501,7 +538,7 @@ export function ProofLensConsole() {
                     {d.selected_passages} {t('段', 'passages')}
                   </p>
                   <a href={d.url} target="_blank" rel="noreferrer">
-                    {t('打开 SEC 原文件', 'Open SEC filing')}{' '}
+                    {t('打开一手原文件', 'Open primary source')}{' '}
                     <ExternalLink size={15} />
                   </a>
                   <p className="pl2-hash">{d.sha256}</p>

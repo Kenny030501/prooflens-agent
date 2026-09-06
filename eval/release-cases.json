@@ -1,0 +1,27 @@
+[
+  {"id":"regression-A2","split":"regression","entity":"AMZN","as_of":"2025-05-31","source_ids":["AMZN-2024Q4-new","AMZN-2025Q1-new"],"claims":[
+    {"claim_id":"C1","text":"Amazon reported full-year 2024 operating income of $68.6 billion and Q4 2024 operating income of $21.2 billion; these are different reporting periods.","expected":"supported"},
+    {"claim_id":"C2","text":"Amazon net sales declined sequentially from $187.8 billion in Q4 2024 to $155.7 billion in Q1 2025.","expected":"supported"},
+    {"claim_id":"C3","text":"Amazon reported net income of $59.2 billion in Q4 2024.","expected":"conflicted","required_source":"AMZN-2024Q4-new-P06"},
+    {"claim_id":"C4","text":"Amazon disclosed AWS standalone free cash flow of $8.0 billion for Q1 2025.","expected":"insufficient"}]},
+  {"id":"regression-M1","split":"regression","entity":"MRVL","as_of":"2025-05-31","source_ids":["MRVL-2025Q4-new","MRVL-2026Q1-new"],"claims":[
+    {"claim_id":"C1","text":"Marvell GAAP net income decreased from $200.2 million in Q4 FY2025 to $177.9 million in Q1 FY2026.","expected":"supported"},
+    {"claim_id":"C2","text":"Marvell non-GAAP net income increased from $531.4 million in Q4 FY2025 to $540.0 million in Q1 FY2026.","expected":"supported"},
+    {"claim_id":"C3","text":"Marvell reported GAAP net income of $540.0 million in Q1 FY2026.","expected":"conflicted"},
+    {"claim_id":"C4","text":"Marvell disclosed GAAP net profit of $50.0 million specifically for its custom AI silicon product line in Q1 FY2026.","expected":"insufficient"}]},
+  {"id":"fresh-AMZN","split":"fresh_claims_same_source_family","entity":"AMZN","as_of":"2025-05-31","claims":[
+    {"claim_id":"C1","text":"Amazon reported net income of $17.1 billion in Q1 2025.","expected":"supported","required_source":"AMZN-2025Q1-new-P06"},
+    {"claim_id":"C2","text":"AWS operating income increased from $10.6 billion in Q4 2024 to $11.5 billion in Q1 2025, a calculated increase of $0.9 billion using rounded figures.","expected":"supported"},
+    {"claim_id":"C3","text":"亚马逊 2025 年第一季度净销售额为 187.8 billion USD。","expected":"conflicted"},
+    {"claim_id":"C4","text":"Amazon disclosed a standalone Trainium operating margin of 25% for Q1 2025.","expected":"insufficient"}]},
+  {"id":"fresh-MRVL","split":"fresh_claims_same_source_family","entity":"MRVL","as_of":"2025-05-31","claims":[
+    {"claim_id":"C1","text":"Marvell reported GAAP diluted EPS of $0.20 and non-GAAP diluted EPS of $0.62 for Q1 FY2026.","expected":"supported"},
+    {"claim_id":"C2","text":"Using Marvell Q1 FY2026 reported diluted EPS, non-GAAP EPS exceeded GAAP EPS by a calculated $0.42 per share.","expected":"supported"},
+    {"claim_id":"C3","text":"Marvell 在 Q1 FY2026 披露的 GAAP gross margin 为 59.8%。","expected":"conflicted"},
+    {"claim_id":"C4","text":"Marvell disclosed a standalone custom AI silicon operating margin of 45% in Q1 FY2026.","expected":"insufficient"}]},
+  {"id":"fresh-NVDA","split":"fresh_claims_same_source_family","entity":"NVDA","as_of":"2025-05-31","claims":[
+    {"claim_id":"C1","text":"NVIDIA Data Center revenue rose from $35.6 billion in Q4 FY2025 to $39.1 billion in Q1 FY2026, a calculated increase of $3.5 billion using rounded figures.","expected":"supported"},
+    {"claim_id":"C2","text":"NVIDIA Q1 FY2026 GAAP net income was $18,775 million, while non-GAAP net income was $19,894 million.","expected":"supported"},
+    {"claim_id":"C3","text":"英伟达 Q1 FY2026 披露的 GAAP diluted EPS 为 0.89 USD。","expected":"conflicted"},
+    {"claim_id":"C4","text":"As of May 31, 2025, NVIDIA had reported actual Q2 FY2026 revenue of $45.0 billion.","expected":"insufficient"}]}
+]

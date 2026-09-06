@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "{\"results\":[{\"claim_id\":\"C1\",\"status\":\"supported\",\"reason\":\"证据明确披露 Q1 FY2026 GAAP 摊薄每股收益为 $0.20，non-GAAP 摊薄每股收益为 $0.62，与声明完全一致。\",\"facts\":[{\"metric\":\"GAAP diluted EPS\",\"value\":0.20,\"currency\":\"USD\",\"unit\":\"per share\",\"period\":\"Q1 FY2026\",\"evidence_passage_id\":\"MRVL-2026Q1-new-P03\",\"basis\":\"GAAP\",\"origin\":\"reported_actual\"},{\"metric\":\"non-GAAP diluted EPS\",\"value\":0.62,\"currency\":\"USD\",\"unit\":\"per share\",\"period\":\"Q1 FY2026\",\"evidence_passage_id\":\"MRVL-2026Q1-new-P03\",\"basis\":\"non-GAAP\",\"origin\":\"reported_actual\"}],\"citations\":[{\"passage_id\":\"MRVL-2026Q1-new-P03\",\"quote\":\"Q1 Diluted income per share: $0.20 GAAP diluted income per share; $0.62 non-GAAP diluted income per share\"}],\"missing_fields\":[],\"derivation\":null},{\"claim_id\":\"C2\",\"status\":\"supported\",\"reason\":\"证据显示 Q1 FY2026 non-GAAP 摊薄每股收益为 $0.62，GAAP 摊薄每股收益为 $0.20，两者差值为 $0.42，与声明一致。\",\"facts\":[{\"metric\":\"non-GAAP diluted EPS\",\"value\":0.62,\"currency\":\"USD\",\"unit\":\"per share\",\"period\":\"Q1 FY2026\",\"evidence_passage_id\":\"MRVL-2026Q1-new-P03\",\"basis\":\"non-GAAP\",\"origin\":\"reported_actual\"},{\"metric\":\"GAAP diluted EPS\",\"value\":0.20,\"currency\":\"USD\",\"unit\":\"per share\",\"period\":\"Q1 FY2026\",\"evidence_passage_id\":\"MRVL-2026Q1-new-P03\",\"basis\":\"GAAP\",\"origin\":\"reported_actual\"}],\"citations\":[{\"passage_id\":\"MRVL-2026Q1-new-P03\",\"quote\":\"Q1 Diluted income per share: $0.20 GAAP diluted income per share; $0.62 non-GAAP diluted income per share\"}],\"missing_fields\":[],\"derivation\":{\"operation\":\"difference\",\"minuend_fact_index\":0,\"subtrahend_fact_index\":1,\"assumptions\":[\"差值 = non-GAAP 摊薄每股收益 - GAAP 摊薄每股收益，单位为美元/股\"]}},{\"claim_id\":\"C3\",\"status\":\"conflicted\",\"reason\":\"证据显示 Q1 FY2026 GAAP 毛利率为 50.3%，non-GAAP 毛利率为 59.8%。声明将 59.8% 归为 GAAP 毛利率，与证据直接矛盾。\",\"facts\":[{\"metric\":\"GAAP gross margin\",\"value\":50.3,\"currency\":null,\"unit\":\"percent\",\"period\":\"Q1 FY2026\",\"evidence_passage_id\":\"MRVL-2026Q1-new-P02\",\"basis\":\"GAAP\",\"origin\":\"reported_actual\"},{\"metric\":\"non-GAAP gross margin\",\"value\":59.8,\"currency\":null,\"unit\":\"percent\",\"period\":\"Q1 FY2026\",\"evidence_passage_id\":\"MRVL-2026Q1-new-P02\",\"basis\":\"non-GAAP\",\"origin\":\"reported_actual\"}],\"citations\":[{\"passage_id\":\"MRVL-2026Q1-new-P02\",\"quote\":\"Q1 Gross Margin: 50.3% GAAP gross margin; 59.8% non-GAAP gross margin\"}],\"missing_fields\":[],\"derivation\":null},{\"claim_id\":\"C4\",\"status\":\"insufficient\",\"reason\":\"证据中未提及 Marvell 在 Q1 FY2026 披露独立的定制 AI 硅业务运营利润率（standalone custom AI silicon operating margin）为 45% 的信息，无法验证该声明。\",\"facts\":[],\"citations\":[],\"missing_fields\":[\"standalone custom AI silicon operating margin for Q1 FY2026\"],\"derivation\":null}]}",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1788702074,
+  "id": "20260906214056c74bbc2eb6b34e09",
+  "model": "glm-5.2",
+  "object": "chat.completion",
+  "request_id": "20260906214056c74bbc2eb6b34e09",
+  "usage": {
+    "completion_tokens": 1182,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2885,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 4067
+  }
+}

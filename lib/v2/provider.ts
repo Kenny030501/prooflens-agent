@@ -53,6 +53,7 @@ export async function complete(
                   currency: { type: ['string', 'null'] },
                   unit: { type: ['string', 'null'] },
                   period: { type: ['string', 'null'] },
+                  evidence_passage_id: { type: 'string' },
                   basis: {
                     type: 'string',
                     enum: ['GAAP', 'non-GAAP', 'not_applicable', 'unknown'],
@@ -75,6 +76,7 @@ export async function complete(
                   'currency',
                   'unit',
                   'period',
+                  'evidence_passage_id',
                   'basis',
                   'origin',
                 ],
@@ -97,20 +99,11 @@ export async function complete(
             derivation: {
               anyOf: [
                 { type: 'null' },
-                {
-                  type: 'object',
-                  properties: {
-                    operation: {
-                      type: 'string',
-                      enum: ['sum', 'difference', 'percent_change'],
-                    },
-                    inputs: { type: 'array', items: { type: 'number' } },
-                    result: { type: 'number' },
-                    assumptions: { type: 'array', items: { type: 'string' } },
-                  },
-                  required: ['operation', 'inputs', 'result', 'assumptions'],
-                  additionalProperties: false,
-                },
+                ...[
+                  { operation: { const: 'difference' }, minuend_fact_index: { type: 'integer', minimum: 0 }, subtrahend_fact_index: { type: 'integer', minimum: 0 } },
+                  { operation: { const: 'sum' }, term_fact_indices: { type: 'array', items: { type: 'integer', minimum: 0 }, minItems: 2, maxItems: 2 } },
+                  { operation: { const: 'percent_change' }, baseline_fact_index: { type: 'integer', minimum: 0 }, current_fact_index: { type: 'integer', minimum: 0 } },
+                ].map(properties => ({ type: 'object', properties: { ...properties, assumptions: { type: 'array', items: { type: 'string' } } }, required: [...Object.keys(properties), 'assumptions'], additionalProperties: false })),
               ],
             },
           },

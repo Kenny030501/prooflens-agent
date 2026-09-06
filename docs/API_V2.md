@@ -2,6 +2,10 @@
 
 Start the local server; then use the same engine through REST or MCP.
 
+v0.3 adds named fact operands for server-side arithmetic and separate local review labels. Numeric occurrence checks do not prove full metric/period/basis entailment. Financial-calendar start/end dates remain unnormalized when unknown.
+
+`GET /api/demo?ticker=AMZN`: an explicitly labeled, unedited recorded real-call example. It costs zero for replay and does not verify new input. Three company examples include remaining known failures.
+
 ```sh
 curl http://localhost:3000/api/v2/evidence-audits \
   -H 'Content-Type: application/json' \
