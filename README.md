@@ -6,19 +6,19 @@
 
 ▶️ [两分钟演示视频](public/demo.mp4) · [在线演示](https://prooflens-agent.yaowenhu1215.chatgpt.site)（需所有者登录）· [项目 Notion](https://app.notion.com/p/3d2c4b789bd681a9bad0c88a14a8b3fa)
 
-## 解决什么问题
+## 产品价值
 
 Agent 生成的财务结论数字看上去合理，却常有三类错误：报告期错配（把季度写成年度）、口径混淆（把 Non-GAAP 当 GAAP）、有文件但没有支持结论的段落。人工逐条回查一手文件慢且贵。
 
 ProofLens 把这个复核动作变成一次结构化调用。判断只分 supported / conflicted / insufficient 三档并给出补查动作，不输出可信度总分——期间错配、推导错误和缺证需要不同的处理，一个总分会把它们混在一起。每条判断绑定 SEC 原文引用和文档哈希，可回溯到具体段落。
 
-## 给谁用
+## 目标群体
 
 直接用户是执行投研任务的工具型 Agent，通过 REST 或 MCP 调用；受益者是用 Agent 做研究的分析师和个人投资者，网页控制台供人工演示与复核。需求来自真实投研工作流中反复出现的任务：让一个 Agent 核对另一个 Agent 给出的财务结论（8 个任务中的 12 条核验请求）。
 
 当前为研究型 MVP：覆盖三家公司、18 份一手文件 / 690 个选定片段，真实 GLM 推理、双通道 TF-IDF 检索、命名操作数计算。
 
-## 怎么用
+## 使用方式
 
 ```sh
 curl http://localhost:3000/api/v2/evidence-audits \
