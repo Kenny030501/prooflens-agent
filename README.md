@@ -2,9 +2,7 @@
 
 让研究 Agent 的财务结论有据可查：提交公司、截止日期和主张，返回逐条判断、一手文件原文、会计口径和补查动作。
 
-[![两分钟演示视频](public/og.png)](public/demo.mp4)
-
-▶️ [两分钟演示视频](public/demo.mp4) · [在线演示](https://prooflens-agent.yaowenhu1215.chatgpt.site)（需所有者登录）· [项目 Notion](https://app.notion.com/p/3d2c4b789bd681a9bad0c88a14a8b3fa)
+[在线演示](https://prooflens-agent.yaowenhu1215.chatgpt.site)（需所有者登录）
 
 ## 产品价值
 
@@ -92,5 +90,3 @@ npm run build
 - [模拟行为、标签分歧和迭代](docs/SIMULATION_AND_ITERATION.md)
 - [运行与验收说明](docs/TEST_AND_RUNBOOK.md)
 - [v0.3 逐题回执与冻结协议](eval/release-v0.3/)、[测试样本](eval/cases.json)、[全部逐题结果](eval/results-v2.1.json)、[模型调用原始回执](eval/runs-v2.1/)
-
-旧 v0.1 文档、规则引擎与早期测试作为历史记录保留，不代表当前服务。
